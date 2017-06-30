@@ -415,6 +415,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa5d36f97006a3429d1c75cc1492be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Data:
+    currentDefend: 2
+    currentAttack: 5
+    currentHealth: 100
+    maxSpeed: 120
   m_WheelDriver:
     m_Rigidbody: {fileID: 54593898785324924}
     maxAngle: 45
@@ -430,6 +435,10 @@ MonoBehaviour:
     criticalSpeed: 12
     stepsBelow: 5
     stepsAbove: 1
+  m_DamageObject:
+    m_CurrentResistant: 0
+    m_CurrentDamage: 0
+    m_MaxDamage: 100
 --- !u!146 &146385513161066990
 WheelCollider:
   m_ObjectHideFlags: 1

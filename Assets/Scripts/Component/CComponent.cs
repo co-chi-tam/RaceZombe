@@ -5,6 +5,10 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CComponent : IComponent {
 
+		public virtual void Init() {
+
+		}
+
 		public virtual void StartComponent() {
 			
 		}

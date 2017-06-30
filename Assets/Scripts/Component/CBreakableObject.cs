@@ -13,7 +13,8 @@ namespace RacingHuntZombie {
 		[Header ("Event")]
 		[SerializeField]	public UnityEvent OnBreaked;
 
-		public virtual void Init(bool value) {
+		public new void Init(bool value) {
+			base.Init ();
 			this.BreakObjects (value);
 		}
 

@@ -56,3 +56,18 @@ MonoBehaviour:
   m_RootObstacle: {fileID: 0}
   m_Joytick: {fileID: 0}
   m_CarControl: {fileID: 0}
+  m_ZombiePrefab: {fileID: 114699181747695244, guid: 64cd0dc48f214c640b07fa0101a22398,
+    type: 2}
+  m_Zombies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

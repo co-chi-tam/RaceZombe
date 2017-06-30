@@ -11,12 +11,23 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected float m_CurrentDamage = 0f;
 		[SerializeField]	protected float m_MaxDamage = 100f;
 
-		public virtual void Init(float resistant, float maxDamage) {
+		public float currentDamage {
+			get { return this.m_CurrentDamage; }
+			set { this.m_CurrentDamage = value; }
+		}
+
+		public float maxDamage {
+			get { return this.m_MaxDamage; }
+			set { this.m_MaxDamage = value; }
+		}
+
+		public new void Init(float resistant, float maxDamage) {
+			base.Init ();
 			this.m_CurrentResistant = resistant;
 			this.m_MaxDamage = maxDamage;
 		}
 
-		public virtual void CalculteDamge(float damage) {
+		public virtual void CalculteDamage(float damage) {
 			var totalDamage = damage - this.m_CurrentResistant <= 0f ? 0f : damage - this.m_CurrentResistant;
 			this.m_CurrentDamage += totalDamage;
 		}

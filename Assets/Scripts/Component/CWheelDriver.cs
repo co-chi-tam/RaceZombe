@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace RacingHuntZombie {
 	[Serializable]
-	public class CWheelDriver : CRigidbodyDriver {
+	public class CWheelDriver : CRigidbodyObject {
 
 		[Header ("Wheel configs")]
 		[Tooltip("Maximum steering angle of the wheels")]
@@ -28,6 +28,11 @@ namespace RacingHuntZombie {
 		public int stepsBelow = 5;
 		[Tooltip("Simulation sub-steps when the speed is below critical.")]
 		public int stepsAbove = 1;
+
+		public new void Init(float maxSpeed) {
+			base.Init ();
+			this.maxTorque = maxSpeed;
+		}
 
 		public virtual void UpdateDriver(float angleInput, float torqueInput, bool handBrakeInput)
 		{

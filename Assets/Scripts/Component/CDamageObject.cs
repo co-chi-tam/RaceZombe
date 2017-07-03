@@ -7,9 +7,14 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CDamageObject : CComponent {
 
-		[SerializeField]	protected float m_CurrentResistant = 0;
+		[SerializeField]	protected float m_MaxResistant = 20f;
 		[SerializeField]	protected float m_CurrentDamage = 0f;
 		[SerializeField]	protected float m_MaxDamage = 100f;
+
+		public float maxResistant {
+			get { return this.m_MaxResistant; }
+			set { this.m_MaxResistant = value; }
+		}
 
 		public float currentDamage {
 			get { return this.m_CurrentDamage; }
@@ -23,12 +28,12 @@ namespace RacingHuntZombie {
 
 		public new void Init(float resistant, float maxDamage) {
 			base.Init ();
-			this.m_CurrentResistant = resistant;
+			this.m_MaxResistant = resistant;
 			this.m_MaxDamage = maxDamage;
 		}
 
 		public virtual void CalculteDamage(float damage) {
-			var totalDamage = damage - this.m_CurrentResistant <= 0f ? 0f : damage - this.m_CurrentResistant;
+			var totalDamage = damage <= 0f ? 0f : damage;
 			this.m_CurrentDamage += totalDamage;
 		}
 

@@ -5,17 +5,17 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CObjectData {
 
-		public float currentDefend;
-		public float currentAttack;
-		public float currentHealth;
-		public float maxSpeed;
+		public string objectName;
+		public float currentResistant;
+		public float currentDamage;
+		public float currentDurability;
 
 		public CObjectData ()
 		{
-			this.currentDefend 	= 02f;
-			this.currentAttack 	= 3f;
-			this.currentHealth 	= 100f;
-			this.maxSpeed 		= 3.5f;
+			this.objectName			= string.Empty;
+			this.currentResistant 	= 2f;
+			this.currentDamage 		= 3f;
+			this.currentDurability 	= 100f;
 		}
 		
 	}

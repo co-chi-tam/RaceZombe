@@ -8,9 +8,11 @@ namespace RacingHuntZombie {
 	public class CRigidbodyObject: CComponent {
 
 		[Header ("Physic")]
-		[SerializeField]	private Rigidbody m_Rigidbody;
+		[SerializeField]	protected Rigidbody m_Rigidbody;
 
 		public virtual float GetVelocityMS() {
+			if (this.m_Rigidbody == null)
+				return 0f;
 			return Mathf.Abs (this.m_Rigidbody.velocity.magnitude);
 		}
 

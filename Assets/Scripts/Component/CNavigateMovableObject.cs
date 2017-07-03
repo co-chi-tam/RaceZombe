@@ -46,6 +46,12 @@ namespace RacingHuntZombie {
 				return false;
 			return base.IsNearTarget();
 		}
+
+		public virtual bool CanMoveTo(Vector3 position, ref Vector3[] path) {
+			var result = this.m_NavMeshAgent.CalculatePath (position, this.m_NavMeshPath);
+			path = this.m_NavMeshPath.corners;
+			return result;
+		}
 		
 	}
 }

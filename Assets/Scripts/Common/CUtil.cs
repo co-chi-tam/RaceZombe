@@ -8,6 +8,17 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public static class CUtil {
 
+		public static T GetColliderController<T>(this GameObject value) where T : CBaseController {
+			var controller = value.GetComponent<CBaseController> (); // object
+			if (controller == null) {
+				controller = value.GetComponentInParent<CBaseController> (); // parent/object
+			}
+			if (controller == null) {
+				controller = value.transform.root.GetComponent<CBaseController> (); // root/parent/object
+			}
+			return controller as T;
+		}
+
 		/// <summary>
 		/// To the vector2 .
 		/// Exp: x|y

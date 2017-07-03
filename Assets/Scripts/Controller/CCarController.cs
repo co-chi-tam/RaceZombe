@@ -7,7 +7,7 @@ namespace RacingHuntZombie {
 	public class CCarController: CBaseController {
 
 		[Header ("Data")]
-		[SerializeField]	private CMovableData m_Data;
+		[SerializeField]	private CCarData m_Data;
 
 		[Header ("Components")]
 		[SerializeField]	private CWheelDriver m_WheelDriver;
@@ -18,15 +18,7 @@ namespace RacingHuntZombie {
 			base.Start ();
 			this.m_WheelDriver.Init (this.m_Data.maxSpeed);
 			this.m_DamageObject.Init (this.m_Data.currentResistant, this.m_Data.currentDurability);
-			this.m_CarParts.Init (null, 
-									new CCarPartData() {
-										objectName = "FrontBlade",
-										partType = CCarPartsComponent.ECarPart.FRONT,
-										currentDamage = 5,
-										currentResistant = 2,
-										currentDurability = 150f
-									},
-				                  null);
+			this.m_CarParts.Init (m_Data.carParts);
 		}
 
 		protected override void RegisterComponent ()
@@ -41,11 +33,15 @@ namespace RacingHuntZombie {
 			base.UpdateComponents (dt);
 		}
 
-		public void UpdateDriver(float angleInput, float torqueInput, bool brakeInput) {
+		public virtual void UpdateDriver(float angleInput, float torqueInput, bool brakeInput) {
 			this.m_WheelDriver.UpdateDriver (angleInput, torqueInput, brakeInput);
 		}
 
-		protected override void ApplyDamage (CBaseController attacker, float value) {
+		public virtual void UpdateCarPart(CCarPartsComponent.ECarPart part) {
+			var carPartCtrl = this.m_CarParts.GetCarPart (part);
+		}
+
+		public override void ApplyDamage (CBaseController attacker, float value) {
 			base.ApplyDamage (attacker, value);
 		}
 
@@ -58,11 +54,11 @@ namespace RacingHuntZombie {
 		}
 
 		public override void SetData(CObjectData value) {
-			this.m_Data = value as CMovableData;
+			this.m_Data = value as CCarData;
 		}
 
 		public override CObjectData GetData() {
-			return this.m_Data as CMovableData;
+			return this.m_Data as CCarData;
 		}
 
 	}

@@ -8,7 +8,10 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public static class CUtil {
 
-		public static T GetColliderController<T>(this GameObject value) where T : CBaseController {
+		/// <summary>
+		/// Gets the object controller.
+		/// </summary>
+		public static T GetObjectController<T>(this GameObject value) where T : CBaseController {
 			var controller = value.GetComponent<CBaseController> (); // object
 			if (controller == null) {
 				controller = value.GetComponentInParent<CBaseController> (); // parent/object
@@ -17,6 +20,16 @@ namespace RacingHuntZombie {
 				controller = value.transform.root.GetComponent<CBaseController> (); // root/parent/object
 			}
 			return controller as T;
+		}
+
+		/// <summary>
+		/// Gets the custom component.
+		/// </summary>
+		public static T GetCustomComponent<T>(this GameObject value) where T : CComponent {
+			var controller = value.GetComponent<CBaseController> (); // object
+			if (controller == null)
+				return default(T);
+			return controller.GetCustomComponent<T>();
 		}
 
 		/// <summary>

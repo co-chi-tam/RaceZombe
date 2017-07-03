@@ -422,6 +422,17 @@ MonoBehaviour:
     currentDamage: 3
     currentDurability: 100
     maxSpeed: 120
+    carParts:
+    - objectName: TopMachineGun
+      currentResistant: 2
+      currentDamage: 3
+      currentDurability: 100
+      partType: 0
+    - objectName: FrontBlade
+      currentResistant: 2
+      currentDamage: 5
+      currentDurability: 150
+      partType: 1
   m_WheelDriver:
     m_Rigidbody: {fileID: 54593898785324924}
     maxAngle: 45

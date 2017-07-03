@@ -102,11 +102,16 @@ public class CSceneManager: CMonoSingleton<CSceneManager> {
 	/// <summary>
 	/// Loads the scene async.
 	/// </summary>
-	public IEnumerator HandleLoadSceneAsync(string sceneName) {
+	public IEnumerator HandleLoadSceneAsync(string sceneName, Func<bool> onComplete = null) {
 		this.OnFadeInScreen ();
 		yield return WaitHelper.WaitForShortSeconds;
 		var sceneNameWithoutExtension = Path.GetFileNameWithoutExtension (sceneName);
 		yield return SceneManager.LoadSceneAsync (sceneNameWithoutExtension);
+		if (onComplete != null) {
+			while (onComplete () == false) {
+				yield return WaitHelper.WaitFixedUpdate;
+			}
+		}
 		this.OnFadeOutScreen ();
 	}
 

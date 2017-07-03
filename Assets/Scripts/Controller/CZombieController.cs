@@ -17,7 +17,7 @@ namespace RacingHuntZombie {
 		[SerializeField]	private CMovableObject m_MovableObject;
 		[SerializeField]	private CDamageObject m_DamageObject;
 
-		private float m_Countdown = 5f;
+		private float m_Countdown = 3f;
 
 		protected override void Start() {
 			base.Start ();
@@ -26,8 +26,8 @@ namespace RacingHuntZombie {
 			this.m_DamageObject.Init (this.m_Data.currentResistant, this.m_Data.currentDurability);
 		}
 
-		protected override void Update() {
-			base.Update();
+		protected override void LateUpdate() {
+			base.LateUpdate();
 			if (this.m_DamageObject.IsOutOfDamage ()) {
 				m_Countdown -= Time.deltaTime;
 				if (m_Countdown <= 0f) {
@@ -57,7 +57,7 @@ namespace RacingHuntZombie {
 			}
 		}
 
-		protected override void ApplyDamage (CBaseController attacker, float value)
+		public override void ApplyDamage (CBaseController attacker, float value)
 		{
 			base.ApplyDamage (attacker, value);
 			if (attacker.GetVelocityKMH () > this.m_DamageObject.maxResistant) {

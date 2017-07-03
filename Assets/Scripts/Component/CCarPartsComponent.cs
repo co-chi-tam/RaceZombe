@@ -13,16 +13,19 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected GameObject m_FrontPart;
 		[SerializeField]	protected GameObject m_BackPart;
 
-		public enum ECarPart: byte {
-			NONE 	= 0,
-			TOP 	= 1,
-			FRONT 	= 2,
-			BACK 	= 3
+		public enum ECarPart: int {
+			NONE 	= -1,
+			TOP 	= 0,
+			FRONT 	= 1,
+			BACK 	= 2
 		}
+
+		protected Dictionary<ECarPart, CCarPartController> m_CarPartMap;
 
 		public new void Init (params CCarPartData[] parts)
 		{
 			base.Init ();
+			this.m_CarPartMap = new Dictionary<ECarPart, CCarPartController> ();
 			for (int i = 0; i < parts.Length; i++) {
 				if (parts[i] == null)
 					continue;
@@ -33,22 +36,31 @@ namespace RacingHuntZombie {
 		private void UpdateCarParts(CCarPartData part) {
 			if (part.partType == ECarPart.NONE)
 				return;
-			var objGO = GameObject.Instantiate (Resources.Load<CCarPartController> ("Prefabs/" + part.objectName));
+			var objCtrl = GameObject.Instantiate (Resources.Load<CCarPartController> ("Prefabs/" + part.objectName));
 			switch (part.partType) {
 			case ECarPart.TOP:
-				objGO.transform.SetParent (this.m_TopPart.transform);
+				objCtrl.transform.SetParent (this.m_TopPart.transform);
 				break;
 			case ECarPart.FRONT:
-				objGO.transform.SetParent (this.m_FrontPart.transform);
+				objCtrl.transform.SetParent (this.m_FrontPart.transform);
 				break;
 			case ECarPart.BACK:
-				objGO.transform.SetParent (this.m_BackPart.transform);
+				objCtrl.transform.SetParent (this.m_BackPart.transform);
 				break;
 			}
-			objGO.transform.localPosition = Vector3.zero;
-			objGO.transform.localRotation = Quaternion.identity;
-			objGO.SetData (part);
-			objGO.SetOwner (this.m_Owner);
+			objCtrl.transform.localPosition = Vector3.zero;
+			objCtrl.transform.localRotation = Quaternion.identity;
+			objCtrl.SetData (part);
+			objCtrl.SetOwner (this.m_Owner);
+			this.m_CarPartMap[part.partType] = objCtrl;
+		}
+
+		public CCarPartController GetCarPart(ECarPart part) {
+			if (part == ECarPart.NONE)
+				return null;
+			if (this.m_CarPartMap.ContainsKey (part) == false)
+				return null;
+			return this.m_CarPartMap [part];
 		}
 
 	}

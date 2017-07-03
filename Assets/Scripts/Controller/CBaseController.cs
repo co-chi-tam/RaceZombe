@@ -6,6 +6,7 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CBaseController : MonoBehaviour, IActiveObject {
 
+		[Header ("Object Active")]
 		[SerializeField]	private bool m_Active = false;
 
 		protected Transform m_Transform;
@@ -61,52 +62,65 @@ namespace RacingHuntZombie {
 			return default (T);
 		}
 
-		protected virtual void ApplyDamage(CBaseController attacker, float damage) {
+		public virtual void ApplyDamage(CBaseController attacker, float damage) {
 		
 		}
 
-		protected virtual void InteractiveOrtherObject(Collision collision) {
-			for (int i = 0; i < collision.contacts.Length; i++) {
-				var contactObj = collision.contacts [i].otherCollider;
-				if (contactObj.gameObject.layer != LayerMask.NameToLayer ("Ground")) {
-					var controller = contactObj.gameObject.GetColliderController<CBaseController> ();
-					if (controller == null) {
-						continue;
-					}
-					if (controller.GetActive() == false) {
-						continue;
-					}
-					this.ApplyDamage (controller, controller.GetDamage());
+		public virtual void InteractiveOrtherObject (GameObject contactObj) {
+			if (contactObj.gameObject.layer != LayerMask.NameToLayer ("Ground")) {
+				var controller = contactObj.gameObject.GetObjectController<CBaseController> ();
+				if (controller == null) {
+					return;
 				}
+				if (controller.GetActive() == false) {
+					return;
+				}
+				this.ApplyDamage (controller, controller.GetDamage());
 			}
 		}
 
-		protected virtual void StayOrtherObject(Collision collision) {
+		public virtual void StayOrtherObject(GameObject contactObj) {
 
 		}
 
-		protected virtual void ExitOrtherObject(Collision collision) {
+		public virtual void ExitOrtherObject(GameObject contactObj) {
 
 		}
 
 		protected virtual void OnCollisionEnter(Collision collision) {
-			this.InteractiveOrtherObject (collision);
+			for (int i = 0; i < collision.contacts.Length; i++) {
+				var contactObj = collision.contacts [i].otherCollider.gameObject;
+				this.InteractiveOrtherObject (contactObj);
+			}
 		}
 
 		protected virtual void OnCollisionStay(Collision collision) {
-			this.StayOrtherObject (collision);
+			for (int i = 0; i < collision.contacts.Length; i++) {
+				var contactObj = collision.contacts [i].otherCollider.gameObject;
+				this.StayOrtherObject (contactObj);
+			}
 		}
 
 		protected virtual void OnCollisionExit(Collision collision) {
-			this.ExitOrtherObject (collision);
+			for (int i = 0; i < collision.contacts.Length; i++) {
+				var contactObj = collision.contacts [i].otherCollider.gameObject;
+				this.ExitOrtherObject (contactObj);
+			}
 		}
 
 		protected virtual void OnTriggerEnter(Collider collider) {
-			
+			var contactObj = collider.gameObject;
+			this.InteractiveOrtherObject (contactObj);
 		}
 
 		protected virtual void OnTriggerStay(Collider collider) {
+			var contactObj = collider.gameObject;
+			this.StayOrtherObject (contactObj);
+		}
 
+		protected virtual void OnTriggerExit(Collider collider) {
+			var contactObj = collider.gameObject;
+			this.ExitOrtherObject (contactObj);
 		}
 
 		public virtual float GetDamage() {

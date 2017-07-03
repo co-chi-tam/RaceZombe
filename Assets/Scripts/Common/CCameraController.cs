@@ -15,9 +15,15 @@ public class CCameraController : MonoBehaviour {
 	}
 
 	private void LateUpdate() {
+		if (this.m_FollowObject == null)
+			return;
 		var followPosition = this.m_FollowObject.position;
 		this.m_Transform.position = this.m_OffsetPosition + followPosition;
 			this.m_Transform.rotation = Quaternion.Euler (this.m_OffsetQuanternion);
+	}
+
+	public void SetFollower(Transform value) {
+		this.m_FollowObject = value;
 	}
 
 }

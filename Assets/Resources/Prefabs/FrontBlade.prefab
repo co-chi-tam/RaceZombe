@@ -233,9 +233,13 @@ MonoBehaviour:
   m_Active: 0
   m_Data:
     objectName: FrontBlade
+    objectModelPath: FrontBlade
+    objectAvatarPath: FrontBlade
     currentResistant: 2
     currentDamage: 3
     currentDurability: 100
+    objectModelPrefab: {fileID: 1605530922590176}
+    objectAvatar: {fileID: 0}
     partType: 1
   m_Owner: {fileID: 0}
   m_DamageObject:

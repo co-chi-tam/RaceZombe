@@ -593,6 +593,8 @@ MonoBehaviour:
   m_Active: 0
   m_Data:
     objectName: Zombie
+    objectModelPath: Zombie
+    objectAvatarPath: Zombie
     currentResistant: 10
     currentDamage: 3
     currentDurability: 10

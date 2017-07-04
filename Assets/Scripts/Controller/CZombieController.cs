@@ -57,12 +57,26 @@ namespace RacingHuntZombie {
 			}
 		}
 
+		public override void InteractiveOrtherObject (GameObject contactObj)
+		{
+			if (contactObj.gameObject.layer != LayerMask.NameToLayer ("Ground")) {
+				var controller = contactObj.gameObject.GetObjectController<CBaseController> ();
+				if (controller == null) {
+					return;
+				}
+				if (controller.GetActive() == false) {
+					return;
+				}
+				if (controller.GetVelocityKMH () > this.m_DamageObject.maxResistant) {
+					this.ApplyDamage (controller, controller.GetDamage ());
+				}
+			}
+		}
+
 		public override void ApplyDamage (CBaseController attacker, float value)
 		{
 			base.ApplyDamage (attacker, value);
-			if (attacker.GetVelocityKMH () > this.m_DamageObject.maxResistant) {
-				this.m_DamageObject.CalculteDamage (value);
-			}
+			this.m_DamageObject.CalculteDamage (value);
 		}
 
 		public virtual void SetTargetCollider(Collider target) {

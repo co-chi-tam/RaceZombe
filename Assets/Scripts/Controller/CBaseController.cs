@@ -8,6 +8,7 @@ namespace RacingHuntZombie {
 
 		[Header ("Object Active")]
 		[SerializeField]	private bool m_Active = false;
+		[SerializeField]	private Animator m_Animator;
 
 		protected Transform m_Transform;
 		protected List<CComponent> m_Components;
@@ -66,6 +67,10 @@ namespace RacingHuntZombie {
 		
 		}
 
+		public virtual void ApplyEngineWear(float wear) {
+		
+		}
+
 		public virtual void InteractiveOrtherObject (GameObject contactObj) {
 			if (contactObj.gameObject.layer != LayerMask.NameToLayer ("Ground")) {
 				var controller = contactObj.gameObject.GetObjectController<CBaseController> ();
@@ -109,18 +114,15 @@ namespace RacingHuntZombie {
 		}
 
 		protected virtual void OnTriggerEnter(Collider collider) {
-			var contactObj = collider.gameObject;
-			this.InteractiveOrtherObject (contactObj);
+			
 		}
 
 		protected virtual void OnTriggerStay(Collider collider) {
-			var contactObj = collider.gameObject;
-			this.StayOrtherObject (contactObj);
+			
 		}
 
 		protected virtual void OnTriggerExit(Collider collider) {
-			var contactObj = collider.gameObject;
-			this.ExitOrtherObject (contactObj);
+			
 		}
 
 		public virtual float GetDamage() {
@@ -145,6 +147,18 @@ namespace RacingHuntZombie {
 
 		public virtual bool GetActive() {
 			return this.m_Active;
+		}
+
+		public virtual void SetAnimator(string name, object param = null) {
+			if (param is int) {
+				this.m_Animator.SetInteger (name, (int)param);
+			} else if (param is bool) {
+				this.m_Animator.SetBool (name, (bool)param);
+			} else if (param is float) {
+				this.m_Animator.SetFloat (name, (float)param);
+			} else if (param == null) {
+				this.m_Animator.SetTrigger (name);
+			}
 		}
 		
 	}

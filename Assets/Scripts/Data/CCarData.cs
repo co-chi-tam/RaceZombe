@@ -5,7 +5,7 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CCarData: CMovableData {
 
-		public CCarPartData[] carParts;
+		public CGunPartData[] carParts;
 
 		public CCarData ()
 		{

@@ -34,12 +34,19 @@ namespace RacingHuntZombie {
 			var angleInput 	= Input.GetAxis("Horizontal");
 			var torqueInput = Input.GetAxis("Vertical");
 			this.m_CarControl.UpdateDriver (angleInput, torqueInput, torqueInput == 0f);
+			if (Input.GetKey (KeyCode.L)) {
+				this.UpdateTopCarPart ();
+			}
 #else
 			var joytick 	= this.m_Joytick.InputDirectionXY;
 			var angleInput 	= (joytick.x > 0.5 || joytick.x < -0.5) ? joytick.x : 0f;  //Input.GetAxis("Horizontal");
 			var torqueInput = joytick.y; //Input.GetAxis("Vertical");
 			this.m_CarControl.UpdateDriver (angleInput, torqueInput, this.m_Joytick.GetEnableJoytick());
 #endif
+		}
+
+		public void UpdateTopCarPart() {
+			this.m_CarControl.UpdateCarPart (CCarPartsComponent.ECarPart.TOP, null);
 		}
 
 		public virtual void StartRace(Action complete) {

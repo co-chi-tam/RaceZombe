@@ -6,8 +6,9 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CCarPartController : CBaseController {
 
-		[Header ("Data")]
-		[SerializeField]	protected CCarPartData m_Data;
+		[Header("Data")]
+		[SerializeField]	protected CGunPartData m_Data;
+		[Header ("Owner")]
 		[SerializeField]	protected CCarController m_Owner;
 
 		[Header ("Component")]
@@ -41,8 +42,14 @@ namespace RacingHuntZombie {
 				if (controller.GetActive() == false)
 					return;
 				// Decrease Durability
-				this.m_DamageObject.CalculteDamage (controller.GetDamage () - this.m_DamageObject.maxResistant);
+				this.ApplyEngineWear (controller.GetDamage () - this.m_DamageObject.maxResistant);
 			}
+		}
+
+		public override void ApplyEngineWear (float wear)
+		{
+			base.ApplyEngineWear (wear);
+			this.m_DamageObject.CalculteDamage (wear);
 		}
 
 		public override float GetDamage () {
@@ -50,11 +57,11 @@ namespace RacingHuntZombie {
 		}
 
 		public override void SetData(CObjectData value) {
-			this.m_Data = value as CCarPartData;
+			this.m_Data = value as CGunPartData;
 		}
 
 		public override CObjectData GetData() {
-			return this.m_Data as CCarPartData;
+			return this.m_Data as CGunPartData;
 		}
 
 		public override float GetVelocityKMH () {

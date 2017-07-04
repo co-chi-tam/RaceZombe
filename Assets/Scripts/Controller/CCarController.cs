@@ -37,8 +37,9 @@ namespace RacingHuntZombie {
 			this.m_WheelDriver.UpdateDriver (angleInput, torqueInput, brakeInput);
 		}
 
-		public virtual void UpdateCarPart(CCarPartsComponent.ECarPart part) {
+		public virtual void UpdateCarPart(CCarPartsComponent.ECarPart part, GameObject contact) {
 			var carPartCtrl = this.m_CarParts.GetCarPart (part);
+			carPartCtrl.InteractiveOrtherObject (contact);
 		}
 
 		public override void ApplyDamage (CBaseController attacker, float value) {

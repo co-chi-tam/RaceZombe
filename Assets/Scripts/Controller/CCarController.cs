@@ -21,6 +21,14 @@ namespace RacingHuntZombie {
 			this.m_CarParts.Init (m_Data.carParts);
 		}
 
+		protected override void LateUpdate ()
+		{
+			base.LateUpdate ();
+			if (this.m_CurrentActionDelay > 0f) {
+				this.m_CurrentActionDelay -= Time.deltaTime;
+			}
+		}
+
 		protected override void RegisterComponent ()
 		{
 			base.RegisterComponent ();
@@ -34,7 +42,15 @@ namespace RacingHuntZombie {
 		}
 
 		public virtual void UpdateDriver(float angleInput, float torqueInput, bool brakeInput) {
-			this.m_WheelDriver.UpdateDriver (angleInput, torqueInput, brakeInput);
+			if (this.m_Data.gas > 0f) {
+				this.m_WheelDriver.UpdateDriver (angleInput, torqueInput, brakeInput);
+				var currentGas = this.GetGas ();
+				var consumeGas = this.GetVelocityKMH () / this.m_Data.maxSpeed;
+				currentGas -= consumeGas;
+				this.SetGas (currentGas);
+			} else {
+				this.m_WheelDriver.UpdateDriver (0f, 0f, true);
+			}
 		}
 
 		public virtual void UpdateCarPart(CCarPartsComponent.ECarPart part, GameObject contact) {
@@ -44,6 +60,24 @@ namespace RacingHuntZombie {
 
 		public override void ApplyDamage (CBaseController attacker, float value) {
 			base.ApplyDamage (attacker, value);
+		}
+
+		public override void StayOrtherObject (GameObject contactObj)
+		{
+			base.StayOrtherObject (contactObj);
+			if (this.m_CurrentActionDelay <= 0f) {
+				if (contactObj.gameObject.layer != LayerMask.NameToLayer ("Ground")) {
+					var controller = contactObj.gameObject.GetObjectController<CBaseController> ();
+					if (controller == null) {
+						return;
+					}
+					if (controller.GetActive () == false) {
+						return;
+					}
+					this.ApplyDamage (controller, controller.GetDamage ());
+					this.m_CurrentActionDelay = this.m_Data.actionDelay;
+				}
+			}
 		}
 
 		public override float GetDamage () {
@@ -60,6 +94,14 @@ namespace RacingHuntZombie {
 
 		public override CObjectData GetData() {
 			return this.m_Data as CCarData;
+		}
+
+		public virtual float GetGas() {
+			return this.m_Data.gas;
+		}
+
+		public virtual void SetGas(float value) {
+			this.m_Data.gas = value;
 		}
 
 	}

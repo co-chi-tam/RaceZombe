@@ -6,12 +6,15 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CBaseController : MonoBehaviour, IActiveObject {
 
-		[Header ("Object Active")]
-		[SerializeField]	private bool m_Active = false;
-		[SerializeField]	private Animator m_Animator;
+		[Header ("Object")]
+		[SerializeField]	protected bool m_Active = false;
+		[SerializeField]	protected Collider m_Collider;
+		[SerializeField]	protected Animator m_Animator;
+		[SerializeField]	protected AudioSource m_AudioSource;
 
 		protected Transform m_Transform;
 		protected List<CComponent> m_Components;
+		protected float m_CurrentActionDelay = 0f;
 
 		protected virtual void Awake() {
 			this.m_Transform = transform;
@@ -85,7 +88,7 @@ namespace RacingHuntZombie {
 		}
 
 		public virtual void StayOrtherObject(GameObject contactObj) {
-
+			
 		}
 
 		public virtual void ExitOrtherObject(GameObject contactObj) {
@@ -141,6 +144,10 @@ namespace RacingHuntZombie {
 			return null;
 		}
 
+		public virtual Collider GetCollider() {
+			return this.m_Collider;
+		}
+
 		public virtual void SetActive(bool value) {
 			this.m_Active = value;
 		}
@@ -150,6 +157,8 @@ namespace RacingHuntZombie {
 		}
 
 		public virtual void SetAnimator(string name, object param = null) {
+			if (this.m_Animator == null)
+				return;
 			if (param is int) {
 				this.m_Animator.SetInteger (name, (int)param);
 			} else if (param is bool) {
@@ -159,6 +168,12 @@ namespace RacingHuntZombie {
 			} else if (param == null) {
 				this.m_Animator.SetTrigger (name);
 			}
+		}
+
+		public virtual void SetAudioPlay() {
+			if (this.m_AudioSource == null)
+				return;
+			this.m_AudioSource.Play ();
 		}
 		
 	}

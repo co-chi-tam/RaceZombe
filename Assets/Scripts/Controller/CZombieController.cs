@@ -7,15 +7,15 @@ namespace RacingHuntZombie {
 	public class CZombieController : CBaseController {
 
 		[Header ("Data")]
-		[SerializeField]	private CMovableData m_Data;
+		[SerializeField]	protected CMovableData m_Data;
 
 		[Header ("Control")]
-		[SerializeField]	private Collider m_TargetCollider;
+		[SerializeField]	protected CBaseController m_TargetController;
 
 		[Header ("Component")]
-		[SerializeField]	private CBreakableObject m_BreakableObject;
-		[SerializeField]	private CMovableObject m_MovableObject;
-		[SerializeField]	private CDamageObject m_DamageObject;
+		[SerializeField]	protected CBreakableObject m_BreakableObject;
+		[SerializeField]	protected CMovableObject m_MovableObject;
+		[SerializeField]	protected CDamageObject m_DamageObject;
 
 		private float m_Countdown = 3f;
 
@@ -49,9 +49,9 @@ namespace RacingHuntZombie {
 		}
 
 		protected virtual void ChasingTarget(float dt) {
-			if (this.m_TargetCollider == null)
+			if (this.m_TargetController == null)
 				return;
-			this.m_MovableObject.SetDestination (this.m_TargetCollider.transform.position, this.m_TargetCollider);
+			this.m_MovableObject.SetDestination (this.m_TargetController.transform.position, this.m_TargetController.GetCollider());
 			if (this.m_MovableObject.IsNearTarget () == false) {
 				this.m_MovableObject.Move (dt);
 			}
@@ -59,6 +59,7 @@ namespace RacingHuntZombie {
 
 		public override void InteractiveOrtherObject (GameObject contactObj)
 		{
+//			base.InteractiveOrtherObject (contactObj);
 			if (contactObj.gameObject.layer != LayerMask.NameToLayer ("Ground")) {
 				var controller = contactObj.gameObject.GetObjectController<CBaseController> ();
 				if (controller == null) {
@@ -79,8 +80,8 @@ namespace RacingHuntZombie {
 			this.m_DamageObject.CalculteDamage (value);
 		}
 
-		public virtual void SetTargetCollider(Collider target) {
-			this.m_TargetCollider = target;
+		public virtual void SetTarget(CBaseController target) {
+			this.m_TargetController = target;
 		}
 
 		public override float GetDamage ()

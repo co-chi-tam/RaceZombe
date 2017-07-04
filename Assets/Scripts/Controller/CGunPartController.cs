@@ -8,8 +8,6 @@ namespace RacingHuntZombie {
 		
 		[SerializeField]	protected List<CBaseController> m_HitBoxContacts;
 
-		private float m_GunDelay = 0f;
-
 		protected override void Start ()
 		{
 			base.Start ();
@@ -19,14 +17,14 @@ namespace RacingHuntZombie {
 		protected override void LateUpdate ()
 		{
 			base.LateUpdate ();
-			if (this.m_GunDelay > 0) {
-				this.m_GunDelay -= Time.deltaTime;
+			if (this.m_CurrentActionDelay > 0f) {
+				this.m_CurrentActionDelay -= Time.deltaTime;
 			}
 		}
 
 		public override void InteractiveOrtherObject (GameObject contactObj)
 		{
-			if (this.m_GunDelay <= 0f) {
+			if (this.m_CurrentActionDelay <= 0f) {
 //			 	base.InteractiveOrtherObject (contactObj);
 				for (int i = 0; i < this.m_HitBoxContacts.Count; i++) {
 					var objCtrl = this.m_HitBoxContacts [i];
@@ -40,7 +38,7 @@ namespace RacingHuntZombie {
 					objCtrl.ApplyDamage (this.m_Owner, this.GetDamage ());
 				}
 				this.SetAnimator ("Active");
-				this.m_GunDelay = this.m_Data.activeDelay;
+				this.m_CurrentActionDelay = this.m_Data.actionDelay;
 				if (this.m_HitBoxContacts.Count > 0) {
 					// Decrease Durability
 					this.ApplyEngineWear (this.GetDamage () - this.m_DamageObject.maxResistant);

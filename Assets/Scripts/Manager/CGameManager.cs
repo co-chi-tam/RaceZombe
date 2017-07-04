@@ -24,7 +24,7 @@ namespace RacingHuntZombie {
 		[SerializeField]	private CCarController m_CarControl;
 
 		protected virtual void Start() {
-			
+			Application.targetFrameRate = 60;
 		}
 
 		protected virtual void LateUpdate() {
@@ -72,7 +72,7 @@ namespace RacingHuntZombie {
 				yield return zombieGO;
 				zombieGO.transform.position = this.m_ZombieSpawnPoints [i].transform.position;
 				var zombieCtrl = zombieGO.GetComponent<CZombieController> ();
-				zombieCtrl.SetTargetCollider (this.m_CarControl.GetComponent<Collider>());
+				zombieCtrl.SetTarget (this.m_CarControl);
 			}
 		}
 

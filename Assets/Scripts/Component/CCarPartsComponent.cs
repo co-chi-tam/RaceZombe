@@ -29,11 +29,11 @@ namespace RacingHuntZombie {
 			for (int i = 0; i < parts.Length; i++) {
 				if (parts[i] == null)
 					continue;
-				this.UpdateCarParts (parts[i]);
+				this.SpawnCarParts (parts[i]);
 			}
 		}
 
-		private void UpdateCarParts(CCarPartData part) {
+		private void SpawnCarParts(CCarPartData part) {
 			if (part.partType == ECarPart.NONE)
 				return;
 			var objCtrl = GameObject.Instantiate (Resources.Load<CCarPartController> ("Prefabs/" + part.objectName));

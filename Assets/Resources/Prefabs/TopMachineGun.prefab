@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114834983601788894}
   - component: {fileID: 65797364523587958}
   - component: {fileID: 95414303623266988}
+  - component: {fileID: 82414774864977148}
   m_Layer: 8
   m_Name: TopMachineGun
   m_TagString: Untagged
@@ -353,6 +354,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1, z: 3.5}
   m_Center: {x: 0, y: -0.14999998, z: 2.8}
+--- !u!82 &82414774864977148
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1003073711553460}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95414303623266988
 Animator:
   serializedVersion: 3
@@ -382,7 +463,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Active: 0
+  m_Collider: {fileID: 65797364523587958}
   m_Animator: {fileID: 95414303623266988}
+  m_AudioSource: {fileID: 82414774864977148}
   m_Data:
     objectName: TopMachineGun
     objectModelPath: TopMachineGun
@@ -390,6 +473,8 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 4
     currentDurability: 100
+    engineWear: 1
+    actionDelay: 0.1
     partType: 0
   m_Owner: {fileID: 0}
   m_DamageObject:

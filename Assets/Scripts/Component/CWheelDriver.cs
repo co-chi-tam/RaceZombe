@@ -37,7 +37,6 @@ namespace RacingHuntZombie {
 		public virtual void UpdateDriver(float angleInput, float torqueInput, bool handBrakeInput)
 		{
 			this.m_ForwardWheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
-
 			float angle = maxAngle * angleInput;
 			float torque = maxTorque * torqueInput;
 			float handBrake = handBrakeInput ? brakeTorque : 0f;
@@ -58,6 +57,7 @@ namespace RacingHuntZombie {
 			}
 			// Backward wheels
 			for (int i = 0; i < this.m_BackwardWheels.Length; i++) {
+				// A simple car where back wheels steer while rear ones drive.
 				var wheel = this.m_BackwardWheels [i];
 				if (wheel.transform.localPosition.z < 0) {
 					wheel.brakeTorque = handBrake;
@@ -66,7 +66,6 @@ namespace RacingHuntZombie {
 					wheel.motorTorque = Mathf.Lerp (wheel.motorTorque, torque, motorTorqueThreahold);
 				}
 			}
-
 		}
 
 	}

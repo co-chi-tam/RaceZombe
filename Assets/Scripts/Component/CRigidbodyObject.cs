@@ -13,7 +13,8 @@ namespace RacingHuntZombie {
 		public virtual float GetVelocityMS() {
 			if (this.m_Rigidbody == null)
 				return 0f;
-			return Mathf.Abs (this.m_Rigidbody.velocity.magnitude);
+			var velocity = Mathf.Abs (this.m_Rigidbody.velocity.magnitude);
+			return velocity < 0.01f ? 0f : velocity ;
 		}
 
 		public virtual float GetVelocityMH() {

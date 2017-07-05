@@ -40,8 +40,9 @@ GameObject:
   - component: {fileID: 4187940857800948}
   - component: {fileID: 54916032951920688}
   - component: {fileID: 136250393434341504}
-  - component: {fileID: 114699181747695244}
   - component: {fileID: 82136956417755344}
+  - component: {fileID: 95073843304929292}
+  - component: {fileID: 114699181747695244}
   m_Layer: 9
   m_Name: Zombie
   m_TagString: Untagged
@@ -660,6 +661,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95073843304929292
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1242116809292042}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114699181747695244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -673,7 +691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 0
   m_Collider: {fileID: 136250393434341504}
-  m_Animator: {fileID: 0}
+  m_Animator: {fileID: 95073843304929292}
   m_AudioSource: {fileID: 82136956417755344}
   m_Data:
     objectName: Zombie
@@ -682,10 +700,9 @@ MonoBehaviour:
     currentResistant: 10
     currentDamage: 3
     currentDurability: 10
-    engineWear: 1
     actionDelay: 0.1
     maxSpeed: 3.5
-  m_TargetCollider: {fileID: 0}
+  m_TargetController: {fileID: 0}
   m_BreakableObject:
     m_Colliders:
     - {fileID: 136499142786189748}

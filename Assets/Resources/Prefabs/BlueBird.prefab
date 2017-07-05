@@ -65,10 +65,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4811771983450950}
-  - component: {fileID: 54593898785324924}
+  - component: {fileID: 54661427693029404}
   - component: {fileID: 65679203297986412}
-  - component: {fileID: 114908465834761576}
   - component: {fileID: 82666824876845508}
+  - component: {fileID: 95501798817423352}
+  - component: {fileID: 114908465834761576}
   m_Layer: 8
   m_Name: BlueBird
   m_TagString: Untagged
@@ -378,7 +379,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1350694970574178}
   m_Mesh: {fileID: 4300000, guid: 4a971343338912548833e79668a9f2c2, type: 3}
---- !u!54 &54593898785324924
+--- !u!54 &54661427693029404
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -485,6 +486,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95501798817423352
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112118305138270}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114908465834761576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -498,7 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 0
   m_Collider: {fileID: 65679203297986412}
-  m_Animator: {fileID: 0}
+  m_Animator: {fileID: 95501798817423352}
   m_AudioSource: {fileID: 82666824876845508}
   m_Data:
     objectName: BlueBird
@@ -507,10 +525,10 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 3
     currentDurability: 100
-    engineWear: 1
     actionDelay: 1
     maxSpeed: 120
     gas: 1000
+    engineWear: 1
     carParts:
     - objectName: TopMachineGun
       objectModelPath: TopMachineGun
@@ -518,7 +536,6 @@ MonoBehaviour:
       currentResistant: 2
       currentDamage: 3
       currentDurability: 100
-      engineWear: 1
       actionDelay: 0.1
       partType: 0
     - objectName: FrontBlade
@@ -527,11 +544,10 @@ MonoBehaviour:
       currentResistant: 2
       currentDamage: 5
       currentDurability: 150
-      engineWear: 1
       actionDelay: 0.1
       partType: 1
   m_WheelDriver:
-    m_Rigidbody: {fileID: 54593898785324924}
+    m_Rigidbody: {fileID: 54661427693029404}
     maxAngle: 45
     maxTorque: 500
     brakeTorque: 30000

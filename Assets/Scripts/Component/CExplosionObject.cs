@@ -27,19 +27,17 @@ namespace RacingHuntZombie {
 			this.m_ExplosionDamage = damage;
 		}
 
-		public virtual void Explosion(Action<Rigidbody> contact = null) {
+		public virtual void Explosion(Func<Rigidbody, bool> contact = null) {
 			var contacts = Physics.OverlapSphere (this.m_Transform.position, this.m_DetectRadius);
 			for (int i = 0; i < contacts.Length; i++) {
 				var contactRigidbody = contacts[i].gameObject.GetComponent<Rigidbody> ();
 				if (contactRigidbody != null) {
-					contactRigidbody.AddExplosionForce (
-						contactRigidbody.mass + this.m_ExplosionForceMass,   // explosionForce
-						this.m_Transform.position, // position
-						this.m_ExplosionRadius, // radius
-						this.m_ExplosionUpward, // upwardForce
-						ForceMode.Impulse);  // force mode
 					if (contact != null) {
-						contact (contactRigidbody);
+						if (contact (contactRigidbody)) {
+							this.ExplosionObject (contactRigidbody);
+						}
+					} else {
+						this.ExplosionObject (contactRigidbody);
 					}
 				}
 			}
@@ -48,8 +46,21 @@ namespace RacingHuntZombie {
 			}
 		}
 
+		protected virtual void ExplosionObject(Rigidbody contactRigidbody) {
+			contactRigidbody.AddExplosionForce (
+				contactRigidbody.mass + this.m_ExplosionForceMass,   // explosionForce
+				this.m_Transform.position, // position
+				this.m_ExplosionRadius, // radius
+				this.m_ExplosionUpward, // upwardForce
+				ForceMode.Impulse);  // force mode
+		}
+
 		public virtual float GetDamage() {
 			return this.m_ExplosionDamage;
+		}
+
+		public virtual float GetRadius() {
+			return this.m_DetectRadius;
 		}
 		
 	}

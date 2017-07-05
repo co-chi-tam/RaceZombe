@@ -100,8 +100,9 @@ GameObject:
   - component: {fileID: 4523293893404172}
   - component: {fileID: 54169110719026874}
   - component: {fileID: 65151637968601064}
-  - component: {fileID: 114932063227354660}
   - component: {fileID: 82858913898001664}
+  - component: {fileID: 95408426892587546}
+  - component: {fileID: 114932063227354660}
   m_Layer: 8
   m_Name: ArmyJeep
   m_TagString: Untagged
@@ -514,6 +515,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95408426892587546
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412026671565056}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114932063227354660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -527,7 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 0
   m_Collider: {fileID: 65151637968601064}
-  m_Animator: {fileID: 0}
+  m_Animator: {fileID: 95408426892587546}
   m_AudioSource: {fileID: 82858913898001664}
   m_Data:
     objectName: BlueBird
@@ -536,10 +554,10 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 3
     currentDurability: 100
-    engineWear: 1
     actionDelay: 1
     maxSpeed: 220
     gas: 2800
+    engineWear: 1
     carParts: []
   m_WheelDriver:
     m_Rigidbody: {fileID: 54169110719026874}

@@ -12,7 +12,7 @@ namespace RacingHuntZombie {
 		[Header("Component")]
 		[SerializeField]	protected CExplosionObject m_ExplosionObject;
 
-		private float m_Countdown = 2f;
+		private float m_Countdown = -1f;
 
 		protected override void Start() {
 			base.Start ();
@@ -22,10 +22,11 @@ namespace RacingHuntZombie {
 		protected override void LateUpdate ()
 		{
 			base.LateUpdate ();
-			if (this.GetActive () == false) {
+			if (m_Countdown > 0f) {
 				this.m_Countdown -= Time.deltaTime;
 				if (this.m_Countdown <= 0f) {
-					DestroyObject ();
+					this.SetActive (false);
+					this.DestroyObject ();
 				}
 			}
 		}
@@ -38,17 +39,19 @@ namespace RacingHuntZombie {
 
 		protected override void OnTriggerEnter (Collider collider)
 		{
-			if (collider.gameObject.layer == LayerMask.NameToLayer ("Ground"))
+			if (collider.gameObject.layer == LayerMask.NameToLayer ("Ground") 
+				|| collider.gameObject.layer == LayerMask.NameToLayer ("CarPart"))
+				return;
+			if (this.GetActive () == false)
 				return;
 			base.OnTriggerEnter (collider);
 			this.m_ExplosionObject.Explosion ((contactRigidbody) => {
-				if (this.GetActive () == false)
-					return;
 				var controller = contactRigidbody.GetComponent<CBaseController>();
 				if (controller != null) {
 					controller.ApplyDamage (this, this.m_ExplosionObject.GetDamage());
 				}
-				this.SetActive (false);
+				this.m_Countdown = this.m_Countdown < 0f ? 1f : this.m_Countdown; 
+				return controller != null;
 			});
 		}
 		

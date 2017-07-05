@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 65797364523587958}
   - component: {fileID: 95414303623266988}
   - component: {fileID: 82414774864977148}
-  - component: {fileID: 114834983601788894}
+  - component: {fileID: 114102604253790696}
   m_Layer: 10
   m_Name: TopMachineGun
   m_TagString: Untagged
@@ -451,7 +451,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114834983601788894
+--- !u!114 &114102604253790696
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1003073711553460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31cd2b1d7e6094c4098a1ca55ce195f5, type: 3}
+  m_Script: {fileID: 11500000, guid: d74634d18fa014f4bae638fe9bdda9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Active: 0
@@ -471,7 +471,7 @@ MonoBehaviour:
     objectModelPath: TopMachineGun
     objectAvatarPath: TopMachineGun
     currentResistant: 2
-    currentDamage: 4
+    currentDamage: 5
     currentDurability: 100
     actionDelay: 0.1
     partType: 0

@@ -534,7 +534,7 @@ MonoBehaviour:
       objectModelPath: TopMachineGun
       objectAvatarPath: TopMachineGun
       currentResistant: 2
-      currentDamage: 3
+      currentDamage: 10
       currentDurability: 100
       actionDelay: 0.1
       partType: 0

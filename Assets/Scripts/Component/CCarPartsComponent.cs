@@ -36,7 +36,7 @@ namespace RacingHuntZombie {
 		private void SpawnCarParts(CCarPartData part) {
 			if (part.partType == ECarPart.NONE)
 				return;
-			var objCtrl = GameObject.Instantiate (Resources.Load<CCarPartController> ("Prefabs/" + part.objectName));
+			var objCtrl = GameObject.Instantiate (Resources.Load<CCarPartController> ("Prefabs/" + part.objectModelPath));
 			switch (part.partType) {
 			case ECarPart.TOP:
 				objCtrl.transform.SetParent (this.m_TopPart.transform);

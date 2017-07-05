@@ -74,6 +74,10 @@ namespace RacingHuntZombie {
 		
 		}
 
+		public virtual void DestroyObject() {
+			Destroy (this.gameObject);
+		}
+			
 		public virtual void InteractiveOrtherObject (GameObject contactObj) {
 			if (contactObj.gameObject.layer != LayerMask.NameToLayer ("Ground")) {
 				var controller = contactObj.gameObject.GetObjectController<CBaseController> ();

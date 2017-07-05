@@ -11,7 +11,6 @@ namespace RacingHuntZombie {
 		public float currentResistant;
 		public float currentDamage;
 		public float currentDurability;
-		public float engineWear;
 		public float actionDelay;
 
 		public CObjectData ()
@@ -22,7 +21,6 @@ namespace RacingHuntZombie {
 			this.currentResistant 	= 2f;
 			this.currentDamage 		= 3f;
 			this.currentDurability 	= 100f;
-			this.engineWear 		= 1f;
 			this.actionDelay 		= 0.1f;
 		}
 		

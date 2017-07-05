@@ -6,11 +6,13 @@ namespace RacingHuntZombie {
 	public class CCarData: CMovableData {
 
 		public float gas;
+		public float engineWear;
 		public CGunPartData[] carParts;
 
 		public CCarData ()
 		{
-			this.gas = 1000f;
+			this.gas 		= 1000f;
+			this.engineWear	= 1f;
 		}
 
 	}

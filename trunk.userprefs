@@ -1,13 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Controller\CCarController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Data\CCarPartData.cs">
     <Files>
-      <File FileName="Assets\Scripts\Controller\CGunPartController.cs" Line="13" Column="61" />
-      <File FileName="Assets\Scripts\Controller\CCarPartController.cs" Line="43" Column="27" />
-      <File FileName="Assets\Scripts\Controller\CBaseController.cs" Line="78" Column="10" />
-      <File FileName="Assets\Scripts\Controller\CCarController.cs" Line="61" Column="34" />
-      <File FileName="Assets\Scripts\Data\CMovableData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Data\CCarData.cs" Line="12" Column="4" />
+      <File FileName="Assets\Scripts\Controller\CCarController.cs" Line="57" Column="26" />
+      <File FileName="Assets\Scripts\Component\CRigidbodyObject.cs" Line="17" Column="43" />
+      <File FileName="Assets\Scripts\Data\CCarData.cs" Line="16" Column="3" />
+      <File FileName="Assets\Scripts\Manager\CGameManager.cs" Line="27" Column="36" />
+      <File FileName="Assets\Scripts\Data\CCarPartData.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

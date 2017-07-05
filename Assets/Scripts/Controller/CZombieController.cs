@@ -31,7 +31,7 @@ namespace RacingHuntZombie {
 			if (this.m_DamageObject.IsOutOfDamage ()) {
 				m_Countdown -= Time.deltaTime;
 				if (m_Countdown <= 0f) {
-					Destroy (this.gameObject);
+					DestroyObject (this.gameObject);
 				}
 				this.m_BreakableObject.BreakObjects (true);
 				this.SetActive (false);

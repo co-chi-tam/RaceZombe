@@ -11,7 +11,7 @@ namespace RacingHuntZombie {
 		[SerializeField]	private Collider[] m_Colliders;
 		[SerializeField]	private Rigidbody[] m_Rigidbodies;
 		[Header ("Event")]
-		[SerializeField]	public UnityEvent OnBreaked;
+		public UnityEvent OnBreaked;
 
 		private bool m_IsBreaked = false;
 

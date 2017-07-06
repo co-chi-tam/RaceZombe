@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace RacingHuntZombie {
-	public class CCarPartController : CBaseController {
+	public class CCarPartController : CObjectController {
 
 		[Header("Data")]
 		[SerializeField]	protected CGunPartData m_Data;
@@ -15,8 +15,8 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected CDamageObject m_DamageObject;
 
 		protected override void Start() {
-			base.Start ();
 			this.m_DamageObject.Init (this.m_Data.currentResistant, this.m_Data.currentDurability);
+			base.Start ();
 		}
 
 		protected override void LateUpdate ()
@@ -36,7 +36,7 @@ namespace RacingHuntZombie {
 		public override void InteractiveOrtherObject (GameObject contactObj) {
 			base.InteractiveOrtherObject (contactObj);
 			if (contactObj.layer != LayerMask.NameToLayer ("Ground")) {
-				var controller = contactObj.GetObjectController<CBaseController> ();
+				var controller = contactObj.GetObjectController<CObjectController> ();
 				if (controller == null)
 					return;
 				if (controller.GetActive() == false)

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace RacingHuntZombie {
-	public class CCarController: CBaseController {
+	public class CCarController: CObjectController {
 
 		[Header ("Data")]
 		[SerializeField]	private CCarData m_Data;
@@ -15,18 +15,10 @@ namespace RacingHuntZombie {
 		[SerializeField]	private CCarPartsComponent m_CarParts;
 
 		protected override void Start() {
-			base.Start ();
 			this.m_WheelDriver.Init (this.m_Data.maxSpeed);
 			this.m_DamageObject.Init (this.m_Data.currentResistant, this.m_Data.currentDurability);
 			this.m_CarParts.Init (m_Data.carParts);
-		}
-
-		protected override void LateUpdate ()
-		{
-			base.LateUpdate ();
-			if (this.m_CurrentActionDelay > 0f) {
-				this.m_CurrentActionDelay -= Time.deltaTime;
-			}
+			base.Start ();
 		}
 
 		protected override void RegisterComponent ()
@@ -35,10 +27,6 @@ namespace RacingHuntZombie {
 			this.m_Components.Add (this.m_WheelDriver);
 			this.m_Components.Add (this.m_DamageObject);
 			this.m_Components.Add (this.m_CarParts);
-		}
-
-		protected override void UpdateComponents(float dt) {
-			base.UpdateComponents (dt);
 		}
 
 		public virtual void UpdateDriver(float angleInput, float torqueInput, bool brakeInput) {
@@ -58,26 +46,8 @@ namespace RacingHuntZombie {
 			carPartCtrl.InteractiveOrtherObject (contact);
 		}
 
-		public override void ApplyDamage (CBaseController attacker, float value) {
+		public override void ApplyDamage (CObjectController attacker, float value) {
 			base.ApplyDamage (attacker, value);
-		}
-
-		public override void StayOrtherObject (GameObject contactObj)
-		{
-			base.StayOrtherObject (contactObj);
-			if (this.m_CurrentActionDelay <= 0f) {
-				if (contactObj.gameObject.layer != LayerMask.NameToLayer ("Ground")) {
-					var controller = contactObj.gameObject.GetObjectController<CBaseController> ();
-					if (controller == null) {
-						return;
-					}
-					if (controller.GetActive () == false) {
-						return;
-					}
-					this.ApplyDamage (controller, controller.GetDamage ());
-					this.m_CurrentActionDelay = this.m_Data.actionDelay;
-				}
-			}
 		}
 
 		public override float GetDamage () {

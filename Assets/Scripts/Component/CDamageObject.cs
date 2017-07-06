@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RacingHuntZombie {
 	[Serializable]
@@ -10,6 +11,9 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected float m_MaxResistant = 20f;
 		[SerializeField]	protected float m_CurrentDamage = 0f;
 		[SerializeField]	protected float m_MaxDamage = 100f;
+		[SerializeField]	protected bool m_AutoTrigger;
+		[Header ("Event")]
+		public UnityEvent OnDamaged;
 
 		public float maxResistant {
 			get { return this.m_MaxResistant; }
@@ -35,6 +39,15 @@ namespace RacingHuntZombie {
 		public virtual void CalculteDamage(float damage) {
 			var totalDamage = damage <= 0f ? 0f : damage;
 			this.m_CurrentDamage += totalDamage;
+			if (this.m_AutoTrigger == true) {
+				this.EffectDamage ();
+			}
+		}
+
+		public virtual void EffectDamage() {
+			if (this.OnDamaged != null) {
+				this.OnDamaged.Invoke ();
+			}
 		}
 
 		public virtual bool IsOutOfDamage() {

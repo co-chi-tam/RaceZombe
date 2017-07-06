@@ -63,6 +63,7 @@ namespace RacingHuntZombie {
 			yield return carGO;
 			carGO.transform.position = this.m_CarSpawnPoints [0].transform.position;
 			this.m_CarControl = carGO.GetComponent<CCarController> ();
+			this.m_CarControl.SetActive (true);
 			this.m_Camera.SetFollower (carGO.transform);
 		}
 
@@ -72,6 +73,7 @@ namespace RacingHuntZombie {
 				yield return zombieGO;
 				zombieGO.transform.position = this.m_ZombieSpawnPoints [i].transform.position;
 				var zombieCtrl = zombieGO.GetComponent<CZombieController> ();
+				zombieCtrl.SetActive (true);
 				zombieCtrl.SetTarget (this.m_CarControl);
 			}
 		}

@@ -6,12 +6,14 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CInterativeCarPartController : CCarPartController {
 		
-		[SerializeField]	protected List<CBaseController> m_HitBoxContacts;
+		[SerializeField]	protected List<CObjectController> m_HitBoxContacts;
+
+		protected float m_CurrentActionDelay = -1f;
 
 		protected override void Start ()
 		{
 			base.Start ();
-			this.m_HitBoxContacts = new List<CBaseController> ();
+			this.m_HitBoxContacts = new List<CObjectController> ();
 		}
 
 		protected override void LateUpdate ()
@@ -64,7 +66,7 @@ namespace RacingHuntZombie {
 		protected override void OnTriggerEnter (Collider collider)
 		{
 //			base.OnTriggerEnter (collider);
-			var objController = collider.gameObject.GetObjectController<CBaseController> ();
+			var objController = collider.gameObject.GetObjectController<CObjectController> ();
 			if (objController != null) {
 				if (this.m_HitBoxContacts.Contains (objController) == false) {
 					this.m_HitBoxContacts.Add (objController);
@@ -75,7 +77,7 @@ namespace RacingHuntZombie {
 		protected override void OnTriggerExit (Collider collider)
 		{
 //			base.OnTriggerExit (collider);
-			var objController = collider.gameObject.GetObjectController<CBaseController> ();
+			var objController = collider.gameObject.GetObjectController<CObjectController> ();
 			if (objController != null) {
 				if (this.m_HitBoxContacts.Contains (objController)) {
 					this.m_HitBoxContacts.Remove (objController);

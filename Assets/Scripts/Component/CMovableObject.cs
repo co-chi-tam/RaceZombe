@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RacingHuntZombie {
 	[Serializable]
@@ -15,6 +16,9 @@ namespace RacingHuntZombie {
 
 		[Header ("Advance")]
 		[SerializeField]	protected EMoveType m_MoveType;
+
+		[Header("Events")]
+		public UnityEvent OnMoved;
 
 		protected float m_PerlineNoiseX = 0f;
 		protected float m_PerlineNoiseY = 0f;
@@ -43,9 +47,12 @@ namespace RacingHuntZombie {
 			var angle = Mathf.Atan2 (direction.x, direction.z) * Mathf.Rad2Deg;
 			var position = direction.normalized * this.GetMoveSpeedSample(dt);
 			this.m_Rigidbody.position 
-				= Vector3.Lerp (this.m_CurrentTransform.position, this.m_CurrentTransform.position + position, 0.5f);
+				= Vector3.Lerp (this.m_Rigidbody.position, this.m_Rigidbody.position + position, 0.5f);
 			this.m_Rigidbody.rotation 
-				= Quaternion.Lerp (this.m_CurrentTransform.rotation, Quaternion.AngleAxis (angle, Vector3.up), 0.5f);
+				= Quaternion.Lerp (this.m_Rigidbody.rotation, Quaternion.AngleAxis (angle, Vector3.up), 0.5f);
+			if (this.OnMoved != null) {
+				this.OnMoved.Invoke ();
+			}
 		}
 
 		protected virtual float GetMoveSpeedSample(float dt) {

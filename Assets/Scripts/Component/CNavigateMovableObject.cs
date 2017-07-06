@@ -31,7 +31,8 @@ namespace RacingHuntZombie {
 			this.m_NavMeshAgent.isStopped = true;
 		}
 
-		public virtual bool IsOutOfRange() {
+		public override bool IsOutOfRange() {
+			base.IsOutOfRange ();
 			if (this.m_NavMeshAgent.isOnNavMesh == false)
 				return true;
 			if (this.m_NavMeshAgent.CalculatePath (this.m_NavMeshAgent.destination, this.m_NavMeshPath) == false)
@@ -39,7 +40,8 @@ namespace RacingHuntZombie {
 			return base.IsOutOfRange();
 		}
 
-		public virtual bool IsNearTarget() {
+		public override bool IsNearTarget() {
+			base.IsNearTarget ();
 			if (this.m_NavMeshAgent.isOnNavMesh == false)
 				return false;
 			if (this.m_NavMeshAgent.CalculatePath (this.m_NavMeshAgent.destination, this.m_NavMeshPath) == false)

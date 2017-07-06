@@ -1,0 +1,32 @@
+{
+  "fsm": [
+    {
+      "condition_name": "IsRoot",
+      "state_name": "IdleState",
+      "states": [
+        {
+          "condition_name": "HaveEnemy",
+          "state_name": "ActiveState",
+          "states": [
+            {
+              "condition_name": "!HaveEnemy",
+              "state_name": "IdleState",
+              "states": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition_name": "IsAnyState",
+      "state_name": "AnyState",
+      "states": [
+        {
+          "condition_name": "IsDeath",
+          "state_name": "DeathState",
+          "states": []
+        }
+	  ]
+    }
+  ]
+}

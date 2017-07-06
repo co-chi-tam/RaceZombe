@@ -106,7 +106,7 @@ GameObject:
   m_Layer: 8
   m_Name: ArmyJeep
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -574,10 +574,26 @@ MonoBehaviour:
     criticalSpeed: 12
     stepsBelow: 5
     stepsAbove: 1
+    OnMoved:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    OnStopped:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
   m_DamageObject:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
+    m_AutoTrigger: 0
+    OnDamaged:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
   m_CarParts:
     m_Owner: {fileID: 114932063227354660}
     m_TopPart: {fileID: 1685514835630170}

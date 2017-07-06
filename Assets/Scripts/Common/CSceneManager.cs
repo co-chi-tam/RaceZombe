@@ -21,7 +21,6 @@ public class CSceneManager: CMonoSingleton<CSceneManager> {
 	private Rect m_FullScreenRect;
 	private bool m_IsFadeOut = false;
 	private bool m_NeedDraw = false;
-	private bool m_IsHiddenScene = false;
 
 	#endregion
 

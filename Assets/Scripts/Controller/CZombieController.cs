@@ -4,40 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace RacingHuntZombie {
-	public class CZombieController : CBaseController {
+	public class CZombieController : CObjectController {
 
 		[Header ("Data")]
 		[SerializeField]	protected CMovableData m_Data;
 
 		[Header ("Control")]
-		[SerializeField]	protected CBaseController m_TargetController;
+		[SerializeField]	protected CObjectController m_TargetController;
 
 		[Header ("Component")]
 		[SerializeField]	protected CBreakableObject m_BreakableObject;
 		[SerializeField]	protected CMovableObject m_MovableObject;
 		[SerializeField]	protected CDamageObject m_DamageObject;
+		[SerializeField]	protected CFSMComponent m_FSMComponent;
 
-		private float m_Countdown = 3f;
 
 		protected override void Start() {
-			base.Start ();
 			this.m_BreakableObject.Init (false);
 			this.m_MovableObject.Init (1f, 10f, this.m_Data.maxSpeed, this.m_Transform);
 			this.m_DamageObject.Init (this.m_Data.currentResistant, this.m_Data.currentDurability);
-		}
-
-		protected override void LateUpdate() {
-			base.LateUpdate();
-			if (this.m_DamageObject.IsOutOfDamage ()) {
-				m_Countdown -= Time.deltaTime;
-				if (m_Countdown <= 0f) {
-					DestroyObject (this.gameObject);
-				}
-				this.m_BreakableObject.BreakObjects (true);
-				this.SetActive (false);
-			} else {
-				this.ChasingTarget (Time.deltaTime);
-			}
+			this.m_FSMComponent.Init (this);
+			base.Start ();
 		}
 
 		protected override void RegisterComponent ()
@@ -46,9 +33,11 @@ namespace RacingHuntZombie {
 			this.m_Components.Add (this.m_BreakableObject);
 			this.m_Components.Add (this.m_MovableObject);
 			this.m_Components.Add (this.m_DamageObject);
+			this.m_Components.Add (this.m_FSMComponent);
 		}
 
-		protected virtual void ChasingTarget(float dt) {
+		public override void ChasingTarget(float dt) {
+			base.ChasingTarget (dt);
 			if (this.m_TargetController == null)
 				return;
 			this.m_MovableObject.SetDestination (this.m_TargetController.transform.position, this.m_TargetController.GetCollider());
@@ -61,7 +50,7 @@ namespace RacingHuntZombie {
 		{
 //			base.InteractiveOrtherObject (contactObj);
 			if (contactObj.gameObject.layer != LayerMask.NameToLayer ("Ground")) {
-				var controller = contactObj.gameObject.GetObjectController<CBaseController> ();
+				var controller = contactObj.gameObject.GetObjectController<CObjectController> ();
 				if (controller == null) {
 					return;
 				}
@@ -74,13 +63,23 @@ namespace RacingHuntZombie {
 			}
 		}
 
-		public override void ApplyDamage (CBaseController attacker, float value)
+		public override void ApplyDamage (CObjectController attacker, float value)
 		{
 			base.ApplyDamage (attacker, value);
 			this.m_DamageObject.CalculteDamage (value);
 		}
 
-		public virtual void SetTarget(CBaseController target) {
+		public override bool HaveEnemy() {
+			base.HaveEnemy ();
+			return this.m_TargetController != null;
+		}
+
+		public override bool IsDeath() {
+			base.IsDeath ();
+			return this.m_DamageObject.IsOutOfDamage ();
+		}
+
+		public virtual void SetTarget(CObjectController target) {
 			this.m_TargetController = target;
 		}
 

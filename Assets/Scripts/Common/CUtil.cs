@@ -11,13 +11,13 @@ namespace RacingHuntZombie {
 		/// <summary>
 		/// Gets the object controller.
 		/// </summary>
-		public static T GetObjectController<T>(this GameObject value) where T : CBaseController {
-			var controller = value.GetComponent<CBaseController> (); // object
+		public static T GetObjectController<T>(this GameObject value) where T : CObjectController {
+			var controller = value.GetComponent<CObjectController> (); // object
 			if (controller == null) {
-				controller = value.GetComponentInParent<CBaseController> (); // parent/object
+				controller = value.GetComponentInParent<CObjectController> (); // parent/object
 			}
 			if (controller == null) {
-				controller = value.transform.root.GetComponent<CBaseController> (); // root/parent/object
+				controller = value.transform.root.GetComponent<CObjectController> (); // root/parent/object
 			}
 			return controller as T;
 		}
@@ -26,7 +26,7 @@ namespace RacingHuntZombie {
 		/// Gets the custom component.
 		/// </summary>
 		public static T GetCustomComponent<T>(this GameObject value) where T : CComponent {
-			var controller = value.GetComponent<CBaseController> (); // object
+			var controller = value.GetComponent<CObjectController> (); // object
 			if (controller == null)
 				return default(T);
 			return controller.GetCustomComponent<T>();

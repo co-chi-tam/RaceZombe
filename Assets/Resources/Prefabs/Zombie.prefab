@@ -46,7 +46,7 @@ GameObject:
   m_Layer: 9
   m_Name: Zombie
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -741,11 +741,24 @@ MonoBehaviour:
     m_MaxDistance: 10
     m_Speed: 0
     m_MoveType: 0
+    OnMoved:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
     targetPosition: {x: 0, y: 0, z: 0}
   m_DamageObject:
     m_MaxResistant: 5
     m_CurrentDamage: 0
     m_MaxDamage: 100
+    m_AutoTrigger: 0
+    OnDamaged:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  m_FSMComponent:
+    m_FSMJsonText: {fileID: 4900000, guid: a27e25ba22f83ea4c865026221a73c73, type: 3}
 --- !u!136 &136250393434341504
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RacingHuntZombie {
 	[Serializable]
@@ -28,6 +29,9 @@ namespace RacingHuntZombie {
 		public int stepsBelow = 5;
 		[Tooltip("Simulation sub-steps when the speed is below critical.")]
 		public int stepsAbove = 1;
+		[Header("Events")]
+		public UnityEvent OnMoved;
+		public UnityEvent OnStopped;
 
 		public new void Init(float maxSpeed) {
 			base.Init ();
@@ -64,6 +68,16 @@ namespace RacingHuntZombie {
 				}
 				if (wheel.transform.localPosition.z < 0) {
 					wheel.motorTorque = Mathf.Lerp (wheel.motorTorque, torque, motorTorqueThreahold);
+				}
+			}
+			// Event
+			if (handBrakeInput == false) {
+				if (this.OnMoved != null) {
+					this.OnMoved.Invoke ();
+				} 
+			} else {
+				if (this.OnStopped != null) {
+					this.OnStopped.Invoke ();
 				}
 			}
 		}

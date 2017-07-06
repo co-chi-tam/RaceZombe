@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace RacingHuntZombie {
-	public class CMineController : CBaseController {
+	public class CMineController : CObjectController {
 
 		[Header("Data")]
 		[SerializeField]	protected CBombData m_Data;
@@ -15,8 +15,12 @@ namespace RacingHuntZombie {
 		private float m_Countdown = -1f;
 
 		protected override void Start() {
-			base.Start ();
 			this.m_ExplosionObject.Init (this.m_Transform, this.m_Data.currentDamage);
+			base.Start ();
+			// TEST
+			this.SetTimer (this.m_Data.actionDelay, () => {
+				this.m_Active = true;
+			});
 		}
 
 		protected override void LateUpdate ()
@@ -46,7 +50,7 @@ namespace RacingHuntZombie {
 				return;
 			base.OnTriggerEnter (collider);
 			this.m_ExplosionObject.Explosion ((contactRigidbody) => {
-				var controller = contactRigidbody.GetComponent<CBaseController>();
+				var controller = contactRigidbody.GetComponent<CObjectController>();
 				if (controller != null) {
 					controller.ApplyDamage (this, this.m_ExplosionObject.GetDamage());
 				}

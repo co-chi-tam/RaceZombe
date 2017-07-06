@@ -575,6 +575,14 @@ MonoBehaviour:
       currentDurability: 150
       actionDelay: 0.1
       partType: 1
+    - objectName: BackTerminal
+      objectModelPath: BackTerminal
+      objectAvatarPath: BackTerminal
+      currentResistant: 2
+      currentDamage: 50
+      currentDurability: 150
+      actionDelay: 5
+      partType: 2
   m_WheelDriver:
     m_Rigidbody: {fileID: 54661427693029404}
     maxAngle: 45

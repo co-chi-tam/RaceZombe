@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace RacingHuntZombie {
 	public class CInterativeCarPartController : CCarPartController {
-		
+
+		[Header ("Colliders")]
 		[SerializeField]	protected List<CObjectController> m_HitBoxContacts;
 
 		protected float m_CurrentActionDelay = -1f;
@@ -26,8 +27,8 @@ namespace RacingHuntZombie {
 
 		public override void InteractiveOrtherObject (GameObject contactObj)
 		{
+//			base.InteractiveOrtherObject (contactObj);
 			if (this.m_CurrentActionDelay <= 0f) {
-//			 	base.InteractiveOrtherObject (contactObj);
 				for (int i = 0; i < this.m_HitBoxContacts.Count; i++) {
 					var objCtrl = this.m_HitBoxContacts [i];
 					if (objCtrl == null) {

@@ -7,7 +7,7 @@ namespace RacingHuntZombie {
 
 		public float gas;
 		public float engineWear;
-		public CGunPartData[] carParts;
+		public CCarPartData[] carParts;
 
 		public CCarData ()
 		{

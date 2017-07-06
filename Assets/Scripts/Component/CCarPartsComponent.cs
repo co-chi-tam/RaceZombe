@@ -50,6 +50,7 @@ namespace RacingHuntZombie {
 			}
 			objCtrl.transform.localPosition = Vector3.zero;
 			objCtrl.transform.localRotation = Quaternion.identity;
+			objCtrl.SetActive (true);
 			objCtrl.SetData (part);
 			objCtrl.SetOwner (this.m_Owner);
 			this.m_CarPartMap[part.partType] = objCtrl;

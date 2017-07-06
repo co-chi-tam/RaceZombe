@@ -37,6 +37,9 @@ namespace RacingHuntZombie {
 			if (Input.GetKey (KeyCode.L)) {
 				this.UpdateTopCarPart ();
 			}
+			if (Input.GetKey (KeyCode.M)) {
+				this.UpdateBackCarPart ();
+			}
 #else
 			var joytick 	= this.m_Joytick.InputDirectionXY;
 			var angleInput 	= (joytick.x > 0.5 || joytick.x < -0.5) ? joytick.x : 0f;  //Input.GetAxis("Horizontal");
@@ -47,6 +50,10 @@ namespace RacingHuntZombie {
 
 		public void UpdateTopCarPart() {
 			this.m_CarControl.UpdateCarPart (CCarPartsComponent.ECarPart.TOP, null);
+		}
+
+		public void UpdateBackCarPart() {
+			this.m_CarControl.UpdateCarPart (CCarPartsComponent.ECarPart.BACK, null);
 		}
 
 		public virtual void StartRace(Action complete) {

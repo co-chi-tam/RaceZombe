@@ -7,7 +7,7 @@ namespace RacingHuntZombie {
 	public class CCarPartController : CObjectController {
 
 		[Header("Data")]
-		[SerializeField]	protected CGunPartData m_Data;
+		[SerializeField]	protected CCarPartData m_Data;
 		[Header ("Owner")]
 		[SerializeField]	protected CCarController m_Owner;
 
@@ -57,11 +57,11 @@ namespace RacingHuntZombie {
 		}
 
 		public override void SetData(CObjectData value) {
-			this.m_Data = value as CGunPartData;
+			this.m_Data = value as CCarPartData;
 		}
 
 		public override CObjectData GetData() {
-			return this.m_Data as CGunPartData;
+			return this.m_Data as CCarPartData;
 		}
 
 		public override float GetVelocityKMH () {

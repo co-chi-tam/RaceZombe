@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 65397477667691572}
   - component: {fileID: 82425959814269700}
   - component: {fileID: 95080389709755916}
-  - component: {fileID: 114586419597018014}
+  - component: {fileID: 114801585169214958}
   m_Layer: 10
   m_Name: FrontBlade
   m_TagString: Untagged
@@ -318,7 +318,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114586419597018014
+--- !u!114 &114801585169214958
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1605530922590176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74634d18fa014f4bae638fe9bdda9db, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d79acf0bad6c39499d8b78298d305bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Active: 0
@@ -347,4 +347,9 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
-  m_HitBoxContacts: []
+    m_AutoTrigger: 0
+    OnDamaged:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null

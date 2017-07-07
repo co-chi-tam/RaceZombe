@@ -27,7 +27,7 @@ namespace RacingHuntZombie {
 			this.m_ExplosionDamage = damage;
 		}
 
-		public virtual void Explosion(Func<Rigidbody, bool> contact = null) {
+		public virtual void WorldExplosion(Func<Rigidbody, bool> contact = null) {
 			var contacts = Physics.OverlapSphere (this.m_Transform.position, this.m_DetectRadius);
 			for (int i = 0; i < contacts.Length; i++) {
 				var contactRigidbody = contacts[i].gameObject.GetComponent<Rigidbody> ();
@@ -39,6 +39,17 @@ namespace RacingHuntZombie {
 					} else {
 						this.ExplosionObject (contactRigidbody);
 					}
+				}
+			}
+			if (this.OnExplosion != null) {
+				this.OnExplosion.Invoke ();
+			}
+		}
+
+		public virtual void ObjectExplosion(Rigidbody body, Func<bool> contact = null) {
+			if (contact != null) {
+				if (contact ()) {
+					this.ExplosionObject (body);
 				}
 			}
 			if (this.OnExplosion != null) {

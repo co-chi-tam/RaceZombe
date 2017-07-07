@@ -406,6 +406,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4889680086407112}
+  - component: {fileID: 205738427010201656}
   m_Layer: 30
   m_Name: Ground
   m_TagString: Untagged
@@ -3290,6 +3291,28 @@ TerrainCollider:
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 37b2a72c72ce0654284fd715e5dd27a9, type: 2}
   m_EnableTreeColliders: 1
+--- !u!205 &205738427010201656
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495873536282332}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.121580094
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.035948403
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.012620011
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!218 &218152889971019660
 Terrain:
   m_ObjectHideFlags: 1

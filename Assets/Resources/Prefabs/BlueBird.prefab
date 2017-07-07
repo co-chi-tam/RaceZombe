@@ -567,17 +567,17 @@ MonoBehaviour:
       currentDurability: 100
       actionDelay: 0.1
       partType: 0
-    - objectName: FrontBlade
-      objectModelPath: FrontBlade
-      objectAvatarPath: FrontBlade
+    - objectName: FrontLightDrill
+      objectModelPath: FrontLightDrill
+      objectAvatarPath: FrontLightDrill
       currentResistant: 2
-      currentDamage: 5
+      currentDamage: 10
       currentDurability: 150
       actionDelay: 0.1
       partType: 1
-    - objectName: BackTerminal
-      objectModelPath: BackTerminal
-      objectAvatarPath: BackTerminal
+    - objectName: BackLazerFanTerminal
+      objectModelPath: BackLazerFanTerminal
+      objectAvatarPath: BackLazerFanTerminal
       currentResistant: 2
       currentDamage: 50
       currentDurability: 150

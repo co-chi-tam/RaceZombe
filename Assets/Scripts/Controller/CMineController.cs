@@ -4,10 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace RacingHuntZombie {
-	public class CMineController : CObjectController {
-
-		[Header("Data")]
-		[SerializeField]	protected CBombData m_Data;
+	public class CMineController : CInterativeCarPartController {
 
 		[Header("Component")]
 		[SerializeField]	protected CExplosionObject m_ExplosionObject;
@@ -32,6 +29,10 @@ namespace RacingHuntZombie {
 					this.SetActive (false);
 					this.DestroyObject ();
 				}
+			} else {
+				if (this.m_HitBoxContacts.Count > 0) {
+					this.ExplosionObject ();
+				}
 			}
 		}
 
@@ -41,15 +42,8 @@ namespace RacingHuntZombie {
 			this.m_Components.Add (this.m_ExplosionObject);
 		}
 
-		protected override void OnTriggerEnter (Collider collider)
-		{
-			if (collider.gameObject.layer == LayerMask.NameToLayer ("Ground") 
-				|| collider.gameObject.layer == LayerMask.NameToLayer ("CarPart"))
-				return;
-			if (this.GetActive () == false)
-				return;
-			base.OnTriggerEnter (collider);
-			this.m_ExplosionObject.Explosion ((contactRigidbody) => {
+		public virtual void ExplosionObject() {
+			this.m_ExplosionObject.WorldExplosion ((contactRigidbody) => {
 				var controller = contactRigidbody.GetComponent<CObjectController>();
 				if (controller != null) {
 					controller.ApplyDamage (this, this.m_ExplosionObject.GetDamage());
@@ -57,6 +51,28 @@ namespace RacingHuntZombie {
 				this.m_Countdown = this.m_Countdown < 0f ? 1f : this.m_Countdown; 
 				return controller != null;
 			});
+		}
+
+		protected override void OnTriggerEnter (Collider collider)
+		{
+//			base.OnTriggerEnter (collider);
+			var objController = collider.gameObject.GetObjectController<CObjectController> ();
+			if (objController != null && collider.gameObject.layer != LayerMask.NameToLayer("CarPart")) {
+				if (this.m_HitBoxContacts.Contains (objController) == false) {
+					this.m_HitBoxContacts.Add (objController);
+				}
+			}
+		}
+
+		protected override void OnTriggerExit (Collider collider)
+		{
+//			base.OnTriggerExit (collider);
+			var objController = collider.gameObject.GetObjectController<CObjectController> ();
+			if (objController != null && collider.gameObject.layer != LayerMask.NameToLayer("CarPart")) {
+				if (this.m_HitBoxContacts.Contains (objController)) {
+					this.m_HitBoxContacts.Remove (objController);
+				}
+			}
 		}
 		
 	}

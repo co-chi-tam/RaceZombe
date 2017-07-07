@@ -302,19 +302,34 @@ MonoBehaviour:
   m_Animator: {fileID: 95153307109689396}
   m_AudioSource: {fileID: 82531064454808582}
   m_Data:
-    objectName: Bomb_Block
-    objectModelPath: Bomb_Block
-    objectAvatarPath: Bomb_Block
+    objectName: BombMine
+    objectModelPath: BombMine
+    objectAvatarPath: BombMine
     currentResistant: 2
     currentDamage: 50
     currentDurability: 100
     actionDelay: 0.1
+    partType: -1
+  m_Owner: {fileID: 0}
+  m_DamageObject:
+    m_MaxResistant: 20
+    m_CurrentDamage: 0
+    m_MaxDamage: 100
+    m_AutoTrigger: 0
+    OnDamaged:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  m_AutoInteractive: 0
+  m_RepeatAction: 0
+  m_HitBoxContacts: []
   m_ExplosionObject:
     m_Rigidbody: {fileID: 54559581679539852}
     m_DetectRadius: 1.5
     m_ExplosionForceMass: 15
     m_ExplosionRadius: 15
-    m_ExplosionUpward: 1
+    m_ExplosionUpward: 5
     OnExplosion:
       m_PersistentCalls:
         m_Calls:

@@ -6,6 +6,9 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CInterativeCarPartController : CCarPartController {
 
+		[Header ("Auto interactive")]
+		[SerializeField]	protected bool m_AutoInteractive = false;
+		[SerializeField]	protected bool m_RepeatAction = false;
 		[Header ("Colliders")]
 		[SerializeField]	protected List<CObjectController> m_HitBoxContacts;
 
@@ -15,6 +18,10 @@ namespace RacingHuntZombie {
 		{
 			base.Start ();
 			this.m_HitBoxContacts = new List<CObjectController> ();
+			this.m_CurrentActionDelay = this.m_Data.actionDelay;
+			if (this.m_AutoInteractive) {
+				this.SetAnimator ("Active");
+			}
 		}
 
 		protected override void LateUpdate ()
@@ -22,6 +29,14 @@ namespace RacingHuntZombie {
 			base.LateUpdate ();
 			if (this.m_CurrentActionDelay > 0f) {
 				this.m_CurrentActionDelay -= Time.deltaTime;
+			}
+			if (this.m_AutoInteractive) {
+				if (this.m_CurrentActionDelay <= 0f) {
+					this.InteractiveOrtherObject (null);
+					if (this.m_RepeatAction == false) {
+						this.DestroyObject ();
+					}
+				}
 			}
 		}
 
@@ -40,7 +55,6 @@ namespace RacingHuntZombie {
 					}
 					objCtrl.ApplyDamage (this.m_Owner, this.GetDamage ());
 				}
-				this.SetAnimator ("Active");
 				this.m_CurrentActionDelay = this.m_Data.actionDelay;
 				if (this.m_HitBoxContacts.Count > 0) {
 					// Decrease Durability

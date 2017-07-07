@@ -29,8 +29,8 @@ namespace RacingHuntZombie {
 			if (this.m_CurrentActionDelay > 0f)
 				return;
 //			base.InteractiveOrtherObject (contactObj);
-			var objController = Instantiate (Resources.Load<CMeteoriteController>("Prefabs/" + this.m_CallObjectData.objectModelPath));
-			var objPosition = this.m_Transform.position;
+			var objController = Instantiate (Resources.Load<CInterativeCarPartController>("Prefabs/" + this.m_CallObjectData.objectModelPath));
+			var objPosition = this.m_Owner.transform.position;
 			objPosition.y = 0f;
 			objController.transform.position = objPosition;
 			objController.SetData (this.m_CallObjectData);

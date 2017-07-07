@@ -44,6 +44,7 @@ namespace RacingHuntZombie {
 		public virtual void UpdateCarPart(CCarPartsComponent.ECarPart part, GameObject contact) {
 			var carPartCtrl = this.m_CarParts.GetCarPart (part);
 			carPartCtrl.InteractiveOrtherObject (contact);
+			carPartCtrl.SetAnimator ("Active");
 		}
 
 		public override void ApplyDamage (CObjectController attacker, float value) {

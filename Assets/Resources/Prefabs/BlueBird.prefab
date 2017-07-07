@@ -567,9 +567,9 @@ MonoBehaviour:
       currentDurability: 100
       actionDelay: 0.1
       partType: 0
-    - objectName: FrontLightDrill
-      objectModelPath: FrontLightDrill
-      objectAvatarPath: FrontLightDrill
+    - objectName: FrontBlade
+      objectModelPath: FrontBlade
+      objectAvatarPath: FrontBlade
       currentResistant: 2
       currentDamage: 10
       currentDurability: 150

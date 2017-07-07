@@ -9,6 +9,7 @@ namespace RacingHuntZombie {
 		[Header ("Auto interactive")]
 		[SerializeField]	protected bool m_AutoInteractive = false;
 		[SerializeField]	protected bool m_RepeatAction = false;
+		[SerializeField]	protected bool m_StartWithAnimation = false;
 		[Header ("Colliders")]
 		[SerializeField]	protected List<CObjectController> m_HitBoxContacts;
 
@@ -19,7 +20,7 @@ namespace RacingHuntZombie {
 			base.Start ();
 			this.m_HitBoxContacts = new List<CObjectController> ();
 			this.m_CurrentActionDelay = this.m_Data.actionDelay;
-			if (this.m_AutoInteractive) {
+			if (this.m_StartWithAnimation) {
 				this.SetAnimator ("Active");
 			}
 		}

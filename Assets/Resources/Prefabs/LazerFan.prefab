@@ -405,6 +405,7 @@ MonoBehaviour:
         PublicKeyToken=null
   m_AutoInteractive: 1
   m_RepeatAction: 0
+  m_StartWithAnimation: 1
   m_HitBoxContacts: []
 --- !u!135 &135623548657703894
 SphereCollider:

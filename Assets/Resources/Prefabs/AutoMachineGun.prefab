@@ -139,7 +139,8 @@ GameObject:
   - component: {fileID: 65085657533950688}
   - component: {fileID: 95783204199665696}
   - component: {fileID: 82120000136453250}
-  - component: {fileID: 114654074139852160}
+  - component: {fileID: 205807595648635080}
+  - component: {fileID: 114321050792267860}
   m_Layer: 10
   m_Name: AutoMachineGun
   m_TagString: Untagged
@@ -591,7 +592,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114654074139852160
+--- !u!114 &114321050792267860
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -599,22 +600,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1931544355036144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74634d18fa014f4bae638fe9bdda9db, type: 3}
+  m_Script: {fileID: 11500000, guid: bd8e387a0582bf5479aa84bc092fcb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Active: 0
   m_Collider: {fileID: 65085657533950688}
   m_Animator: {fileID: 95783204199665696}
   m_AudioSource: {fileID: 82120000136453250}
+  m_TargetController: {fileID: 0}
   m_Data:
-    objectName: TopMachineGun
-    objectModelPath: TopMachineGun
-    objectAvatarPath: TopMachineGun
+    objectName: AutoMachineGun
+    objectModelPath: AutoMachineGun
+    objectAvatarPath: AutoMachineGun
     currentResistant: 2
-    currentDamage: 5
+    currentDamage: 100
     currentDurability: 100
-    actionDelay: 0.5
+    maxDurability: 100
+    actionDelay: 0.1
     partType: -1
+    engineWearValue: 0.1
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20
@@ -3685,3 +3689,43 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+--- !u!205 &205807595648635080
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931544355036144}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.00000011920929, y: 0.31199998, z: 0.1499998}
+  m_Size: 1.5000004
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23208494573185426}
+    - renderer: {fileID: 23404022269184874}
+    - renderer: {fileID: 23800525012845248}
+    - renderer: {fileID: 23944320191024682}
+    - renderer: {fileID: 23617529411323708}
+    - renderer: {fileID: 199887008359527762}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23404022269184874}
+    - renderer: {fileID: 23208494573185426}
+    - renderer: {fileID: 23800525012845248}
+    - renderer: {fileID: 23944320191024682}
+    - renderer: {fileID: 23617529411323708}
+    - renderer: {fileID: 199887008359527762}
+  - screenRelativeHeight: 0.023665104
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23208494573185426}
+    - renderer: {fileID: 23404022269184874}
+    - renderer: {fileID: 23800525012845248}
+    - renderer: {fileID: 23944320191024682}
+    - renderer: {fileID: 23617529411323708}
+    - renderer: {fileID: 199887008359527762}
+  m_Enabled: 1

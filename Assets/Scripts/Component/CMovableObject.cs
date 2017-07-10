@@ -77,12 +77,12 @@ namespace RacingHuntZombie {
 		}
 
 		public virtual bool IsNearTarget() {
-			return Vector3.Distance (this.m_CurrentTransform.position, this.targetPosition) < this.m_MinDistance - this.m_Radius;
+			return Vector3.Distance (this.m_CurrentTransform.position, this.targetPosition) < this.m_MinDistance + this.m_Radius;
 		}
 
 		public virtual void SetDestination(Vector3 value, Collider colliderTarget = null) {
 			this.targetPosition = value;
-			if (colliderTarget != null) {
+			if (colliderTarget != null && colliderTarget.isTrigger == false) {
 				var fixSize = this.m_CurrentTransform.position;
 				this.targetPosition = colliderTarget.ClosestPointOnBounds (fixSize);
 			}

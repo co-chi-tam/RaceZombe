@@ -56,7 +56,8 @@ GameObject:
   - component: {fileID: 135872989598560148}
   - component: {fileID: 95075018200825080}
   - component: {fileID: 82467204059242650}
-  - component: {fileID: 114474771809617144}
+  - component: {fileID: 205319433428748474}
+  - component: {fileID: 114568595302611454}
   m_Layer: 10
   m_Name: MissileBomb
   m_TagString: Untagged
@@ -202,7 +203,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114474771809617144
+--- !u!114 &114568595302611454
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -210,22 +211,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1939533714681728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74634d18fa014f4bae638fe9bdda9db, type: 3}
+  m_Script: {fileID: 11500000, guid: bd8e387a0582bf5479aa84bc092fcb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Active: 0
   m_Collider: {fileID: 135872989598560148}
   m_Animator: {fileID: 95075018200825080}
   m_AudioSource: {fileID: 82467204059242650}
+  m_TargetController: {fileID: 0}
   m_Data:
     objectName: MissileBomb
     objectModelPath: MissileBomb
     objectAvatarPath: MissileBomb
     currentResistant: 2
-    currentDamage: 100
+    currentDamage: 3
     currentDurability: 100
-    actionDelay: 2
+    maxDurability: 100
+    actionDelay: 0.1
     partType: -1
+    engineWearValue: 100
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20
@@ -6296,3 +6300,31 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+--- !u!205 &205319433428748474
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1939533714681728}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 199011168447657728}
+    - renderer: {fileID: 199956785791265402}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 199011168447657728}
+    - renderer: {fileID: 199956785791265402}
+  - screenRelativeHeight: 0.022668641
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 199011168447657728}
+    - renderer: {fileID: 199956785791265402}
+  m_Enabled: 1

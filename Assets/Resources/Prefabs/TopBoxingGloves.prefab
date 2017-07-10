@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4564026861899528}
   - component: {fileID: 33277093429947410}
   - component: {fileID: 23318636320922530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mesh_0771_rip_Tex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,8 +39,9 @@ GameObject:
   - component: {fileID: 95318394755510542}
   - component: {fileID: 82361235486166472}
   - component: {fileID: 65583822694185846}
+  - component: {fileID: 205315514543716240}
   - component: {fileID: 114976902502896198}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TopBoxingGloves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +56,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4597487149986340}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Boxing Gloves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +73,7 @@ GameObject:
   - component: {fileID: 4670518071136242}
   - component: {fileID: 33693429790070188}
   - component: {fileID: 23217938982630196}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mesh_0771_rip_Tex_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,13 +330,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650095740180168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74634d18fa014f4bae638fe9bdda9db, type: 3}
+  m_Script: {fileID: 11500000, guid: bd8e387a0582bf5479aa84bc092fcb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Active: 0
   m_Collider: {fileID: 65583822694185846}
   m_Animator: {fileID: 95318394755510542}
   m_AudioSource: {fileID: 82361235486166472}
+  m_TargetController: {fileID: 0}
   m_Data:
     objectName: TopBoxingGloves
     objectModelPath: TopBoxingGloves
@@ -343,8 +345,10 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 5
     currentDurability: 100
+    maxDurability: 100
     actionDelay: 0.1
     partType: 0
+    engineWearValue: 0.1
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20
@@ -360,3 +364,31 @@ MonoBehaviour:
   m_RepeatAction: 0
   m_StartWithAnimation: 0
   m_HitBoxContacts: []
+--- !u!205 &205315514543716240
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1650095740180168}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.0033120513, y: -0.04526394, z: 0.56}
+  m_Size: 1.6553932
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23318636320922530}
+    - renderer: {fileID: 23217938982630196}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23318636320922530}
+    - renderer: {fileID: 23217938982630196}
+  - screenRelativeHeight: 0.023665104
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23318636320922530}
+    - renderer: {fileID: 23217938982630196}
+  m_Enabled: 1

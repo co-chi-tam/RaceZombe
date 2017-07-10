@@ -10,6 +10,8 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected Collider m_Collider;
 		[SerializeField]	protected Animator m_Animator;
 		[SerializeField]	protected AudioSource m_AudioSource;
+		[Header ("Control")]
+		[SerializeField]	protected CObjectController m_TargetController;
 
 		protected List<CComponent> m_Components;
 		protected CTimerComponent m_TimerComponent;
@@ -107,6 +109,14 @@ namespace RacingHuntZombie {
 
 		public virtual void SetTimer(float time, Action callback) {
 			this.m_TimerComponent.SetTimer (time, callback);
+		}
+
+		public virtual void SetTarget(CObjectController target) {
+			this.m_TargetController = target;
+		}
+
+		public virtual CObjectController GetTarget() {
+			return this.m_TargetController;
 		}
 
 		public virtual float GetDamage() {

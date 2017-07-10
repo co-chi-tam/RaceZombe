@@ -52,7 +52,8 @@ GameObject:
   - component: {fileID: 95588953839837906}
   - component: {fileID: 82087782315776814}
   - component: {fileID: 135623548657703894}
-  - component: {fileID: 114998117150680074}
+  - component: {fileID: 205288963021195704}
+  - component: {fileID: 114342264040700850}
   m_Layer: 0
   m_Name: LazerFan
   m_TagString: Untagged
@@ -132,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 1946979015762376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.3, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 10}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 4303821788251042}
   m_RootOrder: 0
@@ -368,7 +369,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114998117150680074
+--- !u!114 &114342264040700850
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -376,22 +377,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1645202190921240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74634d18fa014f4bae638fe9bdda9db, type: 3}
+  m_Script: {fileID: 11500000, guid: bd8e387a0582bf5479aa84bc092fcb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Active: 0
   m_Collider: {fileID: 135623548657703894}
   m_Animator: {fileID: 95588953839837906}
   m_AudioSource: {fileID: 82087782315776814}
+  m_TargetController: {fileID: 0}
   m_Data:
     objectName: LazerFan
     objectModelPath: LazerFan
     objectAvatarPath: LazerFan
     currentResistant: 2
-    currentDamage: 50
+    currentDamage: 3
     currentDurability: 100
-    actionDelay: 1.5
+    maxDurability: 100
+    actionDelay: 0.1
     partType: -1
+    engineWearValue: 100
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20
@@ -464,3 +468,34 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.002280295, y: 0.24799639, z: 0.000005543232}
     m_Extent: {x: 0.29050207, y: 0.3204316, z: 0.558255}
   m_DirtyAABB: 0
+--- !u!205 &205288963021195704
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645202190921240}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.00000011920929, y: 0.31171405, z: 0}
+  m_Size: 10
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23080782549035872}
+    - renderer: {fileID: 137278276360292656}
+    - renderer: {fileID: 23664713224396316}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23080782549035872}
+    - renderer: {fileID: 137278276360292656}
+    - renderer: {fileID: 23664713224396316}
+  - screenRelativeHeight: 0.021692717
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23080782549035872}
+    - renderer: {fileID: 137278276360292656}
+    - renderer: {fileID: 23664713224396316}
+  m_Enabled: 1

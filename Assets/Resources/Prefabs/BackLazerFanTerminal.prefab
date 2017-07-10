@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4405090862255464}
   - component: {fileID: 82856667543256738}
   - component: {fileID: 95086952602694704}
+  - component: {fileID: 205910922216255416}
   - component: {fileID: 114089485638941362}
   m_Layer: 0
   m_Name: BackLazerFanTerminal
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_Collider: {fileID: 0}
   m_Animator: {fileID: 95086952602694704}
   m_AudioSource: {fileID: 82856667543256738}
+  m_TargetController: {fileID: 0}
   m_Data:
     objectName: BackLazerFanTerminal
     objectModelPath: BackLazerFanTerminal
@@ -330,8 +332,10 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 3
     currentDurability: 100
+    maxDurability: 100
     actionDelay: 5
     partType: 2
+    engineWearValue: 0.1
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20
@@ -350,5 +354,35 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 50
     currentDurability: 100
+    maxDurability: 100
     actionDelay: 1.5
     partType: -1
+    engineWearValue: 100
+--- !u!205 &205910922216255416
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1857207305836128}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.000005543232, y: 0.17301482, z: -0.090848565}
+  m_Size: 1.1165104
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23036597205687566}
+    - renderer: {fileID: 23317268449452598}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23036597205687566}
+    - renderer: {fileID: 23317268449452598}
+  - screenRelativeHeight: 0.023324551
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23036597205687566}
+    - renderer: {fileID: 23317268449452598}
+  m_Enabled: 1

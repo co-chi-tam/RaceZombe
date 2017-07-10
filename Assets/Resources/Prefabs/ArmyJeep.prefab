@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 65151637968601064}
   - component: {fileID: 82858913898001664}
   - component: {fileID: 95408426892587546}
+  - component: {fileID: 205564649068857284}
   - component: {fileID: 114932063227354660}
   m_Layer: 8
   m_Name: ArmyJeep
@@ -547,6 +548,7 @@ MonoBehaviour:
   m_Collider: {fileID: 65151637968601064}
   m_Animator: {fileID: 95408426892587546}
   m_AudioSource: {fileID: 82858913898001664}
+  m_TargetController: {fileID: 0}
   m_Data:
     objectName: BlueBird
     objectModelPath: BlueBird
@@ -554,6 +556,7 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 3
     currentDurability: 100
+    maxDurability: 100
     actionDelay: 1
     maxSpeed: 220
     gas: 2800
@@ -714,4 +717,29 @@ WheelCollider:
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
+  m_Enabled: 1
+--- !u!205 &205564649068857284
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412026671565056}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0.33429998, z: 0}
+  m_Size: 2.500001
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23016880548463040}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23016880548463040}
+  - screenRelativeHeight: 0.04790902
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23016880548463040}
   m_Enabled: 1

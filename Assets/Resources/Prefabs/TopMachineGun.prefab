@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 65797364523587958}
   - component: {fileID: 95414303623266988}
   - component: {fileID: 82414774864977148}
+  - component: {fileID: 205249081532549584}
   - component: {fileID: 114102604253790696}
   m_Layer: 10
   m_Name: TopMachineGun
@@ -459,13 +460,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1003073711553460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74634d18fa014f4bae638fe9bdda9db, type: 3}
+  m_Script: {fileID: 11500000, guid: bd8e387a0582bf5479aa84bc092fcb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Active: 0
   m_Collider: {fileID: 65797364523587958}
   m_Animator: {fileID: 95414303623266988}
   m_AudioSource: {fileID: 82414774864977148}
+  m_TargetController: {fileID: 0}
   m_Data:
     objectName: TopMachineGun
     objectModelPath: TopMachineGun
@@ -473,13 +475,24 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 5
     currentDurability: 100
+    maxDurability: 100
     actionDelay: 0.1
     partType: 0
+    engineWearValue: 0.1
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
+    m_AutoTrigger: 0
+    OnDamaged:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  m_AutoInteractive: 0
+  m_RepeatAction: 0
+  m_StartWithAnimation: 0
   m_HitBoxContacts: []
 --- !u!198 &198288671121723094
 ParticleSystem:
@@ -3536,3 +3549,37 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+--- !u!205 &205249081532549584
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1003073711553460}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0.118499994, z: 0.13749999}
+  m_Size: 1.025
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23023384833177530}
+    - renderer: {fileID: 23236553558217676}
+    - renderer: {fileID: 23523279002460342}
+    - renderer: {fileID: 199766560090078622}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23236553558217676}
+    - renderer: {fileID: 23023384833177530}
+    - renderer: {fileID: 23523279002460342}
+    - renderer: {fileID: 199766560090078622}
+  - screenRelativeHeight: 0.023665104
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23023384833177530}
+    - renderer: {fileID: 23236553558217676}
+    - renderer: {fileID: 23523279002460342}
+    - renderer: {fileID: 199766560090078622}
+  m_Enabled: 1

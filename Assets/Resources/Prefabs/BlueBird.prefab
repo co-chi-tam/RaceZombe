@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 65679203297986412}
   - component: {fileID: 82666824876845508}
   - component: {fileID: 95501798817423352}
+  - component: {fileID: 205966130173524378}
   - component: {fileID: 114908465834761576}
   m_Layer: 8
   m_Name: BlueBird
@@ -547,6 +548,7 @@ MonoBehaviour:
   m_Collider: {fileID: 65679203297986412}
   m_Animator: {fileID: 95501798817423352}
   m_AudioSource: {fileID: 82666824876845508}
+  m_TargetController: {fileID: 0}
   m_Data:
     objectName: BlueBird
     objectModelPath: BlueBird
@@ -554,6 +556,7 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 3
     currentDurability: 100
+    maxDurability: 100
     actionDelay: 1
     maxSpeed: 120
     gas: 1000
@@ -565,24 +568,30 @@ MonoBehaviour:
       currentResistant: 2
       currentDamage: 10
       currentDurability: 100
+      maxDurability: 100
       actionDelay: 0.3
       partType: 0
+      engineWearValue: 0.1
     - objectName: FrontBlade
       objectModelPath: FrontBlade
       objectAvatarPath: FrontBlade
       currentResistant: 2
       currentDamage: 10
       currentDurability: 150
+      maxDurability: 100
       actionDelay: 0.1
       partType: 1
+      engineWearValue: 0.1
     - objectName: BackLazerFanTerminal
       objectModelPath: BackLazerFanTerminal
       objectAvatarPath: BackLazerFanTerminal
       currentResistant: 2
       currentDamage: 50
       currentDurability: 150
+      maxDurability: 100
       actionDelay: 5
       partType: 2
+      engineWearValue: 0.1
   m_WheelDriver:
     m_Rigidbody: {fileID: 54661427693029404}
     maxAngle: 45
@@ -738,4 +747,29 @@ WheelCollider:
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
+  m_Enabled: 1
+--- !u!205 &205966130173524378
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112118305138270}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 2.300001
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23471623361557490}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23471623361557490}
+  - screenRelativeHeight: 0.019802514
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23471623361557490}
   m_Enabled: 1

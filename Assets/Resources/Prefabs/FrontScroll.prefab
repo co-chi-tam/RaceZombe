@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 95552188715535084}
   - component: {fileID: 136132049937531432}
   - component: {fileID: 54247643809628448}
+  - component: {fileID: 205822169511205454}
   - component: {fileID: 114871316069956416}
   m_Layer: 10
   m_Name: FrontScroll
@@ -727,6 +728,7 @@ MonoBehaviour:
   m_Collider: {fileID: 136132049937531432}
   m_Animator: {fileID: 95552188715535084}
   m_AudioSource: {fileID: 82008751796460822}
+  m_TargetController: {fileID: 0}
   m_Data:
     objectName: FrontScroll
     objectModelPath: FrontScroll
@@ -734,8 +736,10 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 10
     currentDurability: 100
+    maxDurability: 100
     actionDelay: 0.1
     partType: 1
+    engineWearValue: 0.1
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20
@@ -773,3 +777,46 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!205 &205822169511205454
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931135650851448}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0.417, z: 0.4930001}
+  m_Size: 2
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23249417112510006}
+    - renderer: {fileID: 23581343415757794}
+    - renderer: {fileID: 23145430223631022}
+    - renderer: {fileID: 23445049951323328}
+    - renderer: {fileID: 23874151338636746}
+    - renderer: {fileID: 23976922347674708}
+    - renderer: {fileID: 23650908109285568}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23249417112510006}
+    - renderer: {fileID: 23581343415757794}
+    - renderer: {fileID: 23145430223631022}
+    - renderer: {fileID: 23445049951323328}
+    - renderer: {fileID: 23874151338636746}
+    - renderer: {fileID: 23976922347674708}
+    - renderer: {fileID: 23650908109285568}
+  - screenRelativeHeight: 0.018888233
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23249417112510006}
+    - renderer: {fileID: 23581343415757794}
+    - renderer: {fileID: 23145430223631022}
+    - renderer: {fileID: 23445049951323328}
+    - renderer: {fileID: 23874151338636746}
+    - renderer: {fileID: 23976922347674708}
+    - renderer: {fileID: 23650908109285568}
+  m_Enabled: 1

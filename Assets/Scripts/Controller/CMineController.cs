@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace RacingHuntZombie {
-	public class CMineController : CInterativeCarPartController {
+	public class CMineController : CInteractiveCarPartController {
 
 		[Header("Component")]
 		[SerializeField]	protected CExplosionObject m_ExplosionObject;

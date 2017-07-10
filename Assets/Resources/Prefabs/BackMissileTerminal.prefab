@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4644534973897996}
   - component: {fileID: 95146435063333126}
   - component: {fileID: 82739791876666668}
+  - component: {fileID: 205512890710312960}
   - component: {fileID: 114481810151798856}
   m_Layer: 8
   m_Name: BackMissileTerminal
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_Collider: {fileID: 0}
   m_Animator: {fileID: 95146435063333126}
   m_AudioSource: {fileID: 82739791876666668}
+  m_TargetController: {fileID: 0}
   m_Data:
     objectName: BackTerminal
     objectModelPath: BackTerminal
@@ -330,8 +332,10 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 5
     currentDurability: 100
+    maxDurability: 100
     actionDelay: 0.1
     partType: 2
+    engineWearValue: 0.1
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20
@@ -350,5 +354,35 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 100
     currentDurability: 100
+    maxDurability: 100
     actionDelay: 2
     partType: -1
+    engineWearValue: 100
+--- !u!205 &205512890710312960
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1039369787719750}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0.5239999, z: -0.13}
+  m_Size: 1.5
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23526190626386408}
+    - renderer: {fileID: 23480966937036574}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23480966937036574}
+    - renderer: {fileID: 23526190626386408}
+  - screenRelativeHeight: 0.02145415
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23480966937036574}
+    - renderer: {fileID: 23526190626386408}
+  m_Enabled: 1

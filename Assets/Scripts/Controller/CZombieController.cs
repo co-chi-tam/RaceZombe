@@ -9,9 +9,6 @@ namespace RacingHuntZombie {
 		[Header ("Data")]
 		[SerializeField]	protected CMovableData m_Data;
 
-		[Header ("Control")]
-		[SerializeField]	protected CObjectController m_TargetController;
-
 		[Header ("Component")]
 		[SerializeField]	protected CBreakableObject m_BreakableObject;
 		[SerializeField]	protected CMovableObject m_MovableObject;
@@ -79,8 +76,13 @@ namespace RacingHuntZombie {
 			return this.m_DamageObject.IsOutOfDamage ();
 		}
 
-		public virtual void SetTarget(CObjectController target) {
-			this.m_TargetController = target;
+		public override void SetTarget(CObjectController target) {
+			base.SetTarget (target);
+		}
+
+		public override CObjectController GetTarget ()
+		{
+			return base.GetTarget ();
 		}
 
 		public override float GetDamage ()

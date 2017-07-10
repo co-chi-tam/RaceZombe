@@ -71,7 +71,7 @@ namespace RacingHuntZombie {
 			carGO.transform.position = this.m_CarSpawnPoints [0].transform.position;
 			this.m_CarControl = carGO.GetComponent<CCarController> ();
 			this.m_CarControl.SetActive (true);
-			this.m_Camera.SetFollower (carGO.transform);
+			this.m_Camera.SetTarget (carGO.transform);
 		}
 
 		private IEnumerator HandleSpawnZombies() {

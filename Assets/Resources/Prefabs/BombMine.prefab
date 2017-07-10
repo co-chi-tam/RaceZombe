@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 82531064454808582}
   - component: {fileID: 54559581679539852}
   - component: {fileID: 95153307109689396}
+  - component: {fileID: 205272669701831746}
   - component: {fileID: 114687435020381728}
   m_Layer: 0
   m_Name: BombMine
@@ -114,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1632083663411800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.15, y: 0, z: 4.78}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4361952673228252}
@@ -301,6 +302,7 @@ MonoBehaviour:
   m_Collider: {fileID: 135189832500268022}
   m_Animator: {fileID: 95153307109689396}
   m_AudioSource: {fileID: 82531064454808582}
+  m_TargetController: {fileID: 0}
   m_Data:
     objectName: BombMine
     objectModelPath: BombMine
@@ -308,8 +310,10 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 50
     currentDurability: 100
+    maxDurability: 100
     actionDelay: 0.1
     partType: -1
+    engineWearValue: 0.1
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20
@@ -323,6 +327,7 @@ MonoBehaviour:
         PublicKeyToken=null
   m_AutoInteractive: 0
   m_RepeatAction: 0
+  m_StartWithAnimation: 0
   m_HitBoxContacts: []
   m_ExplosionObject:
     m_Rigidbody: {fileID: 54559581679539852}
@@ -3400,3 +3405,31 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+--- !u!205 &205272669701831746
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1632083663411800}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.0013806224, y: 0.253845, z: -0.0013806224}
+  m_Size: 1.7010907
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23520492130338146}
+    - renderer: {fileID: 199149656239597732}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23520492130338146}
+    - renderer: {fileID: 199149656239597732}
+  - screenRelativeHeight: 0.018888233
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23520492130338146}
+    - renderer: {fileID: 199149656239597732}
+  m_Enabled: 1

@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 82335743883108238}
   - component: {fileID: 95371049627847508}
   - component: {fileID: 54196647836339504}
+  - component: {fileID: 205220106291425466}
   - component: {fileID: 114133463179937908}
   m_Layer: 8
   m_Name: FrontLightDrill
@@ -295,6 +296,7 @@ MonoBehaviour:
   m_Collider: {fileID: 65710009724217164}
   m_Animator: {fileID: 95371049627847508}
   m_AudioSource: {fileID: 82335743883108238}
+  m_TargetController: {fileID: 0}
   m_Data:
     objectName: FrontLightDrill
     objectModelPath: FrontLightDrill
@@ -302,8 +304,10 @@ MonoBehaviour:
     currentResistant: 2
     currentDamage: 10
     currentDurability: 100
+    maxDurability: 100
     actionDelay: 0.1
     partType: 1
+    engineWearValue: 0.1
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20
@@ -315,3 +319,28 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
+--- !u!205 &205220106291425466
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1845592893665158}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.013078511, y: 0.100649506, z: 0.6201668}
+  m_Size: 1.4759564
+  m_FadeMode: 1
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23511292261277644}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23511292261277644}
+  - screenRelativeHeight: 0.022668641
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23511292261277644}
+  m_Enabled: 1

@@ -22,10 +22,9 @@ namespace RacingHuntZombie {
 		protected override void LateUpdate ()
 		{
 			base.LateUpdate ();
-			if (this.GetActive() && this.m_DamageObject.IsOutOfDamage ()) {
-				this.SetActive (false);
-				this.gameObject.SetActive (false);
-			}
+//			if (this.m_DamageObject.IsOutOfDamage ()) {
+//				this.DestroyObject ();
+//			}
 		}
 
 		protected override void RegisterComponent () {
@@ -42,7 +41,7 @@ namespace RacingHuntZombie {
 				if (controller.GetActive() == false)
 					return;
 				// Decrease Durability
-				this.ApplyEngineWear (controller.GetDamage () - this.m_DamageObject.maxResistant);
+				this.ApplyEngineWear (this.m_Data.engineWearValue);
 			}
 		}
 

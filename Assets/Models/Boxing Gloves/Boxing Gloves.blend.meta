@@ -1,17 +1,26 @@
 fileFormatVersion: 2
-guid: 53de4dd514c02d341a3eb254991e25e9
-timeCreated: 1499403407
+guid: adfd50e9192661c4684f84bf8df3239e
+timeCreated: 1499651752
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    400000: default
-    400002: //RootNode
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: //RootNode
+    100002: Empty
+    100004: Mesh_0771_rip_Tex
+    100006: Mesh_0771_rip_Tex_001
+    400000: //RootNode
+    400002: Empty
+    400004: Mesh_0771_rip_Tex
+    400006: Mesh_0771_rip_Tex_001
+    2300000: Mesh_0771_rip_Tex
+    2300002: Mesh_0771_rip_Tex_001
+    3300000: Mesh_0771_rip_Tex
+    3300002: Mesh_0771_rip_Tex_001
+    4300000: Mesh_0771_rip_Tex_001
+    4300002: Mesh_0771_rip_Tex
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -38,7 +47,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -76,7 +85,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -559,13 +559,13 @@ MonoBehaviour:
     gas: 1000
     engineWear: 1
     carParts:
-    - objectName: TopMachineGun
-      objectModelPath: TopMachineGun
-      objectAvatarPath: TopMachineGun
+    - objectName: TopBoxingGloves
+      objectModelPath: TopBoxingGloves
+      objectAvatarPath: TopBoxingGloves
       currentResistant: 2
       currentDamage: 10
       currentDurability: 100
-      actionDelay: 0.1
+      actionDelay: 0.3
       partType: 0
     - objectName: FrontBlade
       objectModelPath: FrontBlade

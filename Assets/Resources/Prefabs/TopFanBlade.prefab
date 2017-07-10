@@ -31,40 +31,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1138339879183432
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4677460847149384}
-  - component: {fileID: 33149726514514616}
-  - component: {fileID: 23425388382664010}
-  m_Layer: 10
-  m_Name: Cylinder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1310493332892218
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4626961228137040}
-  - component: {fileID: 33945135053470068}
-  - component: {fileID: 23763609489434478}
-  m_Layer: 10
-  m_Name: Cylinder (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1347364256058672
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,6 +41,23 @@ GameObject:
   - component: {fileID: 4174471682480964}
   m_Layer: 10
   m_Name: Models
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1383982455265600
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4799556199500514}
+  - component: {fileID: 33283934236946704}
+  - component: {fileID: 23292280903573580}
+  m_Layer: 0
+  m_Name: SawBlade (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,6 +75,23 @@ GameObject:
   - component: {fileID: 23173637539488056}
   m_Layer: 10
   m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1649191595073514
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4435256038582826}
+  - component: {fileID: 33013896069254950}
+  - component: {fileID: 23469072832374804}
+  m_Layer: 0
+  m_Name: SawBlade (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,24 +140,24 @@ Transform:
   m_Children:
   - {fileID: 4668663488973490}
   - {fileID: 4993730793367086}
-  - {fileID: 4677460847149384}
-  - {fileID: 4626961228137040}
+  - {fileID: 4799556199500514}
+  - {fileID: 4435256038582826}
   m_Father: {fileID: 4061154488384254}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4626961228137040
+--- !u!4 &4435256038582826
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1310493332892218}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.319, y: -0.27300003, z: 0}
-  m_LocalScale: {x: 1.3, y: 0.02, z: 1.3}
+  m_GameObject: {fileID: 1649191595073514}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1.319, y: -0.338, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4174471682480964}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4668663488973490
 Transform:
   m_ObjectHideFlags: 1
@@ -171,19 +171,19 @@ Transform:
   m_Father: {fileID: 4174471682480964}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4677460847149384
+--- !u!4 &4799556199500514
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1138339879183432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.319, y: -0.273, z: 0}
-  m_LocalScale: {x: 1.3, y: 0.02, z: 1.3}
+  m_GameObject: {fileID: 1383982455265600}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.319, y: -0.338, z: 0}
+  m_LocalScale: {x: 1, y: 1.0000005, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 4174471682480964}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4993730793367086
 Transform:
   m_ObjectHideFlags: 1
@@ -229,12 +229,12 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23425388382664010
+--- !u!23 &23292280903573580
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1138339879183432}
+  m_GameObject: {fileID: 1383982455265600}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
@@ -242,7 +242,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: af8e4f276d54d1e4584dbf8c21783766, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -250,7 +250,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_SelectedEditorRenderState: 3
@@ -261,12 +261,12 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23763609489434478
+--- !u!23 &23469072832374804
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1310493332892218}
+  m_GameObject: {fileID: 1649191595073514}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
@@ -274,7 +274,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: af8e4f276d54d1e4584dbf8c21783766, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -282,7 +282,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_SelectedEditorRenderState: 3
@@ -325,13 +325,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33149726514514616
+--- !u!33 &33013896069254950
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1138339879183432}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_GameObject: {fileID: 1649191595073514}
+  m_Mesh: {fileID: 4300000, guid: e37ce15be3fa00649b546329ce2e4bfb, type: 3}
+--- !u!33 &33283934236946704
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383982455265600}
+  m_Mesh: {fileID: 4300000, guid: e37ce15be3fa00649b546329ce2e4bfb, type: 3}
 --- !u!33 &33383372830324502
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -346,13 +353,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1613951022658578}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33945135053470068
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1310493332892218}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65254038200797096
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -490,9 +490,9 @@ MonoBehaviour:
   m_Animator: {fileID: 95734812500151568}
   m_AudioSource: {fileID: 82643664471569878}
   m_Data:
-    objectName: TopFanBlade
-    objectModelPath: TopFanBlade
-    objectAvatarPath: TopFanBlade
+    objectName: TopSawBlade
+    objectModelPath: TopSawBlade
+    objectAvatarPath: TopSawBlade
     currentResistant: 2
     currentDamage: 10
     currentDurability: 100
@@ -503,4 +503,13 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
+    m_AutoTrigger: 0
+    OnDamaged:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  m_AutoInteractive: 0
+  m_RepeatAction: 0
+  m_StartWithAnimation: 0
   m_HitBoxContacts: []

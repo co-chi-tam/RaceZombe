@@ -23,6 +23,9 @@ namespace RacingHuntZombie {
 		[SerializeField]	private UIJoytick m_Joytick;
 		[SerializeField]	private CCarController m_CarControl;
 
+		private bool m_AllLoadingComplete = false;
+		private List<CZombieController> m_Zombies = new List<CZombieController> ();
+
 		protected virtual void Start() {
 			Application.targetFrameRate = 60;
 		}
@@ -46,6 +49,17 @@ namespace RacingHuntZombie {
 			var torqueInput = joytick.y; //Input.GetAxis("Vertical");
 			this.m_CarControl.UpdateDriver (angleInput, torqueInput, this.m_Joytick.GetEnableJoytick());
 #endif
+			if (this.m_AllLoadingComplete) {
+				for (int i = 0; i < this.m_Zombies.Count; i++) {
+					if (this.m_Zombies [i] == null) {
+						CHandleEvent.Instance.AddEvent (this.HandleSetupZombie (true, 
+							this.m_ZombieSpawnPoints [i % this.m_ZombieSpawnPoints.Length].transform.position, 
+							this.m_CarControl), null);
+						this.m_Zombies.RemoveAt(i);
+						i--;
+					}
+				}
+			}
 		}
 
 		public void UpdateTopCarPart() {
@@ -63,6 +77,7 @@ namespace RacingHuntZombie {
 		private IEnumerator HandleSpawnMapObjects() {
 			yield return HandleSpawnCar ();
 			yield return HandleSpawnZombies ();
+			this.m_AllLoadingComplete = true;
 		}
 
 		private IEnumerator HandleSpawnCar() {
@@ -76,13 +91,18 @@ namespace RacingHuntZombie {
 
 		private IEnumerator HandleSpawnZombies() {
 			for (int i = 0; i < m_ZombieSpawnPoints.Length; i++) {
-				var zombieGO = Instantiate(this.m_ZombiePrefabs);
-				yield return zombieGO;
-				zombieGO.transform.position = this.m_ZombieSpawnPoints [i].transform.position;
-				var zombieCtrl = zombieGO.GetComponent<CZombieController> ();
-				zombieCtrl.SetActive (true);
-				zombieCtrl.SetTarget (this.m_CarControl);
+				yield return this.HandleSetupZombie(true, this.m_ZombieSpawnPoints [i].transform.position, this.m_CarControl);
 			}
+		}
+
+		private IEnumerator HandleSetupZombie(bool active, Vector3 position, CCarController target) {
+			var zombieGO = Instantiate(this.m_ZombiePrefabs);
+			yield return zombieGO;
+			zombieGO.transform.position = position;
+			var zombieCtrl = zombieGO.GetComponent<CZombieController> ();
+			zombieCtrl.SetActive (active);
+			zombieCtrl.SetTarget (target);
+			this.m_Zombies.Add (zombieCtrl);
 		}
 
 	}

@@ -266,7 +266,7 @@ MonoBehaviour:
     maxDurability: 100
     actionDelay: 0.1
     partType: -1
-    engineWearValue: 0.1
+    engineWearValue: 0.3
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_RepeatAction: 1
   m_StartWithAnimation: 1
   m_HitBoxContacts: []
-  m_CurrentEvent: ChangeThisToTarget
+  m_CurrentEvent: 1
 --- !u!135 &135867898329600716
 SphereCollider:
   m_ObjectHideFlags: 1

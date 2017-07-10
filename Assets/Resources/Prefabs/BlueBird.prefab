@@ -572,11 +572,11 @@ MonoBehaviour:
       actionDelay: 0.3
       partType: 0
       engineWearValue: 0.1
-    - objectName: FrontBlade
-      objectModelPath: FrontBlade
-      objectAvatarPath: FrontBlade
+    - objectName: FrontDualSawBlade
+      objectModelPath: FrontDualSawBlade
+      objectAvatarPath: FrontDualSawBlade
       currentResistant: 2
-      currentDamage: 10
+      currentDamage: 15
       currentDurability: 150
       maxDurability: 100
       actionDelay: 0.1

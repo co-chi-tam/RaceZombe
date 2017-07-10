@@ -579,7 +579,7 @@ MonoBehaviour:
       currentDamage: 15
       currentDurability: 150
       maxDurability: 100
-      actionDelay: 0.1
+      actionDelay: 0.3
       partType: 1
       engineWearValue: 0.1
     - objectName: BackLazerFanTerminal

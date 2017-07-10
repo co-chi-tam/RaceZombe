@@ -47,6 +47,7 @@ namespace UnityEngine.UICustomize {
 
 		protected virtual void Reset() {
 			this.InputDirectionXZ = Vector3.zero;
+			this.InputDirectionXY = Vector3.zero;
 			this.m_BackgroundImage.rectTransform.anchoredPosition = Vector2.zero;
 			this.m_KnobImage.rectTransform.anchoredPosition = Vector2.zero;
 		}
@@ -73,7 +74,6 @@ namespace UnityEngine.UICustomize {
 				InputDirectionXY = new Vector3 (pos.x * 2f, pos.y * 2f, 0f);
 				InputDirectionXZ = InputDirectionXZ.magnitude > 1f ? InputDirectionXZ.normalized : InputDirectionXZ;
 				InputDirectionXY = InputDirectionXY.magnitude > 1f ? InputDirectionXY.normalized : InputDirectionXY;
-
 				m_KnobImage.rectTransform.anchoredPosition = new Vector2 (InputDirectionXZ.x * (m_BackgroundImage.rectTransform.sizeDelta.x / 3f) , 
 					InputDirectionXZ.z * (m_BackgroundImage.rectTransform.sizeDelta.y / 3f));
 			}

@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 65858406499486874}
   - component: {fileID: 82853402807198966}
   - component: {fileID: 205950299621602382}
-  - component: {fileID: 114177227959729250}
+  - component: {fileID: 114185034834969336}
   m_Layer: 10
   m_Name: FrontDualSawBlade
   m_TagString: Untagged
@@ -95,22 +95,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1600340266673360
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4761133740878426}
-  - component: {fileID: 65614966288165392}
-  m_Layer: 10
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &4014034155590274
 Transform:
   m_ObjectHideFlags: 1
@@ -123,7 +107,6 @@ Transform:
   m_Children:
   - {fileID: 4849036750351634}
   - {fileID: 4417167346732418}
-  - {fileID: 4761133740878426}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -141,19 +124,6 @@ Transform:
   m_Father: {fileID: 4014034155590274}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!4 &4761133740878426
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1600340266673360}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4014034155590274}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4777188697810280
 Transform:
   m_ObjectHideFlags: 1
@@ -272,18 +242,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548673890118014}
   m_Mesh: {fileID: 4300000, guid: 53de4dd514c02d341a3eb254991e25e9, type: 3}
---- !u!65 &65614966288165392
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1600340266673360}
-  m_Material: {fileID: 13400000, guid: ef872da6ce05dbe46a01768440786086, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4, y: 0.5, z: 0.6}
-  m_Center: {x: 0, y: 0, z: 0.3}
 --- !u!65 &65858406499486874
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -393,7 +351,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114177227959729250
+--- !u!114 &114185034834969336
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -401,7 +359,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1304019355246708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d79acf0bad6c39499d8b78298d305bb, type: 3}
+  m_Script: {fileID: 11500000, guid: bd8e387a0582bf5479aa84bc092fcb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Active: 0
@@ -417,7 +375,7 @@ MonoBehaviour:
     currentDamage: 15
     currentDurability: 100
     maxDurability: 100
-    actionDelay: 0.1
+    actionDelay: 0.3
     partType: 1
     engineWearValue: 0.1
   m_Owner: {fileID: 0}
@@ -431,6 +389,10 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
+  m_AutoInteractive: 1
+  m_RepeatAction: 1
+  m_StartWithAnimation: 0
+  m_HitBoxContacts: []
 --- !u!205 &205950299621602382
 LODGroup:
   m_ObjectHideFlags: 1

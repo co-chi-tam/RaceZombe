@@ -22,7 +22,7 @@ namespace RacingHuntZombie {
 
 		[Header ("Wheel advance config")]
 		[Tooltip("The motor torque's threahold when the physics engine motor torque.")]
-		public float motorTorqueThreahold = 0.25f;
+		public float motorTorqueThreahold = 0.75f;
 		[Tooltip("The vehicle's speed when the physics engine can use different amount of sub-steps (in m/s).")]
 		public float criticalSpeed = 5f;
 		[Tooltip("Simulation sub-steps when the speed is above critical.")]

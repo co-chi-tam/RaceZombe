@@ -32,10 +32,8 @@ namespace RacingHuntZombie {
 			PerlineNoise = 1
 		}
 
-		public new void Init(float min, float max, float speed, Transform mTransform) {
+		public new void Init(float speed, Transform mTransform) {
 			base.Init ();
-			this.m_MinDistance = min;
-			this.m_MaxDistance = max;
 			this.m_Speed = speed;
 			this.m_CurrentTransform = mTransform;
 			this.m_PerlineNoiseX = UnityEngine.Random.Range (0f, 100f);

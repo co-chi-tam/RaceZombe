@@ -14,7 +14,7 @@ namespace RacingHuntZombie {
 		private NavMeshPath m_NavMeshPath;
 
 		public new void Init(float min, float max, float speed) {
-			base.Init (min, max, speed, this.m_NavMeshAgent.transform);
+			base.Init (speed, this.m_NavMeshAgent.transform);
 			this.m_NavMeshAgent.speed = speed;
 			this.m_NavMeshPath = new NavMeshPath ();
 			this.m_CurrentTransform = this.m_NavMeshAgent.transform;

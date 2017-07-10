@@ -603,7 +603,7 @@ MonoBehaviour:
     m_BackwardWheels:
     - {fileID: 146750334927546030}
     - {fileID: 146910244715129142}
-    motorTorqueThreahold: 0.25
+    motorTorqueThreahold: 0.75
     criticalSpeed: 12
     stepsBelow: 5
     stepsAbove: 1

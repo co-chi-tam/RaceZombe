@@ -18,7 +18,7 @@ namespace RacingHuntZombie {
 
 		protected override void Start() {
 			this.m_BreakableObject.Init (false);
-			this.m_MovableObject.Init (1f, 10f, this.m_Data.maxSpeed, this.m_Transform);
+			this.m_MovableObject.Init (this.m_Data.maxSpeed, this.m_Transform);
 			this.m_DamageObject.Init (this.m_Data.currentResistant, this.m_Data.currentDurability);
 			this.m_FSMComponent.Init (this);
 			base.Start ();

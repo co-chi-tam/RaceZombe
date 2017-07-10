@@ -738,8 +738,8 @@ MonoBehaviour:
         PublicKeyToken=null
   m_MovableObject:
     m_Rigidbody: {fileID: 54916032951920688}
-    m_Radius: 0.5
-    m_MinDistance: 1
+    m_Radius: 0.3
+    m_MinDistance: 0.1
     m_MaxDistance: 10
     m_Speed: 0
     m_MoveType: 0

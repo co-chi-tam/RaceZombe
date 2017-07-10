@@ -562,9 +562,9 @@ MonoBehaviour:
     gas: 1000
     engineWear: 1
     carParts:
-    - objectName: TopBoxingGloves
-      objectModelPath: TopBoxingGloves
-      objectAvatarPath: TopBoxingGloves
+    - objectName: TopFanBlade
+      objectModelPath: TopFanBlade
+      objectAvatarPath: TopFanBlade
       currentResistant: 2
       currentDamage: 10
       currentDurability: 100
@@ -572,23 +572,23 @@ MonoBehaviour:
       actionDelay: 0.3
       partType: 0
       engineWearValue: 0.1
-    - objectName: FrontDualSawBlade
-      objectModelPath: FrontDualSawBlade
-      objectAvatarPath: FrontDualSawBlade
+    - objectName: FrontBlade
+      objectModelPath: FrontBlade
+      objectAvatarPath: FrontBlade
       currentResistant: 2
-      currentDamage: 15
+      currentDamage: 5
       currentDurability: 150
       maxDurability: 100
       actionDelay: 0.3
       partType: 1
       engineWearValue: 0.1
-    - objectName: BackLazerFanTerminal
-      objectModelPath: BackLazerFanTerminal
-      objectAvatarPath: BackLazerFanTerminal
-      currentResistant: 2
-      currentDamage: 50
+    - objectName: BackMissileTerminal
+      objectModelPath: BackMissileTerminal
+      objectAvatarPath: BackMissileTerminal
+      currentResistant: 0
+      currentDamage: 0
       currentDurability: 150
-      maxDurability: 100
+      maxDurability: 150
       actionDelay: 5
       partType: 2
       engineWearValue: 0.1

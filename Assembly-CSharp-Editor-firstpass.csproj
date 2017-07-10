@@ -51,7 +51,6 @@
      <Compile Include="Assets\Plugins\FSM\Editor\FSMNodeEditor.cs" />
      <None Include="Assets\Models\Propane Tank\Read Me!.txt" />
      <None Include="Assets\Models\Dual Saw Blade\Tag.txt" />
-     <None Include="Assets\Models\Zombie\Read_Me.txt" />
      <None Include="Assets\Models\Saw Blade\Read Me!.txt" />
      <None Include="Assets\Fonts\LICENSE.txt" />
      <None Include="Assets\Plugins\FSM\Sample\SampleFSM.txt" />

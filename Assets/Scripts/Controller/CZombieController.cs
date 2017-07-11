@@ -54,9 +54,7 @@ namespace RacingHuntZombie {
 				if (controller.GetActive() == false) {
 					return;
 				}
-				if (controller.GetVelocityKMH () > this.m_DamageObject.maxResistant) {
-					this.ApplyDamage (controller, controller.GetDamage ());
-				}
+				this.ApplyDamage (controller, controller.GetDamage () - this.m_DamageObject.maxResistant);
 			}
 		}
 

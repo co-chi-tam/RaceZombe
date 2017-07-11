@@ -31,10 +31,10 @@ namespace RacingHuntZombie {
 //			base.InteractiveOrtherObject (contactObj);
 			var objController = Instantiate (Resources.Load<CInteractiveCarPartController>("Prefabs/" + this.m_CallObjectData.objectModelPath));
 			var objPosition = this.m_Owner.transform.position;
-			var objRotation = this.m_Owner.transform.rotation;
+			var objRotation = this.m_Owner.transform.forward;
 			objPosition.y = 0f;
 			objController.transform.position = objPosition;
-			objController.transform.rotation = objRotation;
+			objController.transform.rotation = Quaternion.Euler (objRotation);
 			objController.SetData (this.m_CallObjectData);
 			objController.SetActive(true);
 			objController.SetOwner (this.GetOwner ());

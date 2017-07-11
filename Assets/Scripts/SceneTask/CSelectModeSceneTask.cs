@@ -7,6 +7,8 @@ namespace RacingHuntZombie {
 
 		#region Properties
 
+		private float m_Timer = 5f;
+
 		#endregion
 
 		#region Constructor
@@ -31,17 +33,13 @@ namespace RacingHuntZombie {
 		{
 			base.UpdateTask (dt);
 			if (this.m_IsCompleteTask == false) {
-				var cameraPos = Camera.main.transform.rotation.eulerAngles;
-				cameraPos.y += Time.deltaTime * 15f;
-				Camera.main.transform.rotation = Quaternion.Euler (cameraPos);
-				this.m_IsCompleteTask = cameraPos.y >= 360f;
+				this.m_Timer -= dt;
+				this.m_IsCompleteTask = this.m_Timer < 0f;
 			} else {
 				if (this.OnCompleteTask != null) {
 					this.OnCompleteTask ();
 				}
 			}
-
-
 		}
 
 		#endregion

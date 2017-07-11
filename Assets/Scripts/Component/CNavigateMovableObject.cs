@@ -8,31 +8,46 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CNavigateMovableObject: CMovableObject {
 
-		[SerializeField]	private NavMeshAgent m_NavMeshAgent;
-		[SerializeField]	private Collider m_Collider;
+		[SerializeField]	protected NavMeshAgent m_NavMeshAgent;
 
-		private NavMeshPath m_NavMeshPath;
+		protected NavMeshPath m_NavMeshPath;
 
-		public new void Init(float min, float max, float speed) {
-			base.Init (speed, this.m_NavMeshAgent.transform);
+		public new void Init(float speed, Transform mTransform) {
+			base.Init (speed, mTransform);
 			this.m_NavMeshAgent.speed = speed;
 			this.m_NavMeshPath = new NavMeshPath ();
-			this.m_CurrentTransform = this.m_NavMeshAgent.transform;
+		}
+
+		public override void Move (float dt) {
+//			base.Move (dt);
+			if (this.m_NavMeshPath == null)
+				return;
+			if (this.m_NavMeshAgent.CalculatePath (this.targetPosition, this.m_NavMeshPath) == false)
+				return;
+			var direction = this.targetPosition - this.m_CurrentTransform.position;
+			var angle = Mathf.Atan2 (direction.x, direction.z) * Mathf.Rad2Deg;
+			var position = direction.normalized * this.GetMoveSpeedSample(dt);
+			var destinationPosition = this.m_CurrentTransform.position + position;
+			this.m_NavMeshAgent.destination = (destinationPosition);
 		}
 
 		public virtual void MoveDestination(float dt) {
 			this.m_NavMeshAgent.isStopped = false;
 			this.m_NavMeshAgent.destination = this.targetPosition;
+			if (this.OnMoved != null) {
+				this.OnMoved.Invoke ();
+			}
 		}
 
-		public override void Stop ()
-		{
+		public override void Stop () {
 //			base.Stop ();
 			this.m_NavMeshAgent.isStopped = true;
 		}
 
 		public override bool IsOutOfRange() {
 			base.IsOutOfRange ();
+			if (this.m_NavMeshPath == null)
+				return false;
 			if (this.m_NavMeshAgent.isOnNavMesh == false)
 				return true;
 			if (this.m_NavMeshAgent.CalculatePath (this.m_NavMeshAgent.destination, this.m_NavMeshPath) == false)
@@ -42,6 +57,8 @@ namespace RacingHuntZombie {
 
 		public override bool IsNearTarget() {
 			base.IsNearTarget ();
+			if (this.m_NavMeshPath == null)
+				return false;
 			if (this.m_NavMeshAgent.isOnNavMesh == false)
 				return false;
 			if (this.m_NavMeshAgent.CalculatePath (this.m_NavMeshAgent.destination, this.m_NavMeshPath) == false)

@@ -340,7 +340,7 @@ MonoBehaviour:
     objectModelPath: FrontBlade
     objectAvatarPath: FrontBlade
     currentResistant: 2
-    currentDamage: 5
+    currentDamage: 2
     currentDurability: 100
     maxDurability: 100
     actionDelay: 0.1

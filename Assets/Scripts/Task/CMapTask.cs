@@ -26,8 +26,9 @@ namespace RacingHuntZombie {
 		#region Main methods
 
 		public virtual void LoadMap() {
-			this.m_Map ["IntroScene"]	= new CIntroTask ();
-			this.m_Map ["RaceScene"] 	= new CRaceSceneTask ();
+			this.m_Map ["IntroScene"]		= new CIntroTask ();
+			this.m_Map ["SelectModeScene"]	= new CSelectModeSceneTask ();
+			this.m_Map ["RaceScene"] 		= new CRaceSceneTask ();
 		}
 
 		#endregion

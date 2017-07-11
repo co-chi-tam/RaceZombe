@@ -52,7 +52,6 @@ GameObject:
   - component: {fileID: 33245601295351802}
   - component: {fileID: 136538212294067448}
   - component: {fileID: 23331451738988348}
-  - component: {fileID: 205845934147156452}
   m_Layer: 30
   m_Name: Obstacle Point (18)
   m_TagString: Untagged
@@ -71,7 +70,6 @@ GameObject:
   - component: {fileID: 33303466267504812}
   - component: {fileID: 136071158297339584}
   - component: {fileID: 23450387145175854}
-  - component: {fileID: 205085736068058742}
   m_Layer: 30
   m_Name: Obstacle Point (10)
   m_TagString: Untagged
@@ -90,7 +88,6 @@ GameObject:
   - component: {fileID: 33299346722016472}
   - component: {fileID: 136151202082199320}
   - component: {fileID: 23404872366778400}
-  - component: {fileID: 205990868376774248}
   m_Layer: 30
   m_Name: Obstacle Point (13)
   m_TagString: Untagged
@@ -109,7 +106,6 @@ GameObject:
   - component: {fileID: 33530691761392642}
   - component: {fileID: 136275191495923620}
   - component: {fileID: 23459597849389118}
-  - component: {fileID: 205221296380788424}
   m_Layer: 30
   m_Name: Obstacle Point (4)
   m_TagString: Untagged
@@ -128,7 +124,6 @@ GameObject:
   - component: {fileID: 33746353685220006}
   - component: {fileID: 136033154236144052}
   - component: {fileID: 23300857163595628}
-  - component: {fileID: 205188123884574122}
   m_Layer: 30
   m_Name: Obstacle Point (26)
   m_TagString: Untagged
@@ -162,7 +157,6 @@ GameObject:
   - component: {fileID: 33657899407434844}
   - component: {fileID: 136457097478431310}
   - component: {fileID: 23350492641100970}
-  - component: {fileID: 205106141514485768}
   m_Layer: 30
   m_Name: Obstacle Point (3)
   m_TagString: Untagged
@@ -181,7 +175,6 @@ GameObject:
   - component: {fileID: 33063485028474780}
   - component: {fileID: 136178346490535308}
   - component: {fileID: 23836203952469928}
-  - component: {fileID: 205451759575121396}
   m_Layer: 30
   m_Name: Obstacle Point (8)
   m_TagString: Untagged
@@ -215,7 +208,6 @@ GameObject:
   - component: {fileID: 33565691732695022}
   - component: {fileID: 136671134478793552}
   - component: {fileID: 23644301289816388}
-  - component: {fileID: 205953295483828312}
   m_Layer: 30
   m_Name: Obstacle Point (7)
   m_TagString: Untagged
@@ -234,7 +226,6 @@ GameObject:
   - component: {fileID: 33336028710193172}
   - component: {fileID: 136224579160947108}
   - component: {fileID: 23040871793905928}
-  - component: {fileID: 205780517304704068}
   m_Layer: 30
   m_Name: Obstacle Point (20)
   m_TagString: Untagged
@@ -268,7 +259,6 @@ GameObject:
   - component: {fileID: 33754994298855006}
   - component: {fileID: 136320003207534808}
   - component: {fileID: 23421576441079770}
-  - component: {fileID: 205599709858775734}
   m_Layer: 30
   m_Name: Obstacle Point (1)
   m_TagString: Untagged
@@ -287,7 +277,6 @@ GameObject:
   - component: {fileID: 33497506463533274}
   - component: {fileID: 136352463152262632}
   - component: {fileID: 23874472619918346}
-  - component: {fileID: 205333426611500240}
   m_Layer: 30
   m_Name: Obstacle Point (23)
   m_TagString: Untagged
@@ -336,7 +325,6 @@ GameObject:
   - component: {fileID: 33678503763199252}
   - component: {fileID: 136194520943701102}
   - component: {fileID: 23296975132589958}
-  - component: {fileID: 205035250314302760}
   m_Layer: 30
   m_Name: Obstacle Point (14)
   m_TagString: Untagged
@@ -370,7 +358,6 @@ GameObject:
   - component: {fileID: 33632699313579588}
   - component: {fileID: 136039418340498264}
   - component: {fileID: 23729732965662934}
-  - component: {fileID: 205263112078058668}
   m_Layer: 30
   m_Name: Obstacle Point (25)
   m_TagString: Untagged
@@ -407,7 +394,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1482041117252254
 GameObject:
@@ -420,7 +407,6 @@ GameObject:
   - component: {fileID: 33247124994951492}
   - component: {fileID: 136994338733509204}
   - component: {fileID: 23577480157939194}
-  - component: {fileID: 205400203536113610}
   m_Layer: 30
   m_Name: Obstacle Point (21)
   m_TagString: Untagged
@@ -439,7 +425,6 @@ GameObject:
   - component: {fileID: 33334073629804744}
   - component: {fileID: 136203504426838924}
   - component: {fileID: 23258912070690814}
-  - component: {fileID: 205821205780914746}
   m_Layer: 30
   m_Name: Obstacle Point (11)
   m_TagString: Untagged
@@ -473,7 +458,6 @@ GameObject:
   - component: {fileID: 33656256721231936}
   - component: {fileID: 136181613322486698}
   - component: {fileID: 23527206279521140}
-  - component: {fileID: 205351628957933714}
   m_Layer: 30
   m_Name: Obstacle Point (32)
   m_TagString: Untagged
@@ -524,7 +508,6 @@ GameObject:
   - component: {fileID: 33323703496244588}
   - component: {fileID: 136431509099392034}
   - component: {fileID: 23670765599818038}
-  - component: {fileID: 205064868024017592}
   m_Layer: 30
   m_Name: Obstacle Point (28)
   m_TagString: Untagged
@@ -573,7 +556,6 @@ GameObject:
   - component: {fileID: 33145907548416672}
   - component: {fileID: 136409994855578974}
   - component: {fileID: 23873444498806716}
-  - component: {fileID: 205811328733845104}
   m_Layer: 30
   m_Name: Obstacle Point (30)
   m_TagString: Untagged
@@ -592,7 +574,6 @@ GameObject:
   - component: {fileID: 33018004846152534}
   - component: {fileID: 136101378889192670}
   - component: {fileID: 23757904529039830}
-  - component: {fileID: 205211402437976920}
   m_Layer: 30
   m_Name: Obstacle Point (12)
   m_TagString: Untagged
@@ -626,7 +607,6 @@ GameObject:
   - component: {fileID: 33333065575071090}
   - component: {fileID: 136260193773581840}
   - component: {fileID: 23790640423199808}
-  - component: {fileID: 205628840577269118}
   m_Layer: 30
   m_Name: Obstacle Point (19)
   m_TagString: Untagged
@@ -645,7 +625,6 @@ GameObject:
   - component: {fileID: 33258878137830516}
   - component: {fileID: 136207078626280480}
   - component: {fileID: 23278219224000338}
-  - component: {fileID: 205522476089828064}
   m_Layer: 30
   m_Name: Obstacle Point (16)
   m_TagString: Untagged
@@ -664,7 +643,6 @@ GameObject:
   - component: {fileID: 33842614233114498}
   - component: {fileID: 136443464623964810}
   - component: {fileID: 23688693435628014}
-  - component: {fileID: 205975238891741908}
   m_Layer: 30
   m_Name: Obstacle Point (5)
   m_TagString: Untagged
@@ -683,7 +661,6 @@ GameObject:
   - component: {fileID: 33340557374619002}
   - component: {fileID: 136800031728729504}
   - component: {fileID: 23595923067845672}
-  - component: {fileID: 205207567973726654}
   m_Layer: 30
   m_Name: Obstacle Point (22)
   m_TagString: Untagged
@@ -702,7 +679,6 @@ GameObject:
   - component: {fileID: 33103277293296560}
   - component: {fileID: 136329279732431582}
   - component: {fileID: 23553582874405882}
-  - component: {fileID: 205634348967768540}
   m_Layer: 30
   m_Name: Obstacle Point (9)
   m_TagString: Untagged
@@ -736,7 +712,6 @@ GameObject:
   - component: {fileID: 33034054037242570}
   - component: {fileID: 136460875510191902}
   - component: {fileID: 23433358122544276}
-  - component: {fileID: 205684159861954290}
   m_Layer: 30
   m_Name: Obstacle Point (27)
   m_TagString: Untagged
@@ -755,7 +730,6 @@ GameObject:
   - component: {fileID: 33344109862626512}
   - component: {fileID: 136959714133086382}
   - component: {fileID: 23486161029407636}
-  - component: {fileID: 205692313026747768}
   m_Layer: 30
   m_Name: Obstacle Point (29)
   m_TagString: Untagged
@@ -774,7 +748,6 @@ GameObject:
   - component: {fileID: 33139645828764578}
   - component: {fileID: 136866179319653450}
   - component: {fileID: 23595852747985836}
-  - component: {fileID: 205950337950777206}
   m_Layer: 30
   m_Name: Obstacle Point (6)
   m_TagString: Untagged
@@ -808,7 +781,6 @@ GameObject:
   - component: {fileID: 33177723485615942}
   - component: {fileID: 136910344467171276}
   - component: {fileID: 23241256170191006}
-  - component: {fileID: 205206569163019432}
   m_Layer: 30
   m_Name: Obstacle Point (17)
   m_TagString: Untagged
@@ -827,7 +799,6 @@ GameObject:
   - component: {fileID: 33405886962526492}
   - component: {fileID: 136787093368863550}
   - component: {fileID: 23503102614421032}
-  - component: {fileID: 205567267149535878}
   m_Layer: 30
   m_Name: Obstacle Point (24)
   m_TagString: Untagged
@@ -861,7 +832,6 @@ GameObject:
   - component: {fileID: 33682981709997232}
   - component: {fileID: 136359377863726026}
   - component: {fileID: 23617303747817276}
-  - component: {fileID: 205205180833261392}
   m_Layer: 30
   m_Name: Obstacle Point (15)
   m_TagString: Untagged
@@ -910,7 +880,6 @@ GameObject:
   - component: {fileID: 33130276941418946}
   - component: {fileID: 136867583321908056}
   - component: {fileID: 23821346728939002}
-  - component: {fileID: 205115649613801022}
   m_Layer: 30
   m_Name: Obstacle Point (31)
   m_TagString: Untagged
@@ -929,7 +898,6 @@ GameObject:
   - component: {fileID: 33984051614834004}
   - component: {fileID: 136134125897419422}
   - component: {fileID: 23426304368584060}
-  - component: {fileID: 205724755730148828}
   m_Layer: 30
   m_Name: Obstacle Point (2)
   m_TagString: Untagged
@@ -3388,806 +3356,6 @@ TerrainCollider:
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 37b2a72c72ce0654284fd715e5dd27a9, type: 2}
   m_EnableTreeColliders: 1
---- !u!205 &205035250314302760
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1401050398547696}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23296975132589958}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23296975132589958}
-  - screenRelativeHeight: 0.014478631
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23296975132589958}
-  m_Enabled: 1
---- !u!205 &205064868024017592
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1560282187650344}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23670765599818038}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23670765599818038}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23670765599818038}
-  m_Enabled: 1
---- !u!205 &205085736068058742
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1035263939359922}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23450387145175854}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23450387145175854}
-  - screenRelativeHeight: 0.0116958935
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23450387145175854}
-  m_Enabled: 1
---- !u!205 &205106141514485768
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1117632871730704}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23350492641100970}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23350492641100970}
-  - screenRelativeHeight: 0.014478631
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23350492641100970}
-  m_Enabled: 1
---- !u!205 &205115649613801022
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1954585765460034}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23821346728939002}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23821346728939002}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23821346728939002}
-  m_Enabled: 1
---- !u!205 &205188123884574122
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1053245939666362}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23300857163595628}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23300857163595628}
-  - screenRelativeHeight: 0.0116958935
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23300857163595628}
-  m_Enabled: 1
---- !u!205 &205205180833261392
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1944930556767962}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23617303747817276}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23617303747817276}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23617303747817276}
-  m_Enabled: 1
---- !u!205 &205206569163019432
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1855217502815530}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23241256170191006}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23241256170191006}
-  - screenRelativeHeight: 0.0116958935
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23241256170191006}
-  m_Enabled: 1
---- !u!205 &205207567973726654
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1758277652599800}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23595923067845672}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23595923067845672}
-  - screenRelativeHeight: 0.012775925
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23595923067845672}
-  m_Enabled: 1
---- !u!205 &205211402437976920
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630932285327838}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23757904529039830}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23757904529039830}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23757904529039830}
-  m_Enabled: 1
---- !u!205 &205221296380788424
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1051193768724518}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23459597849389118}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23459597849389118}
-  - screenRelativeHeight: 0.012775925
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23459597849389118}
-  m_Enabled: 1
---- !u!205 &205263112078058668
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1462792381399650}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23729732965662934}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23729732965662934}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23729732965662934}
-  m_Enabled: 1
---- !u!205 &205333426611500240
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230088633176336}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23874472619918346}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23874472619918346}
-  - screenRelativeHeight: 0.0116958935
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23874472619918346}
-  m_Enabled: 1
---- !u!205 &205351628957933714
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1499776643282314}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23527206279521140}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23527206279521140}
-  - screenRelativeHeight: 0.0116958935
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23527206279521140}
-  m_Enabled: 1
---- !u!205 &205400203536113610
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1482041117252254}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23577480157939194}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23577480157939194}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23577480157939194}
-  m_Enabled: 1
---- !u!205 &205451759575121396
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1155923589428652}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23836203952469928}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23836203952469928}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23836203952469928}
-  m_Enabled: 1
---- !u!205 &205522476089828064
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1692940820575732}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23278219224000338}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23278219224000338}
-  - screenRelativeHeight: 0.0116958935
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23278219224000338}
-  m_Enabled: 1
---- !u!205 &205567267149535878
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1874096231947910}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23503102614421032}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23503102614421032}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23503102614421032}
-  m_Enabled: 1
---- !u!205 &205599709858775734
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1224355899794480}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23421576441079770}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23421576441079770}
-  - screenRelativeHeight: 0.0116958935
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23421576441079770}
-  m_Enabled: 1
---- !u!205 &205628840577269118
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647734815331662}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23790640423199808}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23790640423199808}
-  - screenRelativeHeight: 0.014478631
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23790640423199808}
-  m_Enabled: 1
---- !u!205 &205634348967768540
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1800197029075344}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23553582874405882}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23553582874405882}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23553582874405882}
-  m_Enabled: 1
---- !u!205 &205684159861954290
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1833766951814630}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23433358122544276}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23433358122544276}
-  - screenRelativeHeight: 0.012775925
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23433358122544276}
-  m_Enabled: 1
---- !u!205 &205692313026747768
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845067971573736}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23486161029407636}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23486161029407636}
-  - screenRelativeHeight: 0.012775925
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23486161029407636}
-  m_Enabled: 1
---- !u!205 &205724755730148828
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1989897549155876}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23426304368584060}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23426304368584060}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23426304368584060}
-  m_Enabled: 1
---- !u!205 &205780517304704068
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1199649643623440}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23040871793905928}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23040871793905928}
-  - screenRelativeHeight: 0.012775925
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23040871793905928}
-  m_Enabled: 1
---- !u!205 &205811328733845104
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630273375120296}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23873444498806716}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23873444498806716}
-  - screenRelativeHeight: 0.014478631
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23873444498806716}
-  m_Enabled: 1
---- !u!205 &205821205780914746
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1494910945931168}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23258912070690814}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23258912070690814}
-  - screenRelativeHeight: 0.012775925
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23258912070690814}
-  m_Enabled: 1
---- !u!205 &205845934147156452
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1033193152933462}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23331451738988348}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23331451738988348}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23331451738988348}
-  m_Enabled: 1
---- !u!205 &205950337950777206
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845630022115902}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23595852747985836}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23595852747985836}
-  - screenRelativeHeight: 0.012775925
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23595852747985836}
-  m_Enabled: 1
---- !u!205 &205953295483828312
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1195357316628852}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23644301289816388}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23644301289816388}
-  - screenRelativeHeight: 0.0116958935
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23644301289816388}
-  m_Enabled: 1
---- !u!205 &205975238891741908
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1696382774555660}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23688693435628014}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23688693435628014}
-  - screenRelativeHeight: 0.013332474
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23688693435628014}
-  m_Enabled: 1
---- !u!205 &205990868376774248
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1035464746692660}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23404872366778400}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23404872366778400}
-  - screenRelativeHeight: 0.012775925
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23404872366778400}
-  m_Enabled: 1
 --- !u!218 &218152889971019660
 Terrain:
   m_ObjectHideFlags: 1

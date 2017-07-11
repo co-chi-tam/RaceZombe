@@ -562,11 +562,11 @@ MonoBehaviour:
     gas: 1000
     engineWear: 1
     carParts:
-    - objectName: TopFanBlade
-      objectModelPath: TopFanBlade
-      objectAvatarPath: TopFanBlade
+    - objectName: TopBoxingGloves
+      objectModelPath: TopBoxingGloves
+      objectAvatarPath: TopBoxingGloves
       currentResistant: 2
-      currentDamage: 10
+      currentDamage: 15
       currentDurability: 100
       maxDurability: 100
       actionDelay: 0.3
@@ -576,7 +576,7 @@ MonoBehaviour:
       objectModelPath: FrontBlade
       objectAvatarPath: FrontBlade
       currentResistant: 2
-      currentDamage: 5
+      currentDamage: 2
       currentDurability: 150
       maxDurability: 100
       actionDelay: 0.3

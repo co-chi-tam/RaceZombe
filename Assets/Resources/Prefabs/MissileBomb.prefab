@@ -6314,17 +6314,11 @@ LODGroup:
   m_LODs:
   - screenRelativeHeight: 0.6
     fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 199011168447657728}
-    - renderer: {fileID: 199956785791265402}
+    renderers: []
   - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 199011168447657728}
-    - renderer: {fileID: 199956785791265402}
+    renderers: []
   - screenRelativeHeight: 0.022668641
     fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 199011168447657728}
-    - renderer: {fileID: 199956785791265402}
+    renderers: []
   m_Enabled: 1

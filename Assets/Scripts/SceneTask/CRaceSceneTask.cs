@@ -27,9 +27,11 @@ namespace RacingHuntZombie {
 		{
 			base.StartTask ();
 			this.m_IsCompleteTask = false;
+			this.m_IsLoadingTask = false;
 			this.m_GameManager = CGameManager.GetInstance ();
 			this.m_GameManager.StartRace (() => {
 				this.m_IsCompleteTask = true;
+				this.m_IsLoadingTask = true;
 			});
 		}
 

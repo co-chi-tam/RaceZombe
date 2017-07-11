@@ -13,6 +13,7 @@ namespace RacingHuntZombie {
 
 		public Action OnCompleteTask;
 
+		protected bool m_IsLoadingTask = false;
 		protected bool m_IsCompleteTask = false;
 
 		#endregion
@@ -71,6 +72,10 @@ namespace RacingHuntZombie {
 
 		public virtual bool IsCompleteTask() {
 			return this.m_IsCompleteTask;
+		}
+
+		public virtual bool IsLoadingTask() {
+			return this.m_IsLoadingTask;
 		}
 
 		public virtual bool IsHiddenTask() {

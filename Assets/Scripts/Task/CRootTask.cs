@@ -102,7 +102,7 @@ namespace RacingHuntZombie {
 
 		protected virtual IEnumerator LoadScene(string name) {
 			var sceneLoading = CSceneManager.Instance.HandleLoadSceneAsync (name, () => {
-				return this.m_CurrentTask.IsCompleteTask();
+				return this.m_CurrentTask.IsLoadingTask();
 			});
 			this.m_CurrentTask.OnSceneLoading ();
 			yield return sceneLoading;

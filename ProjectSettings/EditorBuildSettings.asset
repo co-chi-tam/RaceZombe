@@ -9,5 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroScene.unity
     guid: c433e56b9b3f67945a0b4be10958a889
   - enabled: 1
-    path: Assets/Scenes/RaceScene.unity
+    path: Assets/Scenes/SelectModeScene.unity
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/RaceScene.unity
+    guid: 04fc4f7b49d8ef04383a5a79a634247c

@@ -3567,19 +3567,16 @@ LODGroup:
     - renderer: {fileID: 23023384833177530}
     - renderer: {fileID: 23236553558217676}
     - renderer: {fileID: 23523279002460342}
-    - renderer: {fileID: 199766560090078622}
   - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23236553558217676}
     - renderer: {fileID: 23023384833177530}
     - renderer: {fileID: 23523279002460342}
-    - renderer: {fileID: 199766560090078622}
   - screenRelativeHeight: 0.023665104
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23023384833177530}
     - renderer: {fileID: 23236553558217676}
     - renderer: {fileID: 23523279002460342}
-    - renderer: {fileID: 199766560090078622}
   m_Enabled: 1

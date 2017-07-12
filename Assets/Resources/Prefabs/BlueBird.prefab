@@ -582,9 +582,9 @@ MonoBehaviour:
       actionDelay: 0.3
       partType: 1
       engineWearValue: 0.1
-    - objectName: BackMissileTerminal
-      objectModelPath: BackMissileTerminal
-      objectAvatarPath: BackMissileTerminal
+    - objectName: BackLazerBladeTerminal
+      objectModelPath: BackLazerBladeTerminal
+      objectAvatarPath: BackLazerBladeTerminal
       currentResistant: 0
       currentDamage: 0
       currentDurability: 150

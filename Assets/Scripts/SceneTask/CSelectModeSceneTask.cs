@@ -7,7 +7,7 @@ namespace RacingHuntZombie {
 
 		#region Properties
 
-		private float m_Timer = 5f;
+		private float m_Timer = 10f;
 
 		#endregion
 
@@ -26,7 +26,6 @@ namespace RacingHuntZombie {
 		public override void StartTask ()
 		{
 			base.StartTask ();
-			this.m_IsLoadingTask = true;
 		}
 
 		public override void UpdateTask (float dt)

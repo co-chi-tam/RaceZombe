@@ -34,6 +34,9 @@ namespace RacingHuntZombie {
 			if (this.m_AutoInteractive) {
 				if (this.m_CurrentActionDelay <= 0f) {
 					this.InteractiveOrtherObject (null);
+					if (this.m_StartWithAnimation == false) {
+						this.SetAnimator ("Active");
+					}
 					if (this.m_RepeatAction == false) {
 						this.DestroyObject ();
 					}

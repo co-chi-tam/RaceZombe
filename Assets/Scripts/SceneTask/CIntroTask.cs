@@ -26,7 +26,6 @@ namespace RacingHuntZombie {
 		public override void StartTask ()
 		{
 			base.StartTask ();
-			this.m_IsLoadingTask = true;
 		}
 
 		public override void UpdateTask (float dt)

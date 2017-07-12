@@ -18,7 +18,6 @@ namespace RacingHuntZombie {
 		public override void StartState()
 		{
 			base.StartState ();
-			this.m_BreakableObject.BreakObjects (true);
 			this.m_Controller.SetActive (false);
 		}
 

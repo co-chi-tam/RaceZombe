@@ -76,6 +76,12 @@ namespace RacingHuntZombie {
 			return this.m_DamageObject.IsOutOfDamage ();
 		}
 
+		public override void SetActive (bool value)
+		{
+			base.SetActive (value);
+			this.m_BreakableObject.BreakObjects (!value);
+		}
+
 		public override void SetTarget(CObjectController target) {
 			base.SetTarget (target);
 		}

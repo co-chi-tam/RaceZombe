@@ -753,7 +753,18 @@ MonoBehaviour:
     - {fileID: 54415700580613308}
     OnBreaked:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1887781805209802}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
   m_MovableObject:
@@ -781,13 +792,13 @@ MonoBehaviour:
     - -90
     - 90
     m_AngleAvoidances:
+    - 10
     - 40
+    - -40
     - 60
     - -60
-    - 60
-    - -60
-    - 60
-    - -60
+    - 80
+    - -80
     m_LengthAvoidances:
     - 3
     - 3
@@ -812,25 +823,14 @@ MonoBehaviour:
     m_Rigidbody: {fileID: 54035483266545742}
     m_TargetLayerMask:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 256
     m_DetectRadius: 3
     m_ExplosionForceMass: 15
     m_ExplosionRadius: 3
     m_ExplosionUpward: 1
     OnExplosion:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1887781805209802}
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+        m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
 --- !u!136 &136156668295182244
@@ -1411,7 +1411,7 @@ ParticleSystem:
     boxY: 1
     boxZ: 1
     radius:
-      value: 2
+      value: 3
       mode: 0
       spread: 0
       speed:

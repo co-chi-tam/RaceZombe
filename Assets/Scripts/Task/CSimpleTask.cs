@@ -23,6 +23,8 @@ namespace RacingHuntZombie {
 		{
 			base.StartTask ();
 			Screen.sleepTimeout = SleepTimeout.NeverSleep;
+			this.m_IsCompleteTask = false;
+			this.m_IsLoadingTask = true;
 		}
 
 		#endregion

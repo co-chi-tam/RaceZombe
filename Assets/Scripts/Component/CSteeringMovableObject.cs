@@ -11,7 +11,7 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected LayerMask m_Obstacles;
 
 		[SerializeField]	protected float[] m_AngleCheckings = new float[] { 0, -15, 15, -45, 45, -90, 90 }; 
-		[SerializeField]	protected float[] m_AngleAvoidances = new float[] { 40, 60, -60, 60, -60, 80, -80 }; 
+		[SerializeField]	protected float[] m_AngleAvoidances = new float[] { 10, 40, -40, 60, -60, 80, -80 }; 
 		[SerializeField]	protected float[] m_LengthAvoidances = new float[] { 3f, 3f, 3f, 3f, 3f, 1.5f, 1.5f };
 
 		protected float m_Angle;
@@ -36,7 +36,7 @@ namespace RacingHuntZombie {
 				if (position != Vector3.zero) {
 					this.m_Rigidbody.position = Vector3.Lerp (this.m_Rigidbody.position, this.m_Rigidbody.position + position, 0.5f);
 				}
-				this.m_Rigidbody.rotation = Quaternion.Lerp (this.m_Rigidbody.rotation, Quaternion.AngleAxis (m_Angle, Vector3.up), 0.25f);
+				this.m_Rigidbody.rotation = Quaternion.Lerp (this.m_Rigidbody.rotation, Quaternion.AngleAxis (m_Angle, Vector3.up), 0.5f);
 #if UNITY_EDITOR
 				Debug.DrawRay (this.m_Rigidbody.position, m_Direction, Color.green);	
 #endif

@@ -355,7 +355,7 @@ MonoBehaviour:
     currentDamage: 100
     currentDurability: 100
     maxDurability: 100
-    actionDelay: 2
+    actionDelay: 2.2
     partType: -1
     engineWearValue: 100
 --- !u!205 &205512890710312960

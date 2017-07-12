@@ -16,7 +16,7 @@ namespace RacingHuntZombie {
 		[SerializeField]	private CCameraController m_Camera;
 		[SerializeField]	private GameObject m_CarPrefabs;
 		[SerializeField]	private GameObject[] m_CarSpawnPoints;
-		[SerializeField]	private GameObject m_ZombiePrefabs;
+		[SerializeField]	private GameObject[] m_ZombiePrefabs;
 		[SerializeField]	private GameObject[] m_ZombieSpawnPoints;
 
 		[Header ("Control")]
@@ -53,7 +53,7 @@ namespace RacingHuntZombie {
 				for (int i = 0; i < this.m_Zombies.Count; i++) {
 					if (this.m_Zombies [i] == null) {
 						CHandleEvent.Instance.AddEvent (this.HandleSetupZombie (true, 
-							this.m_ZombieSpawnPoints [i % this.m_ZombieSpawnPoints.Length].transform.position, 
+							i, 
 							this.m_CarControl), null);
 						this.m_Zombies.RemoveAt(i);
 						i--;
@@ -91,12 +91,13 @@ namespace RacingHuntZombie {
 
 		private IEnumerator HandleSpawnZombies() {
 			for (int i = 0; i < m_ZombieSpawnPoints.Length; i++) {
-				yield return this.HandleSetupZombie(true, this.m_ZombieSpawnPoints [i].transform.position, this.m_CarControl);
+				yield return this.HandleSetupZombie(true, i, this.m_CarControl);
 			}
 		}
 
-		private IEnumerator HandleSetupZombie(bool active, Vector3 position, CCarController target) {
-			var zombieGO = Instantiate(this.m_ZombiePrefabs);
+		private IEnumerator HandleSetupZombie(bool active, int index, CCarController target) {
+			var position = this.m_ZombieSpawnPoints [index].transform.position;
+			var zombieGO = Instantiate(this.m_ZombiePrefabs [index % this.m_ZombiePrefabs.Length]);
 			yield return zombieGO;
 			zombieGO.transform.position = position;
 			var zombieCtrl = zombieGO.GetComponent<CZombieController> ();

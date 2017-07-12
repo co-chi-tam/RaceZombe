@@ -331,6 +331,9 @@ MonoBehaviour:
   m_HitBoxContacts: []
   m_ExplosionObject:
     m_Rigidbody: {fileID: 54559581679539852}
+    m_TargetLayerMask:
+      serializedVersion: 2
+      m_Bits: 4294967295
     m_DetectRadius: 1.5
     m_ExplosionForceMass: 15
     m_ExplosionRadius: 15
@@ -415,7 +418,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 366411478

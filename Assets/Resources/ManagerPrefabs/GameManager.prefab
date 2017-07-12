@@ -56,8 +56,9 @@ MonoBehaviour:
     type: 2}
   m_CarSpawnPoints:
   - {fileID: 0}
-  m_ZombiePrefabs: {fileID: 1242116809292042, guid: 64cd0dc48f214c640b07fa0101a22398,
-    type: 2}
+  m_ZombiePrefabs:
+  - {fileID: 1242116809292042, guid: 64cd0dc48f214c640b07fa0101a22398, type: 2}
+  - {fileID: 1402844815016872, guid: e78c2dd0ecbab1a41bbc3f51acffb4f0, type: 2}
   m_ZombieSpawnPoints:
   - {fileID: 0}
   - {fileID: 0}

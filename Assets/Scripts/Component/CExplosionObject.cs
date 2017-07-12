@@ -9,6 +9,7 @@ namespace RacingHuntZombie {
 	public class CExplosionObject : CRigidbodyObject {
 
 		[Header("Info")]
+		[SerializeField]	protected LayerMask m_TargetLayerMask;
 		[SerializeField] 	protected float m_DetectRadius = 3f;
 		[SerializeField]	protected float m_ExplosionForceMass = 15f;
 		[SerializeField] 	protected float m_ExplosionRadius = 3f;
@@ -28,7 +29,7 @@ namespace RacingHuntZombie {
 		}
 
 		public virtual void WorldExplosion(Func<Rigidbody, bool> contact = null) {
-			var contacts = Physics.OverlapSphere (this.m_Transform.position, this.m_DetectRadius);
+			var contacts = Physics.OverlapSphere (this.m_Transform.position, this.m_DetectRadius, this.m_TargetLayerMask);
 			for (int i = 0; i < contacts.Length; i++) {
 				var contactRigidbody = contacts[i].gameObject.GetComponent<Rigidbody> ();
 				if (contactRigidbody != null) {

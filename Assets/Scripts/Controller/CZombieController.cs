@@ -11,7 +11,7 @@ namespace RacingHuntZombie {
 
 		[Header ("Component")]
 		[SerializeField]	protected CBreakableObject m_BreakableObject;
-		[SerializeField]	protected CMovableObject m_MovableObject;
+		[SerializeField]	protected CSteeringMovableObject m_MovableObject;
 		[SerializeField]	protected CDamageObject m_DamageObject;
 		[SerializeField]	protected CFSMComponent m_FSMComponent;
 
@@ -54,7 +54,9 @@ namespace RacingHuntZombie {
 				if (controller.GetActive() == false) {
 					return;
 				}
-				this.ApplyDamage (controller, controller.GetDamage () - this.m_DamageObject.maxResistant);
+				if (controller.GetVelocityKMH () > this.m_DamageObject.maxResistant) {
+					this.ApplyDamage (controller, controller.GetDamage ());
+				}
 			}
 		}
 

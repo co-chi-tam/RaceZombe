@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RacingHuntZombie {
 	public class CInteractiveCarPartController : CCarPartController {
@@ -10,6 +11,9 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected bool m_AutoInteractive = false;
 		[SerializeField]	protected bool m_RepeatAction = false;
 		[SerializeField]	protected bool m_StartWithAnimation = false;
+		[SerializeField]	protected float m_DestroyAfter = 1f;
+		public UnityEvent OnEventTriggerEnter;
+
 		[Header ("Colliders")]
 		[SerializeField]	protected List<CObjectController> m_HitBoxContacts;
 
@@ -59,12 +63,16 @@ namespace RacingHuntZombie {
 					}
 					this.InteractiveTarget (objCtrl);
 				}
-				this.m_CurrentActionDelay = this.m_Data.actionDelay;
+				this.m_CurrentActionDelay = this.m_DestroyAfter;
 				if (this.m_HitBoxContacts.Count > 0) {
 					// Decrease Durability
 					this.ApplyEngineWear (this.m_Data.engineWearValue);
 				}
 			}
+		}
+
+		public virtual void AutoInteractive() {
+			this.InteractiveOrtherObject (null, null);
 		}
 
 		protected virtual void InteractiveTarget(CObjectController target) {
@@ -89,10 +97,20 @@ namespace RacingHuntZombie {
 		protected override void OnTriggerEnter (Collider collider)
 		{
 //			base.OnTriggerEnter (collider);
+			var isExceptionLayer = this.m_ExcepLayerMask.value == (this.m_ExcepLayerMask.value | (1 << collider.gameObject.layer));
+			if (isExceptionLayer == true)
+				return;
+			if (collider.isTrigger == true)
+				return;
 			var objController = collider.gameObject.GetObjectController<CObjectController> ();
 			if (objController != null) {
 				if (this.m_HitBoxContacts.Contains (objController) == false) {
 					this.m_HitBoxContacts.Add (objController);
+				}
+			}
+			if (this.m_AutoInteractive == false) {
+				if (this.OnEventTriggerEnter != null) {
+					this.OnEventTriggerEnter.Invoke ();
 				}
 			}
 		}
@@ -100,6 +118,11 @@ namespace RacingHuntZombie {
 		protected override void OnTriggerExit (Collider collider)
 		{
 //			base.OnTriggerExit (collider);
+			var isExceptionLayer = this.m_ExcepLayerMask.value == (this.m_ExcepLayerMask.value | (1 << collider.gameObject.layer));
+			if (isExceptionLayer == true)
+				return;
+			if (collider.isTrigger == true)
+				return;
 			var objController = collider.gameObject.GetObjectController<CObjectController> ();
 			if (objController != null) {
 				if (this.m_HitBoxContacts.Contains (objController)) {

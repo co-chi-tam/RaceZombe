@@ -97,8 +97,12 @@ namespace RacingHuntZombie {
 			}
 		}
 
-		public virtual void ChasingTarget(float dt) {
-		
+		public virtual void UpdateObject(float dt) {
+			
+		}
+
+		public virtual bool HaveGas() {
+			return false;
 		}
 
 		public virtual bool HaveEnemy() {
@@ -139,6 +143,14 @@ namespace RacingHuntZombie {
 
 		public virtual CObjectData GetData() {
 			return null;
+		}
+
+		public virtual void SetGas(float value) {
+		
+		}
+
+		public virtual float GetGas() {
+			return 0f;
 		}
 
 		public virtual Collider GetCollider() {

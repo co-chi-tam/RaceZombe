@@ -1,0 +1,12 @@
+﻿{
+  "objectName": "FrontBlade",
+  "objectModelPath": "FrontBlade",
+  "objectAvatarPath": "FrontBlade",
+  "currentResistant": 2,
+  "currentDamage": 2,
+  "currentDurability": 150,
+  "maxDurability": 150,
+  "actionDelay": 0.3,
+  "partType": 1,
+  "engineWearValue": 0.1
+}

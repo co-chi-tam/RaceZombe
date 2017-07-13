@@ -9,6 +9,7 @@ namespace RacingHuntZombie {
 	public class CFSMComponent : CComponent {
 
 		[SerializeField]	protected TextAsset m_FSMJsonText;
+		[SerializeField]	protected string m_FSMStateName;
 
 		protected FSMManager m_FSMManager;
 
@@ -22,6 +23,7 @@ namespace RacingHuntZombie {
 			this.m_FSMManager.RegisterState ("DeathState", 	new FSMDeathState(context));
 
 			this.m_FSMManager.RegisterCondition ("HaveEnemy", 	context.HaveEnemy);
+			this.m_FSMManager.RegisterCondition ("HaveGas", 	context.HaveGas);
 			this.m_FSMManager.RegisterCondition ("IsDeath", 	context.IsDeath);
 		}
 
@@ -29,6 +31,7 @@ namespace RacingHuntZombie {
 		{
 			base.UpdateComponent (dt);
 			this.m_FSMManager.UpdateState (dt);
+			this.m_FSMStateName = this.m_FSMManager.currentStateName;
 		}
 
 	}

@@ -1,12 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Component\CCrackabkeObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Data\Zombie\ExplosionZombie.txt">
     <Files>
-      <File FileName="Assets\Scripts\Controller\CInteractiveCarPartController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Controller\CZombieExplosionController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\FSMState\FSMDeathState.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Controller\CZombieController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Component\CCrackabkeObject.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Controller\CZombieExplosionController.cs" Line="25" Column="5" />
+      <File FileName="Assets\Resources\Data\Zombie\ExplosionZombie.txt" Line="11" Column="16" />
+      <File FileName="Assets\Resources\Data\Zombie\NormalZombie.txt" Line="12" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

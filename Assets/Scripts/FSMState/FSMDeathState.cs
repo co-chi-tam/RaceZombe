@@ -7,12 +7,10 @@ namespace RacingHuntZombie {
 	{
 		protected float m_Countdown = 3f;
 		protected CObjectController m_Controller;
-		protected CBreakableObject m_BreakableObject;
 
 		public FSMDeathState(IContext context) : base (context)
 		{
-			this.m_Controller = context as CZombieController;
-			this.m_BreakableObject = this.m_Controller.GetCustomComponent<CBreakableObject> ();
+			this.m_Controller = context as CObjectController;
 		}
 
 		public override void StartState()

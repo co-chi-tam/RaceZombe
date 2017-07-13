@@ -553,18 +553,39 @@ MonoBehaviour:
     m_Bits: 3221225472
   m_TargetController: {fileID: 0}
   m_Data:
-    objectName: BlueBird
-    objectModelPath: BlueBird
-    objectAvatarPath: BlueBird
+    objectName: ArmyJeep
+    objectModelPath: ArmyJeep
+    objectAvatarPath: ArmyJeep
     maxResistant: 2
     currentDamage: 3
     currentDurability: 100
     maxDurability: 100
     actionDelay: 1
     maxSpeed: 220
-    gas: 2800
+    currentGas: 100000000
+    maxGas: 100000000
     engineWear: 1
-    carParts: []
+    carParts:
+    - objectName: FrontDualSawBlade
+      objectModelPath: FrontDualSawBlade
+      objectAvatarPath: FrontDualSawBlade
+      maxResistant: 2
+      currentDamage: 15
+      currentDurability: 150
+      maxDurability: 150
+      actionDelay: 3
+      partType: 1
+      engineWearValue: 0.1
+    - objectName: BackBBQRibs
+      objectModelPath: BackBBQRibs
+      objectAvatarPath: BackBBQRibs
+      maxResistant: 0
+      currentDamage: 0
+      currentDurability: 0
+      maxDurability: 0
+      actionDelay: 0
+      partType: 2
+      engineWearValue: 0
   m_WheelDriver:
     m_Rigidbody: {fileID: 54169110719026874}
     maxAngle: 45
@@ -576,7 +597,6 @@ MonoBehaviour:
     m_BackwardWheels:
     - {fileID: 146826270238826906}
     - {fileID: 146873556683921060}
-    motorTorqueThreahold: 0.25
     criticalSpeed: 12
     stepsBelow: 5
     stepsAbove: 1
@@ -604,6 +624,9 @@ MonoBehaviour:
     m_TopPart: {fileID: 1685514835630170}
     m_FrontPart: {fileID: 1678592555963586}
     m_BackPart: {fileID: 1003202185158862}
+  m_FSMComponent:
+    m_FSMJsonText: {fileID: 4900000, guid: 683c418ccf41e0043abf6fb8f7302fce, type: 3}
+    m_FSMStateName: 
 --- !u!146 &146392513848195820
 WheelCollider:
   m_ObjectHideFlags: 1

@@ -1,0 +1,13 @@
+﻿{
+  "objectName": "TopFanBlade",
+  "objectModelPath": "TopFanBlade",
+  "objectAvatarPath": "TopFanBlade",
+  "currentResistant": 2,
+  "currentDamage": 15,
+  "currentDurability": 100,
+  "maxDurability": 100,
+  "actionDelay": 0.3,
+  "partType": 0,
+  "engineWearValue": 0.1
+}
+

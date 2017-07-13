@@ -1,0 +1,17 @@
+﻿{
+  "objectName": "LazerBlade",
+  "objectModelPath": "LazerBlade",
+  "objectAvatarPath": "LazerBlade",
+  "currentResistant": 2,
+  "currentDamage": 20,
+  "currentDurability": 100,
+  "maxDurability": 100,
+  "actionDelay": 0.3,
+  "partType": -1,
+  "engineWearValue": 0.1
+}
+
+
+
+
+

@@ -575,7 +575,8 @@ MonoBehaviour:
     maxDurability: 100
     actionDelay: 1
     maxSpeed: 120
-    gas: 1000
+    currentGas: 1000
+    maxGas: 1000
     engineWear: 1
     carParts:
     - objectName: TopBoxingGloves
@@ -619,7 +620,6 @@ MonoBehaviour:
     m_BackwardWheels:
     - {fileID: 146750334927546030}
     - {fileID: 146910244715129142}
-    motorTorqueThreahold: 1
     criticalSpeed: 12
     stepsBelow: 5
     stepsAbove: 1
@@ -647,6 +647,9 @@ MonoBehaviour:
     m_TopPart: {fileID: 1069656803325972}
     m_FrontPart: {fileID: 1848117557133178}
     m_BackPart: {fileID: 1060562044559900}
+  m_FSMComponent:
+    m_FSMJsonText: {fileID: 4900000, guid: 683c418ccf41e0043abf6fb8f7302fce, type: 3}
+    m_FSMStateName: 
 --- !u!146 &146385513161066990
 WheelCollider:
   m_ObjectHideFlags: 1

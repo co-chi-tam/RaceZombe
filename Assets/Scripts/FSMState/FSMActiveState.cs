@@ -9,7 +9,7 @@ namespace RacingHuntZombie {
 
 		public FSMActiveState(IContext context) : base (context)
 		{
-			this.m_Controller = context as CZombieController;
+			this.m_Controller = context as CObjectController;
 		}
 
 		public override void StartState()
@@ -20,7 +20,7 @@ namespace RacingHuntZombie {
 		public override void UpdateState(float dt)
 		{
 			base.UpdateState (dt);
-			this.m_Controller.ChasingTarget (dt);
+			this.m_Controller.UpdateObject (dt);
 		}
 
 		public override void ExitState()

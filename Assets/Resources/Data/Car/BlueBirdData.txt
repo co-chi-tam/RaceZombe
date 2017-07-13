@@ -1,0 +1,16 @@
+﻿{
+  "objectName": "BlueBird",
+  "objectModelPath": "BlueBird",
+  "objectAvatarPath": "BlueBird",
+  "objectFSMPath": "FSMCarGraph",
+  "currentResistant": 2,
+  "currentDamage": 3,
+  "currentDurability": 100,
+  "maxDurability": 100,
+  "actionDelay": 1,
+  "maxSpeed": 120,
+  "currentGas": 1000,
+  "maxGas": 1000,
+  "engineWear": 1,
+  "carParts": []
+}

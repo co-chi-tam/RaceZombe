@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4721534734660040}
   - component: {fileID: 65487538541556816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Light Drill EX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4521562628045706}
   - component: {fileID: 33753991159867010}
   - component: {fileID: 23511292261277644}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: h_drillS05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 54196647836339504}
   - component: {fileID: 205220106291425466}
   - component: {fileID: 114133463179937908}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: FrontLightDrill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

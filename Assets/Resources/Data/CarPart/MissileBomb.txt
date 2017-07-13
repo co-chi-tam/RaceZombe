@@ -1,0 +1,18 @@
+﻿{
+  "objectName": "MissileBomb",
+  "objectModelPath": "MissileBomb",
+  "objectAvatarPath": "MissileBomb",
+  "currentResistant": 2,
+  "currentDamage": 100,
+  "currentDurability": 100,
+  "maxDurability": 100,
+  "actionDelay": 0.3,
+  "partType": -1,
+  "engineWearValue": 0.1
+}
+
+
+
+
+
+

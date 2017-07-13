@@ -735,10 +735,10 @@ MonoBehaviour:
     objectAvatarPath: ExplosionZombie
     maxResistant: 2
     currentDamage: 20
-    currentDurability: 100
-    maxDurability: 100
+    currentDurability: 10
+    maxDurability: 10
     actionDelay: 0.1
-    maxSpeed: 3.5
+    maxSpeed: 1.5
   m_BreakableObject:
     m_Colliders:
     - {fileID: 136156668295182244}
@@ -821,6 +821,7 @@ MonoBehaviour:
         PublicKeyToken=null
   m_FSMComponent:
     m_FSMJsonText: {fileID: 4900000, guid: a27e25ba22f83ea4c865026221a73c73, type: 3}
+    m_FSMStateName: 
   m_ExplosionObject:
     m_Rigidbody: {fileID: 54035483266545742}
     m_TargetLayerMask:

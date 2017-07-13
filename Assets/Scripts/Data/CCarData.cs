@@ -8,20 +8,23 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CCarData: CMovableData {
 
-		public float gas;
+		public float currentGas;
+		public float maxGas;
 		public float engineWear;
 		public CCarPartData[] carParts;
 
 		public CCarData ()
 		{
-			this.gas 		= 1000f;
-			this.engineWear	= 1f;
+			this.currentGas		= 1000f;
+			this.maxGas			= 1000f;
+			this.engineWear		= 1f;
 		}
 
 		public override string ToJSON ()
 		{
 			base.ToJSON ();
-			this.m_DictJSON.Add ("gas", this.gas);
+			this.m_DictJSON.Add ("currentGas", this.currentGas);
+			this.m_DictJSON.Add ("maxGas", this.maxGas);
 			this.m_DictJSON.Add ("engineWear", this.engineWear);
 			var carPartsJSON = "[";
 			for (int i = 0; i < this.carParts.Length; i++) {

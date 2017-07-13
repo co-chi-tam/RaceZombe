@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4896467221389996}
   - component: {fileID: 198202026423528322}
   - component: {fileID: 199149656239597732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ParticleBlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4361952673228252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 95153307109689396}
   - component: {fileID: 205272669701831746}
   - component: {fileID: 114687435020381728}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BombMine
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4538615818352356}
   - component: {fileID: 33621890868263506}
   - component: {fileID: 23520492130338146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1632083663411800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.1, y: 0, z: -29.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4361952673228252}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_AudioSource: {fileID: 82531064454808582}
   m_ExcepLayerMask:
     serializedVersion: 2
-    m_Bits: 3221225472
+    m_Bits: 4294965503
   m_TargetController: {fileID: 0}
   m_Data:
     objectName: BombMine
@@ -330,6 +330,12 @@ MonoBehaviour:
   m_AutoInteractive: 0
   m_RepeatAction: 0
   m_StartWithAnimation: 0
+  m_DestroyAfter: 1
+  OnEventTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_HitBoxContacts: []
   m_ExplosionObject:
     m_Rigidbody: {fileID: 54559581679539852}
@@ -366,7 +372,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198202026423528322
 ParticleSystem:
@@ -3426,15 +3432,12 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23520492130338146}
-    - renderer: {fileID: 199149656239597732}
   - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23520492130338146}
-    - renderer: {fileID: 199149656239597732}
   - screenRelativeHeight: 0.018888233
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23520492130338146}
-    - renderer: {fileID: 199149656239597732}
   m_Enabled: 1

@@ -10,14 +10,16 @@ namespace RacingHuntZombie {
 		[SerializeField]	private CCarData m_Data;
 
 		[Header ("Components")]
-		[SerializeField]	private CWheelDriver m_WheelDriver;
-		[SerializeField]	private CDamageObject m_DamageObject;
-		[SerializeField]	private CCarPartsComponent m_CarParts;
+		[SerializeField]	protected CWheelDriver m_WheelDriver;
+		[SerializeField]	protected CDamageObject m_DamageObject;
+		[SerializeField]	protected CCarPartsComponent m_CarParts;
+		[SerializeField]	protected CFSMComponent m_FSMComponent;
 
 		protected override void Start() {
 			this.m_WheelDriver.Init (this.m_Data.maxSpeed);
 			this.m_DamageObject.Init (this.m_Data.maxResistant, this.m_Data.currentDurability);
 			this.m_CarParts.Init (m_Data.carParts);
+			this.m_FSMComponent.Init (this);
 			base.Start ();
 		}
 
@@ -27,10 +29,11 @@ namespace RacingHuntZombie {
 			this.m_Components.Add (this.m_WheelDriver);
 			this.m_Components.Add (this.m_DamageObject);
 			this.m_Components.Add (this.m_CarParts);
+			this.m_Components.Add (this.m_FSMComponent);
 		}
 
 		public virtual void UpdateDriver(float angleInput, float torqueInput, bool brakeInput) {
-			if (this.m_Data.gas > 0f) {
+			if (this.m_Data.currentGas > 0f) {
 				this.m_WheelDriver.UpdateDriver (angleInput, torqueInput, brakeInput);
 				var currentGas = this.GetGas ();
 				var consumeGas = this.GetVelocityKMH () / this.m_Data.maxSpeed;
@@ -81,6 +84,10 @@ namespace RacingHuntZombie {
 			}
 		}
 
+		public override bool HaveGas () {
+			return this.GetGas () > 0f;
+		}
+
 		public override float GetDamage () {
 			return this.m_Data.currentDamage;
 		}
@@ -103,12 +110,12 @@ namespace RacingHuntZombie {
 			return this.m_Data.maxResistant;
 		}
 
-		public virtual float GetGas() {
-			return this.m_Data.gas;
+		public override float GetGas() {
+			return this.m_Data.currentGas;
 		}
 
-		public virtual void SetGas(float value) {
-			this.m_Data.gas = value;
+		public override void SetGas(float value) {
+			this.m_Data.currentGas = value;
 		}
 
 	}

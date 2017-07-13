@@ -19,12 +19,12 @@ namespace RacingHuntZombie {
 			this.m_Components.Add (this.m_ExplosionObject);
 		}
 
-		public override void ChasingTarget(float dt) {
+		protected override void ChasingTarget(float dt) {
 			base.ChasingTarget (dt);
 			if (this.m_MovableObject.IsNearTarget () == true) {
 				this.m_ExplosionObject.WorldExplosion ((contactRigidbody) => {
 					var controller = contactRigidbody.GetComponent<CObjectController>();
-					if (controller != null) {
+					if (controller != null && controller != this) {
 						controller.ApplyDamage (this, this.m_ExplosionObject.GetDamage());
 					}
 					return controller != null;

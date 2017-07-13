@@ -1,0 +1,14 @@
+﻿{
+  "objectName": "BackMissileTerminal",
+  "objectModelPath": "BackMissileTerminal",
+  "objectAvatarPath": "BackMissileTerminal",
+  "currentResistant": 2,
+  "currentDamage": 0,
+  "currentDurability": 150,
+  "maxDurability": 150,
+  "actionDelay": 5,
+  "partType": 2,
+  "engineWearValue": 0.1
+}
+
+

@@ -1,0 +1,12 @@
+﻿{
+  "objectName": "Zombie",
+  "objectModelPath": "Zombie",
+  "objectAvatarPath": "Zombie",
+  "objectFSMPath": "FSMSimpleGraph",
+  "currentResistant": 2,
+  "currentDamage": 3,
+  "currentDurability": 10,
+  "maxDurability": 10,
+  "actionDelay": 0.1,
+  "maxSpeed": 3.5
+}

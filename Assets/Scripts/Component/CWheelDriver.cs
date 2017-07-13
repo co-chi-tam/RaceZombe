@@ -21,8 +21,6 @@ namespace RacingHuntZombie {
 		[SerializeField]	private WheelCollider[] m_BackwardWheels;
 
 		[Header ("Wheel advance config")]
-		[Tooltip("The motor torque's threahold when the physics engine motor torque.")]
-		public float motorTorqueThreahold = 0.75f;
 		[Tooltip("The vehicle's speed when the physics engine can use different amount of sub-steps (in m/s).")]
 		public float criticalSpeed = 5f;
 		[Tooltip("Simulation sub-steps when the speed is above critical.")]
@@ -52,12 +50,6 @@ namespace RacingHuntZombie {
 				if (wheel.transform.localPosition.z > 0) {
 					wheel.steerAngle = angle;
 				}
-				if (wheel.transform.localPosition.z < 0) {
-					wheel.brakeTorque = handBrake;
-				}
-				if (wheel.transform.localPosition.z < 0) {
-					wheel.motorTorque = Mathf.Lerp (wheel.motorTorque, torque, motorTorqueThreahold);
-				}
 			}
 			// Backward wheels
 			for (int i = 0; i < this.m_BackwardWheels.Length; i++) {
@@ -67,7 +59,7 @@ namespace RacingHuntZombie {
 					wheel.brakeTorque = handBrake;
 				}
 				if (wheel.transform.localPosition.z < 0) {
-					wheel.motorTorque = Mathf.Lerp (wheel.motorTorque, torque, motorTorqueThreahold);
+					wheel.motorTorque = torque;
 				}
 			}
 			// Event

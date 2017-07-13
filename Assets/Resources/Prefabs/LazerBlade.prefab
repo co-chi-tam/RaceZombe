@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4039073306555568}
   - component: {fileID: 33332062793194752}
   - component: {fileID: 23946107666896848}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4296022908471306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: h_hammerS01_skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4199119564262932}
   - component: {fileID: 137127650886066466}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: h_hammerS01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4367044240273314}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: h_hammerS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 4641308560984868}
   - component: {fileID: 33105228939926820}
   - component: {fileID: 23084282023632308}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 135234706013786482}
   - component: {fileID: 205533642760576038}
   - component: {fileID: 114357508499282810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LazerBlade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ MonoBehaviour:
     currentDamage: 20
     currentDurability: 100
     maxDurability: 100
-    actionDelay: 0.1
+    actionDelay: 1.5
     partType: -1
     engineWearValue: 100
   m_Owner: {fileID: 0}
@@ -412,6 +412,12 @@ MonoBehaviour:
   m_AutoInteractive: 1
   m_RepeatAction: 0
   m_StartWithAnimation: 1
+  m_DestroyAfter: 1.5
+  OnEventTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_HitBoxContacts: []
 --- !u!135 &135234706013786482
 SphereCollider:

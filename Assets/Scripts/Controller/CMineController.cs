@@ -45,7 +45,7 @@ namespace RacingHuntZombie {
 		public virtual void ExplosionObject() {
 			this.m_ExplosionObject.WorldExplosion ((contactRigidbody) => {
 				var controller = contactRigidbody.GetComponent<CObjectController>();
-				if (controller != null) {
+				if (controller != null && controller != this) {
 					controller.ApplyDamage (this, this.m_ExplosionObject.GetDamage());
 				}
 				this.m_Countdown = this.m_Countdown < 0f ? 1f : this.m_Countdown; 

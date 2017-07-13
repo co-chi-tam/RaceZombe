@@ -33,8 +33,13 @@ namespace RacingHuntZombie {
 			this.m_Components.Add (this.m_FSMComponent);
 		}
 
-		public override void ChasingTarget(float dt) {
-			base.ChasingTarget (dt);
+		public override void UpdateObject (float dt)
+		{
+			base.UpdateObject (dt);
+			this.ChasingTarget (dt);
+		}
+
+		protected virtual void ChasingTarget(float dt) {
 			if (this.m_TargetController == null)
 				return;
 			this.m_MovableObject.SetDestination (this.m_TargetController.transform.position, this.m_TargetController.GetCollider());

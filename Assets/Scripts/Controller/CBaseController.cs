@@ -36,36 +36,39 @@ namespace RacingHuntZombie {
 			Destroy (this.gameObject);
 		}
 
-		public virtual void InteractiveOrtherObject (GameObject contactObj) {
+		public virtual void InteractiveOrtherObject (GameObject thisContantObj, GameObject contactObj) {
 			
 		}
 
-		public virtual void StayOrtherObject(GameObject contactObj) {
+		public virtual void StayOrtherObject(GameObject thisContantObj, GameObject contactObj) {
 
 		}
 
-		public virtual void ExitOrtherObject(GameObject contactObj) {
+		public virtual void ExitOrtherObject(GameObject thisContantObj, GameObject contactObj) {
 
 		}
 
 		protected virtual void OnCollisionEnter(Collision collision) {
 			for (int i = 0; i < collision.contacts.Length; i++) {
 				var contactObj = collision.contacts [i].otherCollider.gameObject;
-				this.InteractiveOrtherObject (contactObj);
+				var thisContactObj = collision.contacts [i].thisCollider.gameObject;
+				this.InteractiveOrtherObject (thisContactObj, contactObj);
 			}
 		}
 
 		protected virtual void OnCollisionStay(Collision collision) {
 			for (int i = 0; i < collision.contacts.Length; i++) {
 				var contactObj = collision.contacts [i].otherCollider.gameObject;
-				this.StayOrtherObject (contactObj);
+				var thisContactObj = collision.contacts [i].thisCollider.gameObject;
+				this.StayOrtherObject (thisContactObj, contactObj);
 			}
 		}
 
 		protected virtual void OnCollisionExit(Collision collision) {
 			for (int i = 0; i < collision.contacts.Length; i++) {
 				var contactObj = collision.contacts [i].otherCollider.gameObject;
-				this.ExitOrtherObject (contactObj);
+				var thisContactObj = collision.contacts [i].thisCollider.gameObject;
+				this.ExitOrtherObject (thisContactObj, contactObj);
 			}
 		}
 

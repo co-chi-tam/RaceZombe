@@ -103,6 +103,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4713333657699328}
+  - component: {fileID: 65007768449522220}
   m_Layer: 8
   m_Name: BlueBird
   m_TagString: Untagged
@@ -424,6 +425,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65007768449522220
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383379795980748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1, z: 2.5}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!65 &65679203297986412
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -548,12 +561,15 @@ MonoBehaviour:
   m_Collider: {fileID: 65679203297986412}
   m_Animator: {fileID: 95501798817423352}
   m_AudioSource: {fileID: 82666824876845508}
+  m_ExcepLayerMask:
+    serializedVersion: 2
+    m_Bits: 3221225472
   m_TargetController: {fileID: 0}
   m_Data:
     objectName: BlueBird
     objectModelPath: BlueBird
     objectAvatarPath: BlueBird
-    currentResistant: 2
+    maxResistant: 2
     currentDamage: 3
     currentDurability: 100
     maxDurability: 100
@@ -565,7 +581,7 @@ MonoBehaviour:
     - objectName: TopBoxingGloves
       objectModelPath: TopBoxingGloves
       objectAvatarPath: TopBoxingGloves
-      currentResistant: 2
+      maxResistant: 2
       currentDamage: 15
       currentDurability: 100
       maxDurability: 100
@@ -575,7 +591,7 @@ MonoBehaviour:
     - objectName: FrontBlade
       objectModelPath: FrontBlade
       objectAvatarPath: FrontBlade
-      currentResistant: 2
+      maxResistant: 2
       currentDamage: 2
       currentDurability: 150
       maxDurability: 100
@@ -585,7 +601,7 @@ MonoBehaviour:
     - objectName: BackLazerBladeTerminal
       objectModelPath: BackLazerBladeTerminal
       objectAvatarPath: BackLazerBladeTerminal
-      currentResistant: 0
+      maxResistant: 2
       currentDamage: 0
       currentDurability: 150
       maxDurability: 150
@@ -603,7 +619,7 @@ MonoBehaviour:
     m_BackwardWheels:
     - {fileID: 146750334927546030}
     - {fileID: 146910244715129142}
-    motorTorqueThreahold: 0.75
+    motorTorqueThreahold: 1
     criticalSpeed: 12
     stepsBelow: 5
     stepsAbove: 1
@@ -621,7 +637,6 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
-    m_AutoTrigger: 0
     OnDamaged:
       m_PersistentCalls:
         m_Calls: []

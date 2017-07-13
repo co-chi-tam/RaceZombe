@@ -10,7 +10,7 @@ namespace RacingHuntZombie {
 		public string objectName;
 		public string objectModelPath;
 		public string objectAvatarPath;
-		public float currentResistant;
+		public float maxResistant;
 		public float currentDamage;
 		public float currentDurability;
 		public float maxDurability;
@@ -23,7 +23,7 @@ namespace RacingHuntZombie {
 			this.objectName			= string.Empty;
 			this.objectModelPath	= string.Empty;
 			this.objectAvatarPath	= string.Empty;
-			this.currentResistant 	= 2f;
+			this.maxResistant 	= 2f;
 			this.currentDamage 		= 3f;
 			this.currentDurability 	= 100f;
 			this.maxDurability 		= 100f;
@@ -37,7 +37,7 @@ namespace RacingHuntZombie {
 			this.m_DictJSON.Add ("objectName", this.objectName);
 			this.m_DictJSON.Add ("objectModelPath", this.objectModelPath);
 			this.m_DictJSON.Add ("objectAvatarPath", this.objectAvatarPath);
-			this.m_DictJSON.Add ("currentResistant", this.currentResistant);
+			this.m_DictJSON.Add ("currentResistant", this.maxResistant);
 			this.m_DictJSON.Add ("currentDamage", this.currentDamage);
 			this.m_DictJSON.Add ("currentDurability", this.currentDurability);
 			this.m_DictJSON.Add ("maxDurability", this.maxDurability);

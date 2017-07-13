@@ -33,7 +33,7 @@ namespace RacingHuntZombie {
 			}
 			if (this.m_AutoInteractive) {
 				if (this.m_CurrentActionDelay <= 0f) {
-					this.InteractiveOrtherObject (null);
+					this.InteractiveOrtherObject (this.gameObject, null);
 					if (this.m_StartWithAnimation == false) {
 						this.SetAnimator ("Active");
 					}
@@ -44,7 +44,7 @@ namespace RacingHuntZombie {
 			}
 		}
 
-		public override void InteractiveOrtherObject (GameObject contactObj)
+		public override void InteractiveOrtherObject (GameObject thisContantObj, GameObject contactObj)
 		{
 //			base.InteractiveOrtherObject (contactObj);
 			if (this.m_CurrentActionDelay <= 0f) {

@@ -24,7 +24,7 @@ namespace RacingHuntZombie {
 			}
 		}
 
-		public override void InteractiveOrtherObject (GameObject contactObj)
+		public override void InteractiveOrtherObject (GameObject thisContantObj, GameObject contactObj)
 		{
 			if (this.m_CurrentActionDelay > 0f)
 				return;

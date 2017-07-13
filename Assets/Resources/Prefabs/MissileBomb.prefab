@@ -249,12 +249,15 @@ MonoBehaviour:
   m_Collider: {fileID: 135872989598560148}
   m_Animator: {fileID: 95075018200825080}
   m_AudioSource: {fileID: 82467204059242650}
+  m_ExcepLayerMask:
+    serializedVersion: 2
+    m_Bits: 3221225472
   m_TargetController: {fileID: 0}
   m_Data:
     objectName: MissileBomb
     objectModelPath: MissileBomb
     objectAvatarPath: MissileBomb
-    currentResistant: 2
+    maxResistant: 2
     currentDamage: 3
     currentDurability: 100
     maxDurability: 100
@@ -266,7 +269,6 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
-    m_AutoTrigger: 0
     OnDamaged:
       m_PersistentCalls:
         m_Calls: []

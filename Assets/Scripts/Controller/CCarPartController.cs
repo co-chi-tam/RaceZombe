@@ -15,7 +15,7 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected CDamageObject m_DamageObject;
 
 		protected override void Start() {
-			this.m_DamageObject.Init (this.m_Data.currentResistant, this.m_Data.currentDurability);
+			this.m_DamageObject.Init (this.m_Data.maxResistant, this.m_Data.currentDurability);
 			base.Start ();
 		}
 
@@ -32,23 +32,17 @@ namespace RacingHuntZombie {
 			this.m_Components.Add (this.m_DamageObject);
 		}
 
-		public override void InteractiveOrtherObject (GameObject contactObj) {
-			base.InteractiveOrtherObject (contactObj);
-			if (contactObj.layer != LayerMask.NameToLayer ("Ground")) {
-				var controller = contactObj.GetObjectController<CObjectController> ();
-				if (controller == null)
-					return;
-				if (controller.GetActive() == false)
-					return;
-				// Decrease Durability
-				this.ApplyEngineWear (this.m_Data.engineWearValue);
-			}
-		}
-
 		public override void ApplyEngineWear (float wear)
 		{
 			base.ApplyEngineWear (wear);
 			this.m_DamageObject.CalculteDamage (wear);
+		}
+
+		public override void ApplyDamage (CObjectController attacker, float damage)
+		{
+			base.ApplyDamage (attacker, damage);
+			var totalDamage = damage - this.m_DamageObject.maxResistant; 
+			this.m_DamageObject.CalculteDamage (totalDamage);
 		}
 
 		public override float GetDamage () {
@@ -67,6 +61,12 @@ namespace RacingHuntZombie {
 			if (this.m_Owner == null)
 				return 0f;
 			return this.m_Owner.GetVelocityKMH ();
+		}
+
+		public override float GetResistant ()
+		{
+			base.GetResistant ();
+			return this.m_Data.maxResistant;
 		}
 
 		public virtual void SetOwner(CCarController value) {

@@ -607,12 +607,15 @@ MonoBehaviour:
   m_Collider: {fileID: 65085657533950688}
   m_Animator: {fileID: 95783204199665696}
   m_AudioSource: {fileID: 82120000136453250}
+  m_ExcepLayerMask:
+    serializedVersion: 2
+    m_Bits: 3221225472
   m_TargetController: {fileID: 0}
   m_Data:
     objectName: AutoMachineGun
     objectModelPath: AutoMachineGun
     objectAvatarPath: AutoMachineGun
-    currentResistant: 2
+    maxResistant: 2
     currentDamage: 100
     currentDurability: 100
     maxDurability: 100
@@ -624,7 +627,6 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
-    m_AutoTrigger: 0
     OnDamaged:
       m_PersistentCalls:
         m_Calls: []

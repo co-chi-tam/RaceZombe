@@ -36,7 +36,9 @@ namespace RacingHuntZombie {
 #if UNITY_EDITOR
 			var angleInput 	= Input.GetAxis("Horizontal");
 			var torqueInput = Input.GetAxis("Vertical");
-			this.m_CarControl.UpdateDriver (angleInput, torqueInput, angleInput == 0 && torqueInput == 0f);
+			if (angleInput != 0f || torqueInput != 0f) {
+				this.m_CarControl.UpdateDriver (angleInput, torqueInput, angleInput == 0 && torqueInput == 0f);
+			}
 			if (Input.GetKey (KeyCode.L)) {
 				this.UpdateTopCarPart ();
 			}
@@ -47,7 +49,9 @@ namespace RacingHuntZombie {
 			var joytick 	= this.m_Joytick.InputDirectionXY;
 			var angleInput 	= (joytick.x > 0.5 || joytick.x < -0.5) ? joytick.x : 0f;  //Input.GetAxis("Horizontal");
 			var torqueInput = joytick.y; //Input.GetAxis("Vertical");
-			this.m_CarControl.UpdateDriver (angleInput, torqueInput, angleInput == 0 && torqueInput == 0f);
+			if (angleInput != 0f || torqueInput != 0f) {
+				this.m_CarControl.UpdateDriver (angleInput, torqueInput, angleInput == 0 && torqueInput == 0f);
+			}
 #endif
 			if (this.m_AllLoadingComplete) {
 				for (int i = 0; i < this.m_Zombies.Count; i++) {

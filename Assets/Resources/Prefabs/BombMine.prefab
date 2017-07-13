@@ -302,12 +302,15 @@ MonoBehaviour:
   m_Collider: {fileID: 135189832500268022}
   m_Animator: {fileID: 95153307109689396}
   m_AudioSource: {fileID: 82531064454808582}
+  m_ExcepLayerMask:
+    serializedVersion: 2
+    m_Bits: 3221225472
   m_TargetController: {fileID: 0}
   m_Data:
     objectName: BombMine
     objectModelPath: BombMine
     objectAvatarPath: BombMine
-    currentResistant: 2
+    maxResistant: 2
     currentDamage: 50
     currentDurability: 100
     maxDurability: 100
@@ -319,7 +322,6 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
-    m_AutoTrigger: 0
     OnDamaged:
       m_PersistentCalls:
         m_Calls: []
@@ -333,7 +335,7 @@ MonoBehaviour:
     m_Rigidbody: {fileID: 54559581679539852}
     m_TargetLayerMask:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1792
     m_DetectRadius: 1.5
     m_ExplosionForceMass: 15
     m_ExplosionRadius: 15

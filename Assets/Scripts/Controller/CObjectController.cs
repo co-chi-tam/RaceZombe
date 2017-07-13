@@ -11,6 +11,7 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected Animator m_Animator;
 		[SerializeField]	protected AudioSource m_AudioSource;
 		[Header ("Control")]
+		[SerializeField]	protected LayerMask m_ExcepLayerMask;
 		[SerializeField]	protected CObjectController m_TargetController;
 
 		protected List<CComponent> m_Components;
@@ -81,10 +82,11 @@ namespace RacingHuntZombie {
 			base.DestroyObject ();
 		}
 			
-		public override void InteractiveOrtherObject (GameObject contactObj) {
-			base.InteractiveOrtherObject (contactObj);
-			if (contactObj.gameObject.layer != LayerMask.NameToLayer ("Ground")) {
-				var controller = contactObj.gameObject.GetObjectController<CObjectController> ();
+		public override void InteractiveOrtherObject (GameObject thisContantObj, GameObject contactObj) {
+			base.InteractiveOrtherObject (thisContantObj, contactObj);
+			var isExceptionLayer = this.m_ExcepLayerMask.value == (this.m_ExcepLayerMask.value | (1 << contactObj.gameObject.layer));
+			if (isExceptionLayer == false) {
+				var controller = contactObj.GetObjectController<CObjectController> ();
 				if (controller == null) {
 					return;
 				}
@@ -124,6 +126,10 @@ namespace RacingHuntZombie {
 		}
 
 		public virtual float GetVelocityKMH() {
+			return 0f;
+		}
+
+		public virtual float GetResistant() {
 			return 0f;
 		}
 

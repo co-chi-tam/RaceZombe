@@ -725,12 +725,15 @@ MonoBehaviour:
   m_Collider: {fileID: 136617738594593446}
   m_Animator: {fileID: 95651344533833342}
   m_AudioSource: {fileID: 82943737644440214}
+  m_ExcepLayerMask:
+    serializedVersion: 2
+    m_Bits: 3221225472
   m_TargetController: {fileID: 0}
   m_Data:
     objectName: ExplosionZombie
     objectModelPath: ExplosionZombie
     objectAvatarPath: ExplosionZombie
-    currentResistant: 10
+    maxResistant: 2
     currentDamage: 20
     currentDurability: 100
     maxDurability: 100
@@ -811,7 +814,6 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
-    m_AutoTrigger: 0
     OnDamaged:
       m_PersistentCalls:
         m_Calls: []
@@ -823,7 +825,7 @@ MonoBehaviour:
     m_Rigidbody: {fileID: 54035483266545742}
     m_TargetLayerMask:
       serializedVersion: 2
-      m_Bits: 256
+      m_Bits: 1792
     m_DetectRadius: 3
     m_ExplosionForceMass: 15
     m_ExplosionRadius: 3

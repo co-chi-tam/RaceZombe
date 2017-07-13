@@ -16,7 +16,7 @@ namespace RacingHuntZombie {
 
 		protected override void Start() {
 			this.m_WheelDriver.Init (this.m_Data.maxSpeed);
-			this.m_DamageObject.Init (this.m_Data.currentResistant, this.m_Data.currentDurability);
+			this.m_DamageObject.Init (this.m_Data.maxResistant, this.m_Data.currentDurability);
 			this.m_CarParts.Init (m_Data.carParts);
 			base.Start ();
 		}
@@ -43,12 +43,42 @@ namespace RacingHuntZombie {
 
 		public virtual void UpdateCarPart(CCarPartsComponent.ECarPart part, GameObject contact) {
 			var carPartCtrl = this.m_CarParts.GetCarPart (part);
-			carPartCtrl.InteractiveOrtherObject (contact);
+			carPartCtrl.InteractiveOrtherObject (this.gameObject, contact);
 			carPartCtrl.SetAnimator ("Active");
+		}
+
+		public override void InteractiveOrtherObject (GameObject thisContantObj, GameObject contactObj) {
+//			base.InteractiveOrtherObject (thisContantObj, contactObj);
+			var isExceptionLayer = this.m_ExcepLayerMask.value == (this.m_ExcepLayerMask.value | (1 << contactObj.gameObject.layer));
+			if (isExceptionLayer == false) {
+				var contactCtrl = contactObj.GetObjectController<CObjectController> ();
+				if (contactCtrl == null) {
+					return;
+				}
+				if (contactCtrl.GetActive() == false) {
+					return;
+				}
+				var thisContactCtrl = thisContantObj.GetObjectController<CObjectController> ();
+				if (thisContactCtrl != null) {
+					thisContactCtrl.ApplyDamage (contactCtrl, contactCtrl.GetDamage () - thisContactCtrl.GetResistant());
+				} else {
+					this.ApplyDamage (contactCtrl, contactCtrl.GetDamage () - this.GetResistant());
+				}
+			}
 		}
 
 		public override void ApplyDamage (CObjectController attacker, float value) {
 			base.ApplyDamage (attacker, value);
+			this.m_DamageObject.CalculteDamage (value - this.m_DamageObject.maxResistant);
+		}
+
+		protected override void OnTriggerStay (Collider collider)
+		{
+			base.OnTriggerStay (collider);
+			var isGround = collider.gameObject.layer == LayerMask.NameToLayer ("Ground");
+			if (isGround == true) {
+				this.ApplyDamage (null, Time.deltaTime);
+			}
 		}
 
 		public override float GetDamage () {
@@ -65,6 +95,12 @@ namespace RacingHuntZombie {
 
 		public override CObjectData GetData() {
 			return this.m_Data as CCarData;
+		}
+
+		public override float GetResistant ()
+		{
+			base.GetResistant ();
+			return this.m_Data.maxResistant;
 		}
 
 		public virtual float GetGas() {

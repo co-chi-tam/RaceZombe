@@ -366,12 +366,15 @@ MonoBehaviour:
   m_Collider: {fileID: 65858406499486874}
   m_Animator: {fileID: 95033459641637018}
   m_AudioSource: {fileID: 82853402807198966}
+  m_ExcepLayerMask:
+    serializedVersion: 2
+    m_Bits: 3221225472
   m_TargetController: {fileID: 0}
   m_Data:
     objectName: FrontDualSawBlade
     objectModelPath: FrontDualSawBlade
     objectAvatarPath: FrontDualSawBlade
-    currentResistant: 2
+    maxResistant: 2
     currentDamage: 15
     currentDurability: 100
     maxDurability: 100
@@ -383,7 +386,6 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
-    m_AutoTrigger: 0
     OnDamaged:
       m_PersistentCalls:
         m_Calls: []

@@ -11,7 +11,6 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected float m_MaxResistant = 20f;
 		[SerializeField]	protected float m_CurrentDamage = 0f;
 		[SerializeField]	protected float m_MaxDamage = 100f;
-		[SerializeField]	protected bool m_AutoTrigger;
 		[Header ("Event")]
 		public UnityEvent OnDamaged;
 
@@ -37,11 +36,9 @@ namespace RacingHuntZombie {
 		}
 
 		public virtual void CalculteDamage(float damage) {
-			var totalDamage = damage <= 0f ? 0f : damage;
+			var totalDamage = damage <= 0.1f ? 0.1f : damage;
 			this.m_CurrentDamage += totalDamage;
-			if (this.m_AutoTrigger == true) {
-				this.EffectDamage ();
-			}
+			this.EffectDamage ();
 		}
 
 		public virtual void EffectDamage() {

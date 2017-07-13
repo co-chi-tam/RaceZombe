@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 4475980848433966}
   - component: {fileID: 33514855893140124}
   - component: {fileID: 23128876923413298}
-  - component: {fileID: 65643763904874144}
   m_Layer: 10
   m_Name: Part (1)
   m_TagString: Untagged
@@ -198,18 +197,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.653939, z: 0.205616}
   m_Center: {x: 0, y: -0.041219354, z: 0.16381383}
---- !u!65 &65643763904874144
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1956588439044696}
-  m_Material: {fileID: 13400000, guid: ef872da6ce05dbe46a01768440786086, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1, y: 1.1, z: 1.1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65668998174425248
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -334,12 +321,15 @@ MonoBehaviour:
   m_Collider: {fileID: 65397477667691572}
   m_Animator: {fileID: 95080389709755916}
   m_AudioSource: {fileID: 82425959814269700}
+  m_ExcepLayerMask:
+    serializedVersion: 2
+    m_Bits: 3221225472
   m_TargetController: {fileID: 0}
   m_Data:
     objectName: FrontBlade
     objectModelPath: FrontBlade
     objectAvatarPath: FrontBlade
-    currentResistant: 2
+    maxResistant: 2
     currentDamage: 2
     currentDurability: 100
     maxDurability: 100
@@ -351,7 +341,6 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
-    m_AutoTrigger: 0
     OnDamaged:
       m_PersistentCalls:
         m_Calls: []

@@ -19,7 +19,7 @@ namespace RacingHuntZombie {
 		protected override void Start() {
 			this.m_BreakableObject.Init (false);
 			this.m_MovableObject.Init (this.m_Data.maxSpeed, this.m_Transform);
-			this.m_DamageObject.Init (this.m_Data.currentResistant, this.m_Data.currentDurability);
+			this.m_DamageObject.Init (this.m_Data.maxResistant, this.m_Data.currentDurability);
 			this.m_FSMComponent.Init (this);
 			base.Start ();
 		}
@@ -43,10 +43,11 @@ namespace RacingHuntZombie {
 			}
 		}
 
-		public override void InteractiveOrtherObject (GameObject contactObj)
+		public override void InteractiveOrtherObject (GameObject thisContantObj, GameObject contactObj)
 		{
 //			base.InteractiveOrtherObject (contactObj);
-			if (contactObj.gameObject.layer != LayerMask.NameToLayer ("Ground")) {
+			var isExceptionLayer = this.m_ExcepLayerMask.value == (this.m_ExcepLayerMask.value | (1 << contactObj.gameObject.layer));
+			if (isExceptionLayer == false) {
 				var controller = contactObj.gameObject.GetObjectController<CObjectController> ();
 				if (controller == null) {
 					return;
@@ -55,7 +56,8 @@ namespace RacingHuntZombie {
 					return;
 				}
 				if (controller.GetVelocityKMH () > this.m_DamageObject.maxResistant) {
-					this.ApplyDamage (controller, controller.GetDamage ());
+					var totalDamage = controller.GetVelocityKMH () - this.m_DamageObject.maxResistant + controller.GetDamage ();
+					this.ApplyDamage (controller, totalDamage);
 				}
 			}
 		}
@@ -107,6 +109,12 @@ namespace RacingHuntZombie {
 
 		public override CObjectData GetData() {
 			return this.m_Data as CMovableData;
+		}
+
+		public override float GetResistant ()
+		{
+			base.GetResistant ();
+			return this.m_Data.maxResistant;
 		}
 		
 	}

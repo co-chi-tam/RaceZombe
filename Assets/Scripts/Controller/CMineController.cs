@@ -57,7 +57,8 @@ namespace RacingHuntZombie {
 		{
 //			base.OnTriggerEnter (collider);
 			var objController = collider.gameObject.GetObjectController<CObjectController> ();
-			if (objController != null && collider.gameObject.layer != LayerMask.NameToLayer("CarPart")) {
+			var isExceptionLayer = this.m_ExcepLayerMask.value == (this.m_ExcepLayerMask.value | (1 << collider.gameObject.layer));
+			if (objController != null && isExceptionLayer == false) {
 				if (this.m_HitBoxContacts.Contains (objController) == false) {
 					this.m_HitBoxContacts.Add (objController);
 				}

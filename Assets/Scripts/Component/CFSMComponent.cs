@@ -8,10 +8,16 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CFSMComponent : CComponent {
 
+		#region Properties
+
 		[SerializeField]	protected TextAsset m_FSMJsonText;
 		[SerializeField]	protected string m_FSMStateName;
 
 		protected FSMManager m_FSMManager;
+
+		#endregion
+
+		#region Implementation Component
 
 		public new void Init (ISimpleContext context)
 		{
@@ -33,6 +39,8 @@ namespace RacingHuntZombie {
 			this.m_FSMManager.UpdateState (dt);
 			this.m_FSMStateName = this.m_FSMManager.currentStateName;
 		}
+
+		#endregion
 
 	}
 }

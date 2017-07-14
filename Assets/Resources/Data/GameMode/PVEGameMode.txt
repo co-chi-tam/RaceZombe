@@ -1,4 +1,8 @@
 ﻿{
-	"gameModeName": "PVE",
-	"gameModeFSM": ""
+	"gameModeName": "PVE Mode",
+	"gameModeFSM": "FSMPVEGameMode",
+	"gameModeModel": "PVEMap",
+	"gameModeDescription": "",
+	"killCount": 100,
+	"zombiePrefabs": ["Zombie", "ExplosionZombie"],
 }

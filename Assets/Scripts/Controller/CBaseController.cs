@@ -6,9 +6,15 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CBaseController : MonoBehaviour, IActiveObject {
 
+		#region Properties
+
 		[SerializeField]	protected bool m_Active = false;
 
 		protected Transform m_Transform;
+
+		#endregion
+
+		#region Implementation MonoBehaviour
 
 		protected virtual void Awake() {
 			this.m_Transform = transform;
@@ -30,22 +36,6 @@ namespace RacingHuntZombie {
 
 		protected virtual void OnDestroy() {
 			
-		}
-
-		public virtual void DestroyObject() {
-			Destroy (this.gameObject);
-		}
-
-		public virtual void InteractiveOrtherObject (GameObject thisContantObj, GameObject contactObj) {
-			
-		}
-
-		public virtual void StayOrtherObject(GameObject thisContantObj, GameObject contactObj) {
-
-		}
-
-		public virtual void ExitOrtherObject(GameObject thisContantObj, GameObject contactObj) {
-
 		}
 
 		protected virtual void OnCollisionEnter(Collision collision) {
@@ -84,6 +74,26 @@ namespace RacingHuntZombie {
 
 		}
 
+		#endregion
+
+		#region Main methods
+
+		public virtual void DestroyObject() {
+			Destroy (this.gameObject);
+		}
+
+		public virtual void InteractiveOrtherObject (GameObject thisContantObj, GameObject contactObj) {
+			
+		}
+
+		public virtual void StayOrtherObject(GameObject thisContantObj, GameObject contactObj) {
+
+		}
+
+		public virtual void ExitOrtherObject(GameObject thisContantObj, GameObject contactObj) {
+
+		}
+
 		public virtual void SetActive(bool value) {
 			this.m_Active = value;
 		}
@@ -91,6 +101,8 @@ namespace RacingHuntZombie {
 		public virtual bool GetActive() {
 			return this.m_Active;
 		}
+
+		#endregion
 
 	}
 }

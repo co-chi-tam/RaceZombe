@@ -6,14 +6,21 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CCarController: CObjectController {
 
+		#region Properties
+
 		[Header ("Data")]
 		[SerializeField]	private CCarData m_Data;
+		[SerializeField]	protected int m_KillCount = 0;
 
 		[Header ("Components")]
 		[SerializeField]	protected CWheelDriver m_WheelDriver;
 		[SerializeField]	protected CDamageObject m_DamageObject;
 		[SerializeField]	protected CCarPartsComponent m_CarParts;
 		[SerializeField]	protected CFSMComponent m_FSMComponent;
+
+		#endregion
+
+		#region Implementation MonoBehaviour
 
 		protected override void Start() {
 			this.m_WheelDriver.Init (this.m_Data.maxSpeed);
@@ -22,6 +29,19 @@ namespace RacingHuntZombie {
 			this.m_FSMComponent.Init (this);
 			base.Start ();
 		}
+
+		protected override void OnTriggerStay (Collider collider)
+		{
+			base.OnTriggerStay (collider);
+			var isGround = collider.gameObject.layer == LayerMask.NameToLayer ("Ground");
+			if (isGround == true) {
+				this.ApplyDamage (null, Time.deltaTime);
+			}
+		}
+
+		#endregion
+
+		#region Main methods
 
 		protected override void RegisterComponent ()
 		{
@@ -75,18 +95,17 @@ namespace RacingHuntZombie {
 			this.m_DamageObject.CalculteDamage (value - this.m_DamageObject.maxResistant);
 		}
 
-		protected override void OnTriggerStay (Collider collider)
-		{
-			base.OnTriggerStay (collider);
-			var isGround = collider.gameObject.layer == LayerMask.NameToLayer ("Ground");
-			if (isGround == true) {
-				this.ApplyDamage (null, Time.deltaTime);
-			}
-		}
+		#endregion
+
+		#region FSM 
 
 		public override bool HaveGas () {
 			return this.GetGas () > 0f;
 		}
+
+		#endregion
+
+		#region Getter && Setter
 
 		public override float GetDamage () {
 			return this.m_Data.currentDamage;
@@ -117,6 +136,31 @@ namespace RacingHuntZombie {
 		public override void SetGas(float value) {
 			this.m_Data.currentGas = value;
 		}
+
+		public override float GetGasPercent() {
+			return this.m_Data.currentGas / this.m_Data.maxGas * 100f;
+		}
+
+		public override float GetDurabilityPercent () {
+			return 100f - (this.m_DamageObject.currentDamage / this.m_DamageObject.maxDamage * 100f);
+		}
+
+		public override float GetCarPartPercent(CCarPartsComponent.ECarPart value) {
+			var carPartCtrl = this.m_CarParts.GetCarPart (value);
+			return carPartCtrl.GetDurabilityPercent();
+		}
+
+		public override int GetKillCount ()
+		{
+			return this.m_KillCount;
+		}
+
+		public override void SetKillCount (int value)
+		{
+			this.m_KillCount = value;
+		}
+
+		#endregion
 
 	}
 }

@@ -1,0 +1,30 @@
+﻿{
+  "fsm": [
+    {
+      "condition_name": "IsRoot",
+      "state_name": "GameStartState",
+      "states": [
+        {
+          "condition_name": "IsLoadingCompleted",
+          "state_name": "GameUpdateState",
+          "states": [
+            {
+              "condition_name": "!IsPlayerDeath&&IsKillComplete",
+              "state_name": "GameWinState",
+              "states": []
+            },{
+              "condition_name": "IsPlayerDeath",
+              "state_name": "GameCloseState",
+              "states": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "condition_name": "IsAnyState",
+      "state_name": "AnyState",
+      "states": []
+    }
+  ]
+}

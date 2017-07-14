@@ -588,7 +588,7 @@ MonoBehaviour:
       maxDurability: 100
       actionDelay: 0.3
       partType: 0
-      engineWearValue: 0.1
+      engineWearValue: 1
     - objectName: FrontBlade
       objectModelPath: FrontBlade
       objectAvatarPath: FrontBlade
@@ -599,16 +599,17 @@ MonoBehaviour:
       actionDelay: 0.3
       partType: 1
       engineWearValue: 0.1
-    - objectName: BackLazerBladeTerminal
-      objectModelPath: BackLazerBladeTerminal
-      objectAvatarPath: BackLazerBladeTerminal
+    - objectName: BackGravityMachineTerminal
+      objectModelPath: BackGravityMachineTerminal
+      objectAvatarPath: BackGravityMachineTerminal
       maxResistant: 2
       currentDamage: 0
       currentDurability: 150
       maxDurability: 150
       actionDelay: 5
       partType: 2
-      engineWearValue: 0.1
+      engineWearValue: 10
+  m_KillCount: 0
   m_WheelDriver:
     m_Rigidbody: {fileID: 54661427693029404}
     maxAngle: 45

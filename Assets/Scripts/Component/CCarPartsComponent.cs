@@ -7,6 +7,8 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CCarPartsComponent: CComponent {
 
+		#region Properties
+
 		[Header("Content parts")]
 		[SerializeField]	protected CCarController m_Owner;
 		[SerializeField]	protected GameObject m_TopPart;
@@ -22,6 +24,10 @@ namespace RacingHuntZombie {
 
 		protected Dictionary<ECarPart, CCarPartController> m_CarPartMap;
 
+		#endregion
+
+		#region Implementation Component
+
 		public new void Init (params CCarPartData[] parts)
 		{
 			base.Init ();
@@ -32,6 +38,10 @@ namespace RacingHuntZombie {
 				this.SpawnCarParts (parts[i]);
 			}
 		}
+
+		#endregion
+
+		#region Main methods
 
 		private void SpawnCarParts(CCarPartData part) {
 			if (part.partType == ECarPart.NONE)
@@ -63,6 +73,8 @@ namespace RacingHuntZombie {
 				return null;
 			return this.m_CarPartMap [part];
 		}
+
+		#endregion
 
 	}
 }

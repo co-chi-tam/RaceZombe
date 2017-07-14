@@ -1,0 +1,12 @@
+﻿{
+	"objectName":"GravityMachine",
+	"objectModelPath":"GravityMachine",
+	"objectAvatarPath":"GravityMachine",
+	"currentResistant":2,
+	"currentDamage":5,
+	"currentDurability":100,
+	"maxDurability":100,
+	"actionDelay":1,
+	"partType":-1,
+	"engineWearValue":2
+}

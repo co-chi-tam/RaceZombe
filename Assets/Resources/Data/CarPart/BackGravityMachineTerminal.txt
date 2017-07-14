@@ -1,0 +1,12 @@
+﻿{
+  "objectName": "BackGravityMachineTerminal",
+  "objectModelPath": "BackGravityMachineTerminal",
+  "objectAvatarPath": "BackGravityMachineTerminal",
+  "currentResistant": 0,
+  "currentDamage": 0,
+  "currentDurability": 5,
+  "maxDurability": 5,
+  "actionDelay": 5,
+  "partType": 2,
+  "engineWearValue": 1
+}

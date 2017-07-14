@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class CBaseBehavious : MonoBehaviour {
 
+	#region Properties
+
 	protected Transform m_Transform;
+
+	#endregion 
+
+	#region Implementation MonoBehaviour
 
 	protected virtual void OnEnable() {
 	
@@ -22,8 +28,17 @@ public class CBaseBehavious : MonoBehaviour {
 		
 	}
 
+	protected virtual void FixedUpdate() {
+		this.FixedUpdateBaseTime (Time.fixedDeltaTime);
+	}
+
+	protected virtual void FixedUpdateBaseTime (float dt)
+	{
+
+	}
+
 	protected virtual void Update() {
-		UpdateBaseTime (Time.deltaTime);
+		this.UpdateBaseTime (Time.deltaTime);
 	}
 
 	protected virtual void UpdateBaseTime (float dt)
@@ -31,10 +46,15 @@ public class CBaseBehavious : MonoBehaviour {
 		
 	}
 
-
 	protected virtual void LateUpdate() {
-	
+		this.LateUpdateBaseTime (Time.deltaTime);
 	}
-	
+
+	protected virtual void LateUpdateBaseTime (float dt) {
+
+	}
+
+	#endregion
+
 }
 

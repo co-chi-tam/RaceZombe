@@ -1,14 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Data\Zombie\ExplosionZombie.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Manager\CGameManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Controller\CZombieExplosionController.cs" Line="25" Column="5" />
-      <File FileName="Assets\Resources\Data\Zombie\ExplosionZombie.txt" Line="11" Column="16" />
-      <File FileName="Assets\Resources\Data\Zombie\NormalZombie.txt" Line="12" Column="2" />
+      <File FileName="Assets\Scripts\Manager\CGameManager.cs" Line="70" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <RunToCursorBreakpoint file="E:\Test\Gihub\RaceZombe\trunk\Assets\Resources\Data\GameMode\PVEGameMode.txt" line="8" column="25" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

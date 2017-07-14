@@ -6,6 +6,8 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CObjectController : CBaseController, ISimpleContext {
 
+		#region Properties
+
 		[Header ("Object")]
 		[SerializeField]	protected Collider m_Collider;
 		[SerializeField]	protected Animator m_Animator;
@@ -16,6 +18,10 @@ namespace RacingHuntZombie {
 
 		protected List<CComponent> m_Components;
 		protected CTimerComponent m_TimerComponent;
+
+		#endregion
+
+		#region Implementation MonoBehaviour
 
 		protected override void Awake() {
 			base.Awake ();
@@ -50,6 +56,10 @@ namespace RacingHuntZombie {
 			}
 		}
 
+		#endregion
+
+		#region Implementation Controller
+
 		protected virtual void RegisterComponent() {
 			this.m_Components.Add (this.m_TimerComponent);
 		}
@@ -60,6 +70,10 @@ namespace RacingHuntZombie {
 				this.m_Components [i].UpdateComponent (dt);
 			}
 		}
+
+		#endregion
+
+		#region Main methods
 
 		public virtual T GetCustomComponent<T>() where T : CComponent {
 			for (int i = 0; i < this.m_Components.Count; i++) {
@@ -101,6 +115,10 @@ namespace RacingHuntZombie {
 			
 		}
 
+		#endregion
+
+		#region FSM
+
 		public virtual bool HaveGas() {
 			return false;
 		}
@@ -112,6 +130,10 @@ namespace RacingHuntZombie {
 		public virtual bool IsDeath() {
 			return false;
 		}
+
+		#endregion
+
+		#region Getter && Setter
 
 		public virtual void SetTimer(float time, Action callback) {
 			this.m_TimerComponent.SetTimer (time, callback);
@@ -153,6 +175,26 @@ namespace RacingHuntZombie {
 			return 0f;
 		}
 
+		public virtual float GetGasPercent() {
+			return 100f;
+		}
+
+		public virtual float GetDurabilityPercent() {
+			return 100f;
+		}
+
+		public virtual float GetCarPartPercent(CCarPartsComponent.ECarPart value) {
+			return 100f;
+		}
+
+		public virtual void SetKillCount(int value) {
+
+		}
+
+		public virtual int GetKillCount() {
+			return 0;
+		}
+
 		public virtual Collider GetCollider() {
 			return this.m_Collider;
 		}
@@ -176,6 +218,8 @@ namespace RacingHuntZombie {
 				return;
 			this.m_AudioSource.Play ();
 		}
+
+		#endregion
 		
 	}
 }

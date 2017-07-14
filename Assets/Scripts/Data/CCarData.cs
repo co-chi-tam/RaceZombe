@@ -8,10 +8,16 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CCarData: CMovableData {
 
+		#region Properties
+
 		public float currentGas;
 		public float maxGas;
 		public float engineWear;
 		public CCarPartData[] carParts;
+
+		#endregion
+
+		#region Contructor
 
 		public CCarData ()
 		{
@@ -19,6 +25,10 @@ namespace RacingHuntZombie {
 			this.maxGas			= 1000f;
 			this.engineWear		= 1f;
 		}
+
+		#endregion
+
+		#region Main methods
 
 		public override string ToJSON ()
 		{
@@ -38,6 +48,8 @@ namespace RacingHuntZombie {
 			json = json.Replace ("]\"", "]");
 			return json;
 		}
+
+		#endregion
 
 	}
 }

@@ -8,6 +8,8 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CExplosionObject : CRigidbodyObject {
 
+		#region Properties
+
 		[Header("Info")]
 		[SerializeField]	protected LayerMask m_TargetLayerMask;
 		[SerializeField] 	protected float m_DetectRadius = 3f;
@@ -21,12 +23,20 @@ namespace RacingHuntZombie {
 		protected Transform m_Transform;
 		protected float m_ExplosionDamage = 10f;
 
+		#endregion
+
+		#region Implementation Component
+
 		public new void Init (Transform transform, float damage)
 		{
 			base.Init ();
 			this.m_Transform = transform;
 			this.m_ExplosionDamage = damage;
 		}
+
+		#endregion
+
+		#region Main methods
 
 		public virtual void WorldExplosion(Func<Rigidbody, bool> contact = null) {
 			var contacts = Physics.OverlapSphere (this.m_Transform.position, this.m_DetectRadius, this.m_TargetLayerMask);
@@ -60,7 +70,7 @@ namespace RacingHuntZombie {
 
 		protected virtual void ExplosionObject(Rigidbody contactRigidbody) {
 			contactRigidbody.AddExplosionForce (
-				contactRigidbody.mass + this.m_ExplosionForceMass,   // explosionForce
+				contactRigidbody.mass * 2 + this.m_ExplosionForceMass,   // explosionForce
 				this.m_Transform.position, // position
 				this.m_ExplosionRadius, // radius
 				this.m_ExplosionUpward, // upwardForce
@@ -74,6 +84,8 @@ namespace RacingHuntZombie {
 		public virtual float GetRadius() {
 			return this.m_DetectRadius;
 		}
+
+		#endregion
 		
 	}
 }

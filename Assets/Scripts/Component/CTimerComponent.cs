@@ -6,13 +6,32 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CTimerComponent : CComponent {
 
+		#region Properties
+
 		protected List<CTimerObject> m_TimerObjects;
+
+		#endregion
+
+		#region Internal class
+
+		public class CTimerObject {
+			public float callbackTime;
+			public Action eventCallback;
+		}
+
+		#endregion
+
+		#region Implementation Component
 
 		public override void Init ()
 		{
 			base.Init ();
 			this.m_TimerObjects = new List<CTimerObject> ();
 		}
+
+		#endregion
+
+		#region Main methods
 
 		public override void UpdateComponent (float dt)
 		{
@@ -38,10 +57,7 @@ namespace RacingHuntZombie {
 			this.m_TimerObjects.Add (timerObj);
 		}
 
-	}
+		#endregion
 
-	public class CTimerObject {
-		public float callbackTime;
-		public Action eventCallback;
 	}
 }

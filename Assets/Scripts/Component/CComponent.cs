@@ -5,6 +5,8 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CComponent : IComponent {
 
+		#region Implementation IComponent
+
 		public virtual void Init() {
 
 		}
@@ -20,6 +22,8 @@ namespace RacingHuntZombie {
 		public virtual void EndComponent() {
 			
 		}
-		
+
+		#endregion
+
 	}
 }

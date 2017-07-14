@@ -7,6 +7,8 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CObjectData {
 
+		#region Properties
+
 		public string objectName;
 		public string objectModelPath;
 		public string objectAvatarPath;
@@ -17,6 +19,10 @@ namespace RacingHuntZombie {
 		public float actionDelay;
 
 		protected Dictionary<string, object> m_DictJSON;
+
+		#endregion
+
+		#region Contructor
 
 		public CObjectData ()
 		{
@@ -32,6 +38,10 @@ namespace RacingHuntZombie {
 			this.m_DictJSON = new Dictionary<string, object> ();
 		}
 
+		#endregion
+
+		#region Main methods
+
 		public virtual string ToJSON ()
 		{
 			this.m_DictJSON.Add ("objectName", this.objectName);
@@ -45,6 +55,8 @@ namespace RacingHuntZombie {
 			var json = MiniJSON.Json.Serialize (this.m_DictJSON);
 			return json;
 		}
+
+		#endregion
 		
 	}
 }

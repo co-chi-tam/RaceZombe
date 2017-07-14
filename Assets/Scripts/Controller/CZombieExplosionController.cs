@@ -6,12 +6,22 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CZombieExplosionController : CZombieController {
 
+		#region Properties
+
 		[SerializeField]	protected CExplosionObject m_ExplosionObject;
+
+		#endregion
+
+		#region Implementation MonoBehaviour
 
 		protected override void Start() {
 			this.m_ExplosionObject.Init (this.m_Transform, this.m_Data.currentDamage);
 			base.Start ();
 		}
+
+		#endregion
+
+		#region Implementation Controller
 
 		protected override void RegisterComponent ()
 		{
@@ -33,6 +43,8 @@ namespace RacingHuntZombie {
 				this.ApplyDamage (this, this.m_Data.currentDurability);
 			}
 		}
+
+		#endregion
 		
 	}
 }

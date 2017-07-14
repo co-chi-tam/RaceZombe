@@ -267,7 +267,7 @@ MonoBehaviour:
     currentDamage: 0
     currentDurability: 100
     maxDurability: 100
-    actionDelay: 0.1
+    actionDelay: 0
     partType: -1
     engineWearValue: 100
   m_Owner: {fileID: 0}
@@ -283,6 +283,12 @@ MonoBehaviour:
   m_AutoInteractive: 0
   m_RepeatAction: 0
   m_StartWithAnimation: 0
+  m_DestroyAfter: 1
+  m_HitBoxContacts: []
+  m_CurrentEvent: 101
+  m_FloatValue: 500
+  m_IntValue: 0
+  m_StringValue: 
   OnEventTriggerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -299,11 +305,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  m_HitBoxContacts: []
-  m_CurrentEvent: 101
-  m_FloatValue: 100
-  m_IntValue: 0
-  m_StringValue: 
+  OnEventStart:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!135 &135377317030698594
 SphereCollider:
   m_ObjectHideFlags: 1

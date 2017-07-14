@@ -8,15 +8,25 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CNavigateMovableObject: CMovableObject {
 
+		#region Properties
+
 		[SerializeField]	protected NavMeshAgent m_NavMeshAgent;
 
 		protected NavMeshPath m_NavMeshPath;
+
+		#endregion
+
+		#region Implementation Component
 
 		public new void Init(float speed, Transform mTransform) {
 			base.Init (speed, mTransform);
 			this.m_NavMeshAgent.speed = speed;
 			this.m_NavMeshPath = new NavMeshPath ();
 		}
+
+		#endregion
+
+		#region Main methods
 
 		public override void Move (float dt) {
 //			base.Move (dt);
@@ -71,6 +81,8 @@ namespace RacingHuntZombie {
 			path = this.m_NavMeshPath.corners;
 			return result;
 		}
+
+		#endregion
 		
 	}
 }

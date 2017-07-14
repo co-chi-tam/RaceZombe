@@ -342,9 +342,9 @@ MonoBehaviour:
     m_TargetLayerMask:
       serializedVersion: 2
       m_Bits: 1792
-    m_DetectRadius: 1.5
+    m_DetectRadius: 3
     m_ExplosionForceMass: 15
-    m_ExplosionRadius: 15
+    m_ExplosionRadius: 3
     m_ExplosionUpward: 5
     OnExplosion:
       m_PersistentCalls:

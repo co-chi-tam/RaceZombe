@@ -8,6 +8,8 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CSteeringMovableObject : CMovableObject {
 
+		#region Properties
+
 		[SerializeField]	protected LayerMask m_Obstacles;
 
 		[SerializeField]	protected float[] m_AngleCheckings = new float[] { 0, -15, 15, -45, 45, -90, 90 }; 
@@ -19,12 +21,20 @@ namespace RacingHuntZombie {
 		protected Vector3 m_Direction;
 		protected float radiusBase = 0f;
 
+		#endregion
+
+		#region Implementation Component
+
 		public new void Init (float speed, Transform mTransform)
 		{
 			base.Init(speed, mTransform);
 			this.m_Angle = 0f;
 			this.m_SpeedThreshold = 1f;
 		}
+
+		#endregion
+
+		#region Main methods
 
 		public override void Move (float dt) {
 			if (this.IsNearTarget() == false) {
@@ -75,6 +85,8 @@ namespace RacingHuntZombie {
 		protected virtual void Reset() {
 			m_SpeedThreshold = 1f;
 		}
+
+		#endregion
 
 	}
 }

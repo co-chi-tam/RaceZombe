@@ -8,6 +8,8 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CDamageObject : CComponent {
 
+		#region Properties
+
 		[SerializeField]	protected float m_MaxResistant = 20f;
 		[SerializeField]	protected float m_CurrentDamage = 0f;
 		[SerializeField]	protected float m_MaxDamage = 100f;
@@ -29,11 +31,19 @@ namespace RacingHuntZombie {
 			set { this.m_MaxDamage = value; }
 		}
 
+		#endregion
+
+		#region Implementation Component
+
 		public new void Init(float resistant, float maxDamage) {
 			base.Init ();
 			this.m_MaxResistant = resistant;
 			this.m_MaxDamage = maxDamage;
 		}
+
+		#endregion
+
+		#region Main methods
 
 		public virtual void CalculteDamage(float damage) {
 			var totalDamage = damage <= 0.1f ? 0.1f : damage;
@@ -50,6 +60,8 @@ namespace RacingHuntZombie {
 		public virtual bool IsOutOfDamage() {
 			return this.m_CurrentDamage >= this.m_MaxDamage;
 		}
+
+		#endregion
 
 	}
 }

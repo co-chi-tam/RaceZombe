@@ -6,6 +6,8 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CCarPartController : CObjectController {
 
+		#region Properties
+
 		[Header("Data")]
 		[SerializeField]	protected CCarPartData m_Data;
 		[Header ("Owner")]
@@ -13,6 +15,10 @@ namespace RacingHuntZombie {
 
 		[Header ("Component")]
 		[SerializeField]	protected CDamageObject m_DamageObject;
+
+		#endregion
+
+		#region Implementation MonoBehaviour
 
 		protected override void Start() {
 			this.m_DamageObject.Init (this.m_Data.maxResistant, this.m_Data.currentDurability);
@@ -26,6 +32,10 @@ namespace RacingHuntZombie {
 //				this.DestroyObject ();
 //			}
 		}
+
+		#endregion
+
+		#region Implementation Controller
 
 		protected override void RegisterComponent () {
 			base.RegisterComponent ();
@@ -45,6 +55,10 @@ namespace RacingHuntZombie {
 			this.m_DamageObject.CalculteDamage (totalDamage);
 		}
 
+		#endregion
+
+		#region Getter && Setter
+
 		public override float GetDamage () {
 			return this.m_Data.currentDamage;
 		}
@@ -55,6 +69,10 @@ namespace RacingHuntZombie {
 
 		public override CObjectData GetData() {
 			return this.m_Data as CCarPartData;
+		}
+
+		public override float GetDurabilityPercent () {
+			return 100f - (this.m_DamageObject.currentDamage / this.m_DamageObject.maxDamage * 100f);
 		}
 
 		public override float GetVelocityKMH () {
@@ -76,6 +94,8 @@ namespace RacingHuntZombie {
 		public virtual CCarController GetOwner() {
 			return this.m_Owner;
 		}
+
+		#endregion
 
 	}
 }

@@ -6,10 +6,16 @@ using UnityEngine;
 namespace RacingHuntZombie {
 	public class CMineController : CInteractiveCarPartController {
 
+		#region Properties
+
 		[Header("Component")]
 		[SerializeField]	protected CExplosionObject m_ExplosionObject;
 
 		private float m_Countdown = -1f;
+
+		#endregion
+
+		#region Implementation MonoBehavour
 
 		protected override void Start() {
 			this.m_ExplosionObject.Init (this.m_Transform, this.m_Data.currentDamage);
@@ -36,6 +42,34 @@ namespace RacingHuntZombie {
 			}
 		}
 
+		protected override void OnTriggerEnter (Collider collider)
+		{
+//			base.OnTriggerEnter (collider);
+			var objController = collider.gameObject.GetObjectController<CObjectController> ();
+			var isExceptionLayer = this.m_ExcepLayerMask.value == (this.m_ExcepLayerMask.value | (1 << collider.gameObject.layer));
+			if (objController != null && isExceptionLayer == false) {
+				if (this.m_HitBoxContacts.Contains (objController) == false) {
+					this.m_HitBoxContacts.Add (objController);
+				}
+			}
+		}
+
+		protected override void OnTriggerExit (Collider collider)
+		{
+//			base.OnTriggerExit (collider);
+			var objController = collider.gameObject.GetObjectController<CObjectController> ();
+			var isExceptionLayer = this.m_ExcepLayerMask.value == (this.m_ExcepLayerMask.value | (1 << collider.gameObject.layer));
+			if (objController != null && isExceptionLayer == false) {
+				if (this.m_HitBoxContacts.Contains (objController)) {
+					this.m_HitBoxContacts.Remove (objController);
+				}
+			}
+		}
+
+		#endregion
+
+		#region Implementation Controller
+
 		protected override void RegisterComponent ()
 		{
 			base.RegisterComponent ();
@@ -53,28 +87,7 @@ namespace RacingHuntZombie {
 			});
 		}
 
-		protected override void OnTriggerEnter (Collider collider)
-		{
-//			base.OnTriggerEnter (collider);
-			var objController = collider.gameObject.GetObjectController<CObjectController> ();
-			var isExceptionLayer = this.m_ExcepLayerMask.value == (this.m_ExcepLayerMask.value | (1 << collider.gameObject.layer));
-			if (objController != null && isExceptionLayer == false) {
-				if (this.m_HitBoxContacts.Contains (objController) == false) {
-					this.m_HitBoxContacts.Add (objController);
-				}
-			}
-		}
-
-		protected override void OnTriggerExit (Collider collider)
-		{
-//			base.OnTriggerExit (collider);
-			var objController = collider.gameObject.GetObjectController<CObjectController> ();
-			if (objController != null && collider.gameObject.layer != LayerMask.NameToLayer("CarPart")) {
-				if (this.m_HitBoxContacts.Contains (objController)) {
-					this.m_HitBoxContacts.Remove (objController);
-				}
-			}
-		}
+		#endregion
 		
 	}
 }

@@ -8,6 +8,8 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CWheelDriver : CRigidbodyObject {
 
+		#region Properties
+
 		[Header ("Wheel configs")]
 		[Tooltip("Maximum steering angle of the wheels")]
 		public float maxAngle = 30f;
@@ -31,10 +33,18 @@ namespace RacingHuntZombie {
 		public UnityEvent OnMoved;
 		public UnityEvent OnStopped;
 
+		#endregion
+
+		#region Implementation Component
+
 		public new void Init(float maxSpeed) {
 			base.Init ();
 			this.maxTorque = maxSpeed;
 		}
+
+		#endregion
+
+		#region Main methods
 
 		public virtual void UpdateDriver(float angleInput, float torqueInput, bool handBrakeInput)
 		{
@@ -73,6 +83,8 @@ namespace RacingHuntZombie {
 				}
 			}
 		}
+
+		#endregion
 
 	}
 }

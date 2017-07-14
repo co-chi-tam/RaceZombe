@@ -8,6 +8,8 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CBreakableObject: CComponent {
 
+		#region Properties
+
 		[SerializeField]	private Collider[] m_Colliders;
 		[SerializeField]	private Rigidbody[] m_Rigidbodies;
 		[Header ("Event")]
@@ -15,10 +17,18 @@ namespace RacingHuntZombie {
 
 		private bool m_IsBreaked = false;
 
+		#endregion
+
+		#region Implementation Component
+
 		public new void Init(bool value) {
 			base.Init ();
 			this.BreakObjects (value);
 		}
+
+		#endregion
+
+		#region Main methods
 
 		public virtual void BreakObjects(bool value) {
 			if (this.m_IsBreaked == true)
@@ -37,6 +47,8 @@ namespace RacingHuntZombie {
 				this.OnBreaked.Invoke ();
 			}
 		}
+
+		#endregion
 
 	}
 }

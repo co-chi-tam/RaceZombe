@@ -424,6 +424,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4889680086407112}
+  - component: {fileID: 114555781125141656}
   m_Layer: 30
   m_Name: Ground
   m_TagString: Untagged
@@ -1211,7 +1212,7 @@ Transform:
   - {fileID: 4989727788850572}
   - {fileID: 4222827839710604}
   m_Father: {fileID: 4889680086407112}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4408421951129506
 Transform:
@@ -1368,7 +1369,7 @@ Transform:
   m_Children:
   - {fileID: 4912232598700640}
   m_Father: {fileID: 4889680086407112}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4565954465661936
 Transform:
@@ -1539,14 +1540,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1495873536282332}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4916050721286942}
   - {fileID: 4771627690484644}
-  - {fileID: 4387009539614878}
   - {fileID: 4560799380443608}
+  - {fileID: 4387009539614878}
   - {fileID: 4565954465661936}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3248,6 +3249,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114555781125141656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495873536282332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb5196b1ddde13b449ba9653e971d609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CarSpawnPoints:
+  - {fileID: 1064300521969216}
+  m_ZombieSpawnPoints:
+  - {fileID: 1263293007429214}
+  - {fileID: 1468102378214870}
+  - {fileID: 1605921030484880}
+  - {fileID: 1180920952606206}
+  - {fileID: 1003991880053600}
+  - {fileID: 1642176684073028}
+  - {fileID: 1593355430123640}
+  - {fileID: 1203518339351884}
+  - {fileID: 1804783001451888}
+  - {fileID: 1937920378242286}
+  - {fileID: 1847609835736380}
+  - {fileID: 1949938066910734}
 --- !u!154 &154531651042560256
 TerrainCollider:
   m_ObjectHideFlags: 1

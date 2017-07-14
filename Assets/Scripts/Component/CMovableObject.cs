@@ -8,6 +8,8 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CMovableObject : CRigidbodyObject {
 
+		#region Properties
+
 		[Header ("Info")]
 		[SerializeField]	protected float m_Radius = 0.5f;
 		[SerializeField]	protected float m_MinDistance = 1f;
@@ -32,6 +34,10 @@ namespace RacingHuntZombie {
 			PerlineNoise = 1
 		}
 
+		#endregion
+
+		#region Implementation Component
+
 		public new void Init(float speed, Transform mTransform) {
 			base.Init ();
 			this.m_Speed = speed;
@@ -39,6 +45,10 @@ namespace RacingHuntZombie {
 			this.m_PerlineNoiseX = UnityEngine.Random.Range (0f, 100f);
 			this.m_PerlineNoiseY = 0f;
 		}
+
+		#endregion
+
+		#region Main methods
 
 		public virtual void Move(float dt) {
 			var direction = targetPosition - this.m_CurrentTransform.position;
@@ -89,6 +99,8 @@ namespace RacingHuntZombie {
 		public virtual Vector3 GetDestination() {
 			return this.targetPosition;
 		}
+
+		#endregion
 
 	}
 }

@@ -16,7 +16,7 @@ namespace RacingHuntZombie {
 		public CRaceSceneTask () : base ()
 		{
 			this.taskName = "RaceScene";
-			this.nextTask = "IntroScene";
+			this.nextTask = "SelectModeScene";
 		}
 
 		#endregion

@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 114699181747695244}
   m_Layer: 9
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: RootControl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -779,6 +779,7 @@ MonoBehaviour:
         PublicKeyToken=null
   m_FSMComponent:
     m_FSMJsonText: {fileID: 4900000, guid: a27e25ba22f83ea4c865026221a73c73, type: 3}
+    m_FSMStateName: 
 --- !u!136 &136151683529593374
 CapsuleCollider:
   m_ObjectHideFlags: 1

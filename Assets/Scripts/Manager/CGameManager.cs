@@ -23,6 +23,7 @@ namespace RacingHuntZombie {
 		[SerializeField]	private CUIControlManager m_UIControl;
 		[SerializeField]	private GameObject m_CarPrefabs;
 		[SerializeField]	private GameObject[] m_ZombiePrefabs;
+		[SerializeField]	private GameObject[] m_EnemyPrefabs;
 		[SerializeField]	private CMapManager m_MapManager;
 
 		[Header ("Control")]
@@ -126,6 +127,7 @@ namespace RacingHuntZombie {
 		private IEnumerator HandleSpawnMapObjects() {
 			yield return HandleSpawnCar ();
 			yield return HandleSpawnZombies ();
+			yield return HandleSpawnEnemy ();
 			this.m_AllLoadingComplete = true;
 		}
 
@@ -138,6 +140,17 @@ namespace RacingHuntZombie {
 			this.m_CarControl.SetActive (true);
 			m_Camera.SetTarget (this.m_CarControl.transform);
 			m_UIControl.SetTarget (this.m_CarControl);
+		}
+
+		private IEnumerator HandleSpawnEnemy() {
+			var enemyCarIndex = this.m_EnemyPrefabs.Length;
+			var carGO = Instantiate(this.m_EnemyPrefabs[0]);
+			yield return carGO;
+			var carSpawnPoints = this.m_MapManager.GetZombieSpawnPoints ();
+			carGO.transform.position = carSpawnPoints[0].transform.position;
+			var carEnemy = carGO.GetComponent<CCarController> ();
+			carEnemy.SetActive (true);
+			carEnemy.SetTarget (this.m_CarControl);
 		}
 
 		private IEnumerator HandleSpawnZombies() {

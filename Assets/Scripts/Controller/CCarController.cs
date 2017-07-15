@@ -43,6 +43,36 @@ namespace RacingHuntZombie {
 
 		#region Main methods
 
+		public override void UpdateObject (float dt)
+		{
+			base.UpdateObject (dt);
+			if (this.m_TargetController == null)
+				return;	
+			var targetPosition = this.m_TargetController.transform.position;
+			var direction = targetPosition - this.m_Transform.position;
+			var angle = Mathf.Atan2 (direction.x, direction.z) * Mathf.Rad2Deg;
+			var angleAxis = Quaternion.AngleAxis (angle, Vector3.up).eulerAngles;
+			var currentAngle = this.m_Transform.rotation.eulerAngles.y;
+			var deltaAngle = Mathf.DeltaAngle (currentAngle, angleAxis.y) / 180f;
+			var speed = 1f;
+			RaycastHit hitInfo;
+			var forward = this.m_Transform.forward;
+			forward.y = this.m_Transform.position.y;
+			if (Physics.Raycast (this.m_Transform.position, forward, out hitInfo, 10f)) {
+				var isExceptionLayer = this.m_ExcepLayerMask.value 
+					== (this.m_ExcepLayerMask.value | (1 << hitInfo.collider.gameObject.layer));
+				if (isExceptionLayer == true) {
+					speed = -1f;
+				}
+			}
+//			Debug.DrawRay (this.m_Transform.position, this.m_Transform.forward * 10f, Color.black);
+			this.UpdateDriver (deltaAngle * speed, speed, false);
+		}
+
+		protected virtual void ChaseTarget(float dt) {
+
+		}
+
 		protected override void RegisterComponent ()
 		{
 			base.RegisterComponent ();
@@ -53,7 +83,7 @@ namespace RacingHuntZombie {
 		}
 
 		public virtual void UpdateDriver(float angleInput, float torqueInput, bool brakeInput) {
-			if (this.m_Data.currentGas > 0f) {
+			if (this.GetGas() > 0f) {
 				this.m_WheelDriver.UpdateDriver (angleInput, torqueInput, brakeInput);
 				var currentGas = this.GetGas ();
 				var consumeGas = this.GetVelocityKMH () / this.m_Data.maxSpeed;
@@ -92,7 +122,7 @@ namespace RacingHuntZombie {
 
 		public override void ApplyDamage (CObjectController attacker, float value) {
 			base.ApplyDamage (attacker, value);
-			this.m_DamageObject.CalculteDamage (value - this.m_DamageObject.maxResistant);
+//			this.m_DamageObject.CalculteDamage (value - this.m_DamageObject.maxResistant);
 		}
 
 		#endregion
@@ -130,11 +160,13 @@ namespace RacingHuntZombie {
 		}
 
 		public override float GetGas() {
-			return this.m_Data.currentGas;
+			return this.m_Data.maxGas;
+//			return this.m_Data.currentGas;
 		}
 
 		public override void SetGas(float value) {
-			this.m_Data.currentGas = value;
+			this.m_Data.currentGas = value < 0f ? 0f : 
+				value >= this.m_Data.maxGas ? this.m_Data.maxGas : value;
 		}
 
 		public override float GetGasPercent() {

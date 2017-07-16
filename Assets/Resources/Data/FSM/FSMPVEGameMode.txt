@@ -9,7 +9,7 @@
           "state_name": "GameUpdateState",
           "states": [
             {
-              "condition_name": "!IsPlayerDeath&&IsKillComplete",
+              "condition_name": "!IsPlayerDeath&&IsMissionComplete",
               "state_name": "GameWinState",
               "states": []
             },{

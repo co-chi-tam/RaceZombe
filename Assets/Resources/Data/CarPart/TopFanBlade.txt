@@ -2,6 +2,7 @@
   "objectName": "TopFanBlade",
   "objectModelPath": "TopFanBlade",
   "objectAvatarPath": "TopFanBlade",
+  "objectType": 0,
   "currentResistant": 2,
   "currentDamage": 15,
   "currentDurability": 100,

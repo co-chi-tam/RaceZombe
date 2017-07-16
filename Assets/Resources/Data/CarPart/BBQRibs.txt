@@ -2,6 +2,7 @@
   "objectName": "BBQRibs",
   "objectModelPath": "BBQRibs",
   "objectAvatarPath": "BBQRibs",
+  "objectType": 0,
   "currentResistant": 2,
   "currentDamage": 0,
   "currentDurability": 100,

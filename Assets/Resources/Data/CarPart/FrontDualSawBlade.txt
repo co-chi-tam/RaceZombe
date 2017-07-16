@@ -2,6 +2,7 @@
   "objectName": "FrontDualSawBlade",
   "objectModelPath": "FrontDualSawBlade",
   "objectAvatarPath": "FrontDualSawBlade",
+  "objectType": 0,
   "currentResistant": 2,
   "currentDamage": 15,
   "currentDurability": 150,

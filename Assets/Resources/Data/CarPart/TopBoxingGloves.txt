@@ -2,6 +2,7 @@
   "objectName": "TopBoxingGloves",
   "objectModelPath": "TopBoxingGloves",
   "objectAvatarPath": "TopBoxingGloves",
+  "objectType": 0,
   "currentResistant": 2,
   "currentDamage": 15,
   "currentDurability": 100,

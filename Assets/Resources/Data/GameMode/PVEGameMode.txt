@@ -3,6 +3,5 @@
 	"gameModeFSM": "FSMPVEGameMode",
 	"gameModeModel": "PVEMap",
 	"gameModeDescription": "",
-	"killCount": 100,
 	"zombiePrefabs": ["Zombie", "ExplosionZombie"],
 }

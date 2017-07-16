@@ -45,7 +45,7 @@ namespace RacingHuntZombie {
 
 			this.m_FSMManager.RegisterCondition ("IsLoadingCompleted", 	this.IsLoadingCompleted);
 			this.m_FSMManager.RegisterCondition ("IsPlayerDeath", 		this.IsPlayerDeath);
-			this.m_FSMManager.RegisterCondition ("IsKillComplete", 		this.IsKillComplete);
+			this.m_FSMManager.RegisterCondition ("IsMissionComplete",	this.IsMissionComplete);
 		}
 
 		protected virtual void Start() {
@@ -182,8 +182,9 @@ namespace RacingHuntZombie {
 				|| this.m_CarControl.GetDurabilityPercent() <= 0f;
 		}
 
-		protected virtual bool IsKillComplete() {
-			return this.m_CarControl.GetKillCount() >= this.m_GameModeData.killCount;
+		protected virtual bool IsMissionComplete() {
+//			return this.m_CarControl.GetMissionComplete();
+			return false;
 		}
 
 	}

@@ -2,6 +2,7 @@
   "objectName": "BombMine",
   "objectModelPath": "BombMine",
   "objectAvatarPath": "BombMine",
+  "objectType": 0,
   "currentResistant": 2,
   "currentDamage": 20,
   "currentDurability": 100,

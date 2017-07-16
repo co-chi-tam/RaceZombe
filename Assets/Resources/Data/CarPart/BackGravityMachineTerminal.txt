@@ -2,6 +2,7 @@
   "objectName": "BackGravityMachineTerminal",
   "objectModelPath": "BackGravityMachineTerminal",
   "objectAvatarPath": "BackGravityMachineTerminal",
+  "objectType": 0,
   "currentResistant": 0,
   "currentDamage": 0,
   "currentDurability": 5,

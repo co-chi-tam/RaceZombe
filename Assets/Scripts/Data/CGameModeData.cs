@@ -9,7 +9,6 @@ namespace RacingHuntZombie {
 		public string gameModeFSM;
 		public string gameModeModel;
 		public string gameModeDescription;
-		public int killCount;
 		public int goldAward;
 
 		public CGameModeData ()
@@ -18,7 +17,6 @@ namespace RacingHuntZombie {
 			this.gameModeFSM 			= string.Empty;
 			this.gameModeModel 			= string.Empty;
 			this.gameModeDescription 	= string.Empty;
-			this.killCount 				= 0;
 			this.goldAward 				= 0;
 		}
 		

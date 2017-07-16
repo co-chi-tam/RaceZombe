@@ -13,8 +13,13 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected float m_MaxResistant = 20f;
 		[SerializeField]	protected float m_CurrentDamage = 0f;
 		[SerializeField]	protected float m_MaxDamage = 100f;
+		[SerializeField]	protected float percentDamage = 100f;
 		[Header ("Event")]
 		public UnityEvent OnDamaged;
+		public UnityEvent On10PercentDamage;
+		public UnityEvent On30PercentDamage;
+		public UnityEvent On50PercentDamage;
+		public UnityEvent On80PercentDamage;
 
 		public float maxResistant {
 			get { return this.m_MaxResistant; }
@@ -54,6 +59,27 @@ namespace RacingHuntZombie {
 		public virtual void EffectDamage() {
 			if (this.OnDamaged != null) {
 				this.OnDamaged.Invoke ();
+			}
+			percentDamage = 100f - (this.m_CurrentDamage / this.m_MaxDamage * 100f);
+			if (percentDamage < 100f - 10f) {
+				if (this.On10PercentDamage != null) {
+					this.On10PercentDamage.Invoke ();
+				}
+			} 
+			if (percentDamage < 100f - 30f) {
+				if (this.On30PercentDamage != null) {
+					this.On30PercentDamage.Invoke ();
+				}
+			} 
+			if (percentDamage < 100f - 50f) {
+				if (this.On50PercentDamage != null) {
+					this.On50PercentDamage.Invoke ();
+				}
+			} 
+			if (percentDamage < 100f - 80f) {
+				if (this.On80PercentDamage != null) {
+					this.On80PercentDamage.Invoke ();
+				}
 			}
 		}
 

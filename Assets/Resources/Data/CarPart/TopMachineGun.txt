@@ -2,6 +2,7 @@
   "objectName": "TopMachineGun",
   "objectModelPath": "TopMachineGun",
   "objectAvatarPath": "TopMachineGun",
+  "objectType": 0,
   "currentResistant": 2,
   "currentDamage": 15,
   "currentDurability": 100,

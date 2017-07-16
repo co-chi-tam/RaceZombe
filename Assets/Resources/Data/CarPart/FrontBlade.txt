@@ -2,6 +2,7 @@
   "objectName": "FrontBlade",
   "objectModelPath": "FrontBlade",
   "objectAvatarPath": "FrontBlade",
+  "objectType": 0,
   "currentResistant": 2,
   "currentDamage": 2,
   "currentDurability": 150,

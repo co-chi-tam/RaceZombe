@@ -3,6 +3,7 @@
   "objectModelPath": "Zombie",
   "objectAvatarPath": "Zombie",
   "objectFSMPath": "FSMSimpleGraph",
+  "objectType": 2,
   "currentResistant": 2,
   "currentDamage": 3,
   "currentDurability": 10,

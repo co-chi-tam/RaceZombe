@@ -2,6 +2,7 @@
 	"objectName":"GravityMachine",
 	"objectModelPath":"GravityMachine",
 	"objectAvatarPath":"GravityMachine",
+  	"objectType": 0,
 	"currentResistant":2,
 	"currentDamage":5,
 	"currentDurability":100,

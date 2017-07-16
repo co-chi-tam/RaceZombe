@@ -187,12 +187,8 @@ namespace RacingHuntZombie {
 			return 100f;
 		}
 
-		public virtual void SetKillCount(int value) {
+		public virtual void SetMissionObject(CObjectData.EObjectType key, int value) {
 
-		}
-
-		public virtual int GetKillCount() {
-			return 0;
 		}
 
 		public virtual Collider GetCollider() {

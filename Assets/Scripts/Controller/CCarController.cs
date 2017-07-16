@@ -10,13 +10,13 @@ namespace RacingHuntZombie {
 
 		[Header ("Data")]
 		[SerializeField]	private CCarData m_Data;
-		[SerializeField]	protected int m_KillCount = 0;
 
 		[Header ("Components")]
 		[SerializeField]	protected CWheelDriver m_WheelDriver;
 		[SerializeField]	protected CDamageObject m_DamageObject;
 		[SerializeField]	protected CCarPartsComponent m_CarParts;
 		[SerializeField]	protected CFSMComponent m_FSMComponent;
+		[SerializeField]	protected CMissionComponent m_MissionComponent;
 
 		#endregion
 
@@ -27,6 +27,7 @@ namespace RacingHuntZombie {
 			this.m_DamageObject.Init (this.m_Data.maxResistant, this.m_Data.currentDurability);
 			this.m_CarParts.Init (m_Data.carParts);
 			this.m_FSMComponent.Init (this);
+			this.m_MissionComponent.Init ();
 			base.Start ();
 		}
 
@@ -65,7 +66,6 @@ namespace RacingHuntZombie {
 					speed = -1f;
 				}
 			}
-//			Debug.DrawRay (this.m_Transform.position, this.m_Transform.forward * 10f, Color.black);
 			this.UpdateDriver (deltaAngle * speed, speed, false);
 		}
 
@@ -80,6 +80,7 @@ namespace RacingHuntZombie {
 			this.m_Components.Add (this.m_DamageObject);
 			this.m_Components.Add (this.m_CarParts);
 			this.m_Components.Add (this.m_FSMComponent);
+			this.m_Components.Add (this.m_MissionComponent);
 		}
 
 		public virtual void UpdateDriver(float angleInput, float torqueInput, bool brakeInput) {
@@ -122,7 +123,7 @@ namespace RacingHuntZombie {
 
 		public override void ApplyDamage (CObjectController attacker, float value) {
 			base.ApplyDamage (attacker, value);
-//			this.m_DamageObject.CalculteDamage (value - this.m_DamageObject.maxResistant);
+			this.m_DamageObject.CalculteDamage (value - this.m_DamageObject.maxResistant);
 		}
 
 		#endregion
@@ -182,14 +183,9 @@ namespace RacingHuntZombie {
 			return carPartCtrl.GetDurabilityPercent();
 		}
 
-		public override int GetKillCount ()
+		public override void SetMissionObject (CObjectData.EObjectType key, int value)
 		{
-			return this.m_KillCount;
-		}
-
-		public override void SetKillCount (int value)
-		{
-			this.m_KillCount = value;
+			this.m_MissionComponent.SetMissionObject (key, value);
 		}
 
 		#endregion

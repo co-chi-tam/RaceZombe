@@ -2,6 +2,7 @@
   "objectName": "MissileBomb",
   "objectModelPath": "MissileBomb",
   "objectAvatarPath": "MissileBomb",
+  "objectType": 0,
   "currentResistant": 2,
   "currentDamage": 100,
   "currentDurability": 100,

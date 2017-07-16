@@ -7,11 +7,23 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CObjectData {
 
+		public enum EObjectType: int {
+			NONE 			= 0,
+			Car 			= 1,
+			NormalZombie 	= 2,
+			ExplosionZombie = 3,
+			Gear 			= 4,
+			Steel 			= 5, 
+			Gas 			= 6,
+			CheckPoint 		= 7
+		}
+
 		#region Properties
 
 		public string objectName;
 		public string objectModelPath;
 		public string objectAvatarPath;
+		public EObjectType objectType;
 		public float maxResistant;
 		public float currentDamage;
 		public float currentDurability;
@@ -29,7 +41,8 @@ namespace RacingHuntZombie {
 			this.objectName			= string.Empty;
 			this.objectModelPath	= string.Empty;
 			this.objectAvatarPath	= string.Empty;
-			this.maxResistant 	= 2f;
+			this.objectType 		= EObjectType.NONE;
+			this.maxResistant 		= 2f;
 			this.currentDamage 		= 3f;
 			this.currentDurability 	= 100f;
 			this.maxDurability 		= 100f;
@@ -47,6 +60,7 @@ namespace RacingHuntZombie {
 			this.m_DictJSON.Add ("objectName", this.objectName);
 			this.m_DictJSON.Add ("objectModelPath", this.objectModelPath);
 			this.m_DictJSON.Add ("objectAvatarPath", this.objectAvatarPath);
+			this.m_DictJSON.Add ("objectType", (int) this.objectType);
 			this.m_DictJSON.Add ("currentResistant", this.maxResistant);
 			this.m_DictJSON.Add ("currentDamage", this.currentDamage);
 			this.m_DictJSON.Add ("currentDurability", this.currentDurability);

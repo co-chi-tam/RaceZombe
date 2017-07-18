@@ -9,7 +9,8 @@ namespace RacingHuntZombie {
 		#region Properties
 
 		[Header ("Data")]
-		[SerializeField]	private CCarData m_Data;
+		[SerializeField]	protected bool m_IsBot;
+		[SerializeField]	protected CCarData m_Data;
 
 		[Header ("Components")]
 		[SerializeField]	protected CWheelDriver m_WheelDriver;
@@ -18,17 +19,22 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected CFSMComponent m_FSMComponent;
 		[SerializeField]	protected CMissionComponent m_MissionComponent;
 
+		public bool IsBot {
+			get { return this.m_IsBot; }
+			set { this.m_IsBot = value; }
+		}
+
 		#endregion
 
 		#region Implementation MonoBehaviour
 
-		protected override void Start() {
+		public override void Init() {
 			this.m_WheelDriver.Init (this.m_Data.maxSpeed);
 			this.m_DamageObject.Init (this.m_Data.maxResistant, this.m_Data.currentDurability);
 			this.m_CarParts.Init (m_Data.carParts);
 			this.m_FSMComponent.Init (this);
 			this.m_MissionComponent.Init ();
-			base.Start ();
+			base.Init ();
 		}
 
 		protected override void OnTriggerStay (Collider collider)
@@ -44,9 +50,23 @@ namespace RacingHuntZombie {
 
 		#region Main methods
 
+		protected override void RegisterComponent ()
+		{
+			base.RegisterComponent ();
+			this.m_Components.Add (this.m_WheelDriver);
+			this.m_Components.Add (this.m_DamageObject);
+			this.m_Components.Add (this.m_CarParts);
+			this.m_Components.Add (this.m_FSMComponent);
+			this.m_Components.Add (this.m_MissionComponent);
+		}
+
 		public override void UpdateObject (float dt)
 		{
 			base.UpdateObject (dt);
+			this.ChaseTarget (dt);
+		}
+
+		protected virtual void ChaseTarget(float dt) {
 			if (this.m_TargetController == null)
 				return;	
 			var targetPosition = this.m_TargetController.transform.position;
@@ -67,20 +87,6 @@ namespace RacingHuntZombie {
 				}
 			}
 			this.UpdateDriver (deltaAngle * speed, speed, false);
-		}
-
-		protected virtual void ChaseTarget(float dt) {
-
-		}
-
-		protected override void RegisterComponent ()
-		{
-			base.RegisterComponent ();
-			this.m_Components.Add (this.m_WheelDriver);
-			this.m_Components.Add (this.m_DamageObject);
-			this.m_Components.Add (this.m_CarParts);
-			this.m_Components.Add (this.m_FSMComponent);
-			this.m_Components.Add (this.m_MissionComponent);
 		}
 
 		public virtual void UpdateDriver(float angleInput, float torqueInput, bool brakeInput) {
@@ -124,6 +130,7 @@ namespace RacingHuntZombie {
 		public override void ApplyDamage (CObjectController attacker, float value) {
 			base.ApplyDamage (attacker, value);
 			this.m_DamageObject.CalculteDamage (value - this.m_DamageObject.maxResistant);
+			this.SetMissionObject ("CarDurability", this.GetDurability ());
 		}
 
 		#endregion
@@ -166,8 +173,15 @@ namespace RacingHuntZombie {
 		}
 
 		public override float GetGas() {
-			return this.m_Data.maxGas;
-//			return this.m_Data.currentGas;
+			if (this.m_IsBot) {
+				return this.m_Data.maxGas;
+			} else {
+#if TEST_MODE
+				return this.m_Data.maxGas;
+#else
+				return this.m_Data.currentGas;
+#endif
+			}
 		}
 
 		public override void SetGas(float value) {
@@ -176,12 +190,23 @@ namespace RacingHuntZombie {
 		}
 
 		public override float GetGasPercent() {
-			var gasPercent = this.m_Data.currentGas / this.m_Data.maxGas * 100f;
+			var gasPercent = this.m_Data.currentGas / this.m_Data.maxGas;
 			return gasPercent <= 0f ? 0f : gasPercent;
+			this.SetMissionObject ("CarGas", gasPercent);
+		}
+
+		public override float GetDurability () {
+			return this.m_DamageObject.currentDamage;
+//			return this.m_Data.currentDurability;
+		}
+
+		public override void SetDurability (float value) {
+			this.m_Data.currentDurability = value < 0f ? 0f : 
+				value >= this.m_Data.maxDurability ? this.m_Data.maxDurability : value;
 		}
 
 		public override float GetDurabilityPercent () {
-			var durabilityPercent = 100f - (this.m_DamageObject.currentDamage / this.m_DamageObject.maxDamage * 100f);
+			var durabilityPercent = 1f - (this.m_DamageObject.currentDamage / this.m_DamageObject.maxDamage);
 			return durabilityPercent <= 0f ? 0f : durabilityPercent;
 		}
 
@@ -190,13 +215,16 @@ namespace RacingHuntZombie {
 			return carPartCtrl.GetDurabilityPercent();
 		}
 
-		public override void SetMissionObject (string key, int value)
-		{
+		public override void SetMissionObject (string key, float value) {
 			this.m_MissionComponent.SetMissionObject (key, value);
 		}
 
-		public virtual bool GetMissionObject(Dictionary<string, int> mission) {
+		public virtual bool GetMissionObject(Dictionary<string, float> mission) {
 			return this.m_MissionComponent.IsMissionComplete (mission);
+		}
+
+		public override float GetMissionPercent () {
+			return this.m_MissionComponent.GetMissionPercent ();
 		}
 
 		#endregion

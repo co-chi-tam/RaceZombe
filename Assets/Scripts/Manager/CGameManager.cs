@@ -50,12 +50,7 @@ namespace RacingHuntZombie {
 
 		protected virtual void Start() {
 			Application.targetFrameRate = 60;
-//			var postionText = string.Empty;
-//			for (int i = 0; i < this.m_ZombieSpawnPoints.Length; i++) {
-//				var point = this.m_ZombieSpawnPoints [i].transform.position;
-//				postionText += "\"" + point.x + "|" + point.y + "|" + point.z + (i < this.m_ZombieSpawnPoints.Length - 1 ? "\"," : "\"");
-//			}
-//			Debug.Log (postionText);
+			this.m_GameModeData = TinyJSON.JSON.Load (this.m_GameModeText.text).Make<CGameModeData>();
 		}
 
 		protected virtual void FixedUpdate() {
@@ -102,8 +97,7 @@ namespace RacingHuntZombie {
 			if (this.m_AllLoadingComplete) {
 				for (int i = 0; i < this.m_Zombies.Count; i++) {
 					if (this.m_Zombies [i] == null) {
-						CHandleEvent.Instance.AddEvent (this.HandleSetupZombie (true, 
-							i, 
+						CHandleEvent.Instance.AddEvent (this.HandleSetupZombie (i, 
 							this.m_CarControl), null);
 						this.m_Zombies.RemoveAt(i);
 						i--;
@@ -113,10 +107,14 @@ namespace RacingHuntZombie {
 		}
 
 		public virtual void WinGame() {
-			CRootTask.Instance.GetCurrentTask ().OnTaskCompleted ();
+			CUIControlManager.Instance.OpenMissionCompletePanel ();
 		}
 
 		public virtual void CloseGame() {
+			CUIControlManager.Instance.OpenMissionClosePanel ();
+		}
+
+		public virtual void ResetGame() {
 			CRootTask.Instance.GetCurrentTask ().OnTaskCompleted ();
 		}
 
@@ -133,7 +131,9 @@ namespace RacingHuntZombie {
 			var carSpawnPoints = this.m_MapManager.GetCarSpawnPoints ();
 			carGO.transform.position = carSpawnPoints[0].transform.position;
 			this.m_CarControl = carGO.GetComponent<CCarController> ();
+			this.m_CarControl.Init ();
 			this.m_CarControl.SetActive (true);
+			this.m_CarControl.IsBot = false;
 			m_Camera.SetTarget (this.m_CarControl.transform);
 			m_UIControl.SetTarget (this.m_CarControl);
 		}
@@ -145,25 +145,28 @@ namespace RacingHuntZombie {
 			var carSpawnPoints = this.m_MapManager.GetZombieSpawnPoints ();
 			carGO.transform.position = carSpawnPoints[0].transform.position;
 			var carEnemy = carGO.GetComponent<CCarController> ();
+			carEnemy.Init ();
 			carEnemy.SetActive (true);
 			carEnemy.SetTarget (this.m_CarControl);
+			carEnemy.IsBot = true;
 		}
 
 		private IEnumerator HandleSpawnZombies() {
 			var zombieSpawnPoints = this.m_MapManager.GetZombieSpawnPoints ();
 			for (int i = 0; i < zombieSpawnPoints.Length; i++) {
-				yield return this.HandleSetupZombie(true, i, this.m_CarControl);
+				yield return this.HandleSetupZombie(i, this.m_CarControl);
 			}
 		}
 
-		private IEnumerator HandleSetupZombie(bool active, int index, CCarController target) {
+		private IEnumerator HandleSetupZombie(int index, CCarController target) {
 			var zombieSpawnPoints = this.m_MapManager.GetZombieSpawnPoints ();
 			var position = zombieSpawnPoints [index].transform.position;
 			var zombieGO = Instantiate(this.m_ZombiePrefabs [index % this.m_ZombiePrefabs.Length]);
 			yield return zombieGO;
 			zombieGO.transform.position = position;
 			var zombieCtrl = zombieGO.GetComponent<CZombieController> ();
-			zombieCtrl.SetActive (active);
+			zombieCtrl.Init ();
+			zombieCtrl.SetActive (true);
 			zombieCtrl.SetTarget (target);
 			this.m_Zombies.Add (zombieCtrl);
 		}

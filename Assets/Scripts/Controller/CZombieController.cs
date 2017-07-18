@@ -17,16 +17,18 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected CDamageObject m_DamageObject;
 		[SerializeField]	protected CFSMComponent m_FSMComponent;
 
+		protected bool m_AlreadyUpdateMission = false;
+
 		#endregion
 
 		#region Implementation MonoBehaviour
 
-		protected override void Start() {
+		public override void Init() {
 			this.m_BreakableObject.Init (false);
 			this.m_MovableObject.Init (this.m_Data.maxSpeed, this.m_Transform);
 			this.m_DamageObject.Init (this.m_Data.maxResistant, this.m_Data.currentDurability);
 			this.m_FSMComponent.Init (this);
-			base.Start ();
+			base.Init ();
 		}
 
 		#endregion
@@ -82,10 +84,13 @@ namespace RacingHuntZombie {
 		{
 			base.ApplyDamage (attacker, value);
 			this.m_DamageObject.CalculteDamage (value);
-			if (this.m_DamageObject.IsOutOfDamage () && this.GetActive () && attacker != null) {
+			if (this.m_DamageObject.IsOutOfDamage () 
+				&& this.m_AlreadyUpdateMission == false 
+				&& attacker != null) {
 				for (int i = 0; i < this.m_Data.objectTypes.Length; i++) {
 					attacker.SetMissionObject (this.m_Data.objectTypes[i], 1);
 				}
+				this.m_AlreadyUpdateMission = true;
 			}
 		}
 
@@ -94,12 +99,10 @@ namespace RacingHuntZombie {
 		#region FSM
 
 		public override bool HaveEnemy() {
-			base.HaveEnemy ();
 			return this.m_TargetController != null;
 		}
 
 		public override bool IsDeath() {
-			base.IsDeath ();
 			return this.m_DamageObject.IsOutOfDamage ();
 		}
 

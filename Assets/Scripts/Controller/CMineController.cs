@@ -20,7 +20,6 @@ namespace RacingHuntZombie {
 		protected override void Start() {
 			this.m_ExplosionObject.Init (this.m_Transform, this.m_Data.currentDamage);
 			base.Start ();
-			// TEST
 			this.SetTimer (this.m_Data.actionDelay, () => {
 				this.m_Active = true;
 			});

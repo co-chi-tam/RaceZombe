@@ -17,11 +17,6 @@ namespace RacingHuntZombie {
 
 		#region Implementation MonoBehaviour
 
-		protected override void Start ()
-		{
-			base.Start ();
-		}
-
 		protected override void LateUpdate ()
 		{
 			base.LateUpdate ();

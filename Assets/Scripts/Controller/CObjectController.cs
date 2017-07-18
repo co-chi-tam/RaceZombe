@@ -12,6 +12,7 @@ namespace RacingHuntZombie {
 		[SerializeField]	protected Collider m_Collider;
 		[SerializeField]	protected Animator m_Animator;
 		[SerializeField]	protected AudioSource m_AudioSource;
+		[SerializeField]	protected bool m_AutoInit = false;
 		[Header ("Control")]
 		[SerializeField]	protected LayerMask m_ExcepLayerMask;
 		[SerializeField]	protected CObjectController m_TargetController;
@@ -24,13 +25,21 @@ namespace RacingHuntZombie {
 		#region Implementation MonoBehaviour
 
 		protected override void Awake() {
+			if (this.m_AutoInit) {
+				this.Init ();
+			}
 			base.Awake ();
 			this.m_Components = new List<CComponent> ();
 			this.m_TimerComponent = new CTimerComponent ();
 			this.RegisterComponent ();
 		}
 
-		protected override void Start() {
+		public override void Init() {
+			base.Init ();
+		}
+
+		protected override void Start ()
+		{
 			base.Start ();
 			this.m_TimerComponent.Init ();
 			for (int i = 0; i < this.m_Components.Count; i++) {
@@ -176,19 +185,31 @@ namespace RacingHuntZombie {
 		}
 
 		public virtual float GetGasPercent() {
-			return 100f;
+			return 1f;
+		}
+
+		public virtual float GetDurability() {
+			return 0f;
+		}
+
+		public virtual void SetDurability(float value) {
+		
 		}
 
 		public virtual float GetDurabilityPercent() {
-			return 100f;
+			return 1f;
 		}
 
 		public virtual float GetCarPartPercent(CCarPartsComponent.ECarPart value) {
-			return 100f;
+			return 1f;
 		}
 
-		public virtual void SetMissionObject(string key, int value) {
+		public virtual void SetMissionObject(string key, float value) {
 
+		}
+
+		public virtual float GetMissionPercent() {
+			return 1f;
 		}
 
 		public virtual Collider GetCollider() {

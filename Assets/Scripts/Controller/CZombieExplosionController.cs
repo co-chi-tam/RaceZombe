@@ -14,9 +14,9 @@ namespace RacingHuntZombie {
 
 		#region Implementation MonoBehaviour
 
-		protected override void Start() {
+		public override void Init() {
 			this.m_ExplosionObject.Init (this.m_Transform, this.m_Data.currentDamage);
-			base.Start ();
+			base.Init ();
 		}
 
 		#endregion

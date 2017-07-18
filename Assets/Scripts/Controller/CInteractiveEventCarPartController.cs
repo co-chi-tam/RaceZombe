@@ -32,9 +32,9 @@ namespace RacingHuntZombie {
 
 		#region Implementation MonoBehaviour
 
-		protected override void Start ()
+		protected override void Awake ()
 		{
-			base.Start ();
+			base.Awake ();
 			this.m_InteractiveEvents = new Dictionary<EInteractiveEvent, Action<object>> ();
 			this.m_InteractiveEvents.Add (EInteractiveEvent.ApplyDamageTarget, 	this.ApplyDamageTarget);
 			this.m_InteractiveEvents.Add (EInteractiveEvent.ChangeThisToTarget, this.ChangeThisToTarget);

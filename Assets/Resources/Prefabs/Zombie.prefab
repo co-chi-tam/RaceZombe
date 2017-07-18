@@ -703,7 +703,7 @@ MonoBehaviour:
     objectModelPath: Zombie
     objectAvatarPath: Zombie
     objectTypes:
-    - Zombie
+    - NormalZombie
     maxResistant: 2
     currentDamage: 3
     currentDurability: 10

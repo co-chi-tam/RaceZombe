@@ -6,6 +6,6 @@
 	"goldAware": 100,
 	"zombiePrefabs": ["Zombie", "ExplosionZombie"],
 	"gameMissionInfo": {
-		"NormalZombie": 20
+		"NormalZombie": 5
 	}
 }

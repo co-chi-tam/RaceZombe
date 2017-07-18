@@ -20,9 +20,9 @@ namespace RacingHuntZombie {
 
 		#region Implementation MonoBehaviour
 
-		protected override void Start() {
+		public override void Init() {
 			this.m_DamageObject.Init (this.m_Data.maxResistant, this.m_Data.currentDurability);
-			base.Start ();
+			base.Init ();
 		}
 
 		protected override void LateUpdate ()
@@ -71,8 +71,12 @@ namespace RacingHuntZombie {
 			return this.m_Data as CCarPartData;
 		}
 
+		public override float GetDurability () {
+			return this.m_DamageObject.currentDamage;
+		}
+
 		public override float GetDurabilityPercent () {
-			return 100f - (this.m_DamageObject.currentDamage / this.m_DamageObject.maxDamage * 100f);
+			return 1f - (this.m_DamageObject.currentDamage / this.m_DamageObject.maxDamage);
 		}
 
 		public override float GetVelocityKMH () {
@@ -93,6 +97,13 @@ namespace RacingHuntZombie {
 
 		public virtual CCarController GetOwner() {
 			return this.m_Owner;
+		}
+
+		public override void SetMissionObject (string key, float value)
+		{
+			if (this.m_Owner == null)
+				return;
+			this.m_Owner.SetMissionObject (key, value);
 		}
 
 		#endregion

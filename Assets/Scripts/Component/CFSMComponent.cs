@@ -36,6 +36,8 @@ namespace RacingHuntZombie {
 		public override void UpdateComponent (float dt)
 		{
 			base.UpdateComponent (dt);
+			if (this.m_FSMManager == null)
+				return;
 			this.m_FSMManager.UpdateState (dt);
 			this.m_FSMStateName = this.m_FSMManager.currentStateName;
 		}

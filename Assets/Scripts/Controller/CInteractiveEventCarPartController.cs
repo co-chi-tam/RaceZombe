@@ -14,13 +14,14 @@ namespace RacingHuntZombie {
 			ChangeThisToTarget = 1,
 			// Car part
 			AddGasToTarget = 101,
-			PullTarget = 102
+			PullTarget = 102,
+			PushTarget = 103
 		}
 
 		[Header ("Events")]
 		[SerializeField]	protected EInteractiveEvent m_CurrentEvent = EInteractiveEvent.ApplyDamageTarget;
-		[SerializeField]	protected float m_FloatValue = 0f;
-		[SerializeField]	protected int m_IntValue = 0;
+		[SerializeField]	protected float m_FloatValue = 1f;
+		[SerializeField]	protected int m_IntValue = 1;
 		[SerializeField]	protected string m_StringValue = string.Empty;
 
 		public UnityEvent OnEventTriggerEnter;
@@ -40,6 +41,7 @@ namespace RacingHuntZombie {
 			this.m_InteractiveEvents.Add (EInteractiveEvent.ChangeThisToTarget, this.ChangeThisToTarget);
 			this.m_InteractiveEvents.Add (EInteractiveEvent.AddGasToTarget, 	this.AddGasToTarget);
 			this.m_InteractiveEvents.Add (EInteractiveEvent.PullTarget, 		this.PullTarget);
+			this.m_InteractiveEvents.Add (EInteractiveEvent.PushTarget, 		this.PushTarget);
 		}
 
 		protected override void OnTriggerEnter (Collider collider)
@@ -64,6 +66,8 @@ namespace RacingHuntZombie {
 					this.OnEventStart.Invoke ();
 				}
 			}
+			// Decrease Durability
+			this.ApplyEngineWear (this.m_Data.engineWearValue);
 		}
 
 		protected override void InteractiveTarget(CObjectController target) {
@@ -75,8 +79,6 @@ namespace RacingHuntZombie {
 				this.m_CurrentActionDelay = this.m_DestroyAfter;
 				this.DestroyObject ();
 			}
-			// Decrease Durability
-			this.ApplyEngineWear (this.m_Data.engineWearValue);
 		}
 
 		protected virtual void ApplyDamageTarget(object target) {
@@ -100,7 +102,18 @@ namespace RacingHuntZombie {
 			var rigidBodyCtrl = objCtrl.GetComponent<Rigidbody> ();
 			if (rigidBodyCtrl != null) {
 				var direction = this.m_Transform.position - rigidBodyCtrl.position;
-				var force = direction.normalized * rigidBodyCtrl.mass * this.GetDamage ();
+				var force = direction.normalized * rigidBodyCtrl.mass * this.GetDamage () * this.m_FloatValue;
+				rigidBodyCtrl.AddForce (force, ForceMode.Impulse);
+				objCtrl.ApplyDamage (this.m_Owner, this.GetDamage ());
+			}
+		}
+
+		protected virtual void PushTarget(object target) {
+			var objCtrl = target as CObjectController;
+			var rigidBodyCtrl = objCtrl.GetComponent<Rigidbody> ();
+			if (rigidBodyCtrl != null) {
+				var direction = rigidBodyCtrl.position - this.m_Transform.position;
+				var force = direction.normalized * rigidBodyCtrl.mass * this.GetDamage () * this.m_FloatValue;
 				rigidBodyCtrl.AddForce (force, ForceMode.Impulse);
 				objCtrl.ApplyDamage (this.m_Owner, this.GetDamage ());
 			}

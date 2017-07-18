@@ -94,6 +94,7 @@ namespace RacingHuntZombie {
 				var fixSize = this.m_CurrentTransform.position;
 				this.targetPosition = colliderTarget.ClosestPointOnBounds (fixSize);
 			}
+			this.targetPosition.y = 0f;
 		}
 
 		public virtual Vector3 GetDestination() {

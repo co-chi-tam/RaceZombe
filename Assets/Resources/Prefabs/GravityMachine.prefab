@@ -426,6 +426,7 @@ MonoBehaviour:
   m_Collider: {fileID: 135501843507246850}
   m_Animator: {fileID: 95269973371952012}
   m_AudioSource: {fileID: 82477768444352644}
+  m_AutoInit: 0
   m_ExcepLayerMask:
     serializedVersion: 2
     m_Bits: 4294966527
@@ -480,8 +481,8 @@ MonoBehaviour:
   m_DestroyAfter: 1
   m_HitBoxContacts: []
   m_CurrentEvent: 102
-  m_FloatValue: 0
-  m_IntValue: 0
+  m_FloatValue: 1
+  m_IntValue: 1
   m_StringValue: 
   OnEventTriggerEnter:
     m_PersistentCalls:

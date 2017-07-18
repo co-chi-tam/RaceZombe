@@ -423,6 +423,7 @@ MonoBehaviour:
   m_Collider: {fileID: 0}
   m_Animator: {fileID: 95895732856114794}
   m_AudioSource: {fileID: 82969086509012158}
+  m_AutoInit: 0
   m_ExcepLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -475,7 +476,8 @@ MonoBehaviour:
     objectName: LazerBlade
     objectModelPath: LazerBlade
     objectAvatarPath: LazerBlade
-    objectTypes: []
+    objectTypes:
+    - CarPart
     maxResistant: 2
     currentDamage: 50
     currentDurability: 100

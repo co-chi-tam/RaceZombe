@@ -11,6 +11,7 @@ namespace RacingHuntZombie {
 		#region Properties
 
 		[SerializeField]	protected LayerMask m_Obstacles;
+		[SerializeField]	protected float m_Height = 0.2f;
 
 		[SerializeField]	protected float[] m_AngleCheckings = new float[] { 0, -15, 15, -45, 45, -90, 90 }; 
 		[SerializeField]	protected float[] m_AngleAvoidances = new float[] { 10, 40, -40, 60, -60, 80, -80 }; 
@@ -37,20 +38,18 @@ namespace RacingHuntZombie {
 		#region Main methods
 
 		public override void Move (float dt) {
-			if (this.IsNearTarget() == false) {
-				m_Direction = targetPosition - this.m_Rigidbody.position;
-				var forward = this.m_Rigidbody.transform.forward;
-				m_Angle = Mathf.Atan2 (m_Direction.x, m_Direction.z) * Mathf.Rad2Deg;
-				DrawRayCast ();
-				var position = forward * this.m_Speed * dt * m_SpeedThreshold;
-				if (position != Vector3.zero) {
-					this.m_Rigidbody.position = Vector3.Lerp (this.m_Rigidbody.position, this.m_Rigidbody.position + position, 0.5f);
-				}
-				this.m_Rigidbody.rotation = Quaternion.Lerp (this.m_Rigidbody.rotation, Quaternion.AngleAxis (m_Angle, Vector3.up), 0.5f);
+			m_Direction = targetPosition - this.m_CurrentTransform.position;
+			var forward = this.m_CurrentTransform.forward;
+			m_Angle = Mathf.Atan2 (m_Direction.x, m_Direction.z) * Mathf.Rad2Deg;
+			DrawRayCast ();
+			var position = forward.normalized * this.m_Speed * dt * m_SpeedThreshold;
+			this.m_Rigidbody.position 
+				= Vector3.Lerp (this.m_Rigidbody.position, this.m_Rigidbody.position + position, 0.5f);
+			this.m_Rigidbody.rotation 
+				= Quaternion.Lerp (this.m_Rigidbody.rotation, Quaternion.AngleAxis (m_Angle, Vector3.up), 0.5f);
 #if UNITY_EDITOR
-				Debug.DrawRay (this.m_Rigidbody.position, m_Direction, Color.green);	
+			Debug.DrawLine (this.m_Rigidbody.position, targetPosition, Color.green);	
 #endif
-			}
 			Reset ();
 		}
 
@@ -64,18 +63,22 @@ namespace RacingHuntZombie {
 		}
 
 		protected virtual void DrawRayCast() {
-			var forward = this.m_Rigidbody.transform.forward;
+			var forward = this.m_CurrentTransform.forward;
 			var tmpAngle = m_Angle;
 			var tmpSpeedThreshold = m_SpeedThreshold;
 			for (int i = 0; i < m_AngleCheckings.Length; i++) {
 				var rayCast = Quaternion.AngleAxis(m_AngleCheckings[i], this.m_Rigidbody.transform.up) * forward * m_LengthAvoidances[i];
 				RaycastHit rayCastHit;
-				if (Physics.Raycast (this.m_Rigidbody.position + (rayCast.normalized * radiusBase), rayCast, out rayCastHit, m_LengthAvoidances[i], this.m_Obstacles)) {
+				var target = this.m_Rigidbody.position + (rayCast.normalized * radiusBase);
+				var direction = rayCast;
+				target.y = this.m_Height; 
+				direction.y = this.m_Height;
+				if (Physics.Raycast (target, direction, out rayCastHit, m_LengthAvoidances[i], this.m_Obstacles)) {
 					tmpAngle += m_AngleAvoidances [i] * (1f - (rayCastHit.distance / m_LengthAvoidances[i]));
 					tmpSpeedThreshold -= 1f / ((float)m_AngleCheckings.Length / 1.15f);
 				} 
 #if UNITY_EDITOR
-				Debug.DrawRay (this.m_Rigidbody.position + (rayCast.normalized * radiusBase), rayCast, Color.white);
+				Debug.DrawRay (target, direction, Color.white);
 #endif
 			}
 			m_Angle = tmpAngle;

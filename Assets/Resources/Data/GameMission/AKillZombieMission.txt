@@ -3,6 +3,7 @@
 	"gameModeFSM": "FSMPVEGameMode",
 	"gameModeModel": "PVEMap",
 	"gameModeDescription": "",
+	"gameModeHardPoint": "A",
 	"goldAware": 100,
 	"zombiePrefabs": ["Zombie", "ExplosionZombie"],
 	"gameMissionInfo": {

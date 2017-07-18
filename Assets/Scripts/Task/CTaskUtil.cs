@@ -15,6 +15,7 @@ namespace RacingHuntZombie {
 		public static string PLAYER_ENERGY 				= "PLAYER_ENERGY";
 		public static string PLAYER_MAX_ENERGY			= "PLAYER_MAX_ENERGY";
 		public static string PLAYER_ENEGY_SAVE_TIMER 	= "PLAYER_ENEGY_SAVE_TIMER";
+		public static string PLAYER_SELECTED_MISSION 	= "PLAYER_SELECTED_MISSION";
 
 		public static Dictionary<string, object> REFERENCES = new Dictionary<string, object> () { 
 			{ HOST, 			"https://tamco-tinygame.rhcloud.com" },
@@ -25,7 +26,8 @@ namespace RacingHuntZombie {
 			{ GAME_SOUND_VOLUME, 1f },
 			{ PLAYER_ENERGY, 	new CPlayerEnergy() },
 			{ PLAYER_MAX_ENERGY, 10 },
-			{ PLAYER_ENEGY_SAVE_TIMER, DateTime.UtcNow.Ticks }
+			{ PLAYER_ENEGY_SAVE_TIMER, DateTime.UtcNow.Ticks },
+			{ PLAYER_SELECTED_MISSION, new CGameModeData() }
 		};
 
 		public static object Get(string name) {

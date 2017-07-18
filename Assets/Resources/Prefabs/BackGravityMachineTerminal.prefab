@@ -394,6 +394,7 @@ MonoBehaviour:
   m_Collider: {fileID: 0}
   m_Animator: {fileID: 95383183405867578}
   m_AudioSource: {fileID: 82096944842564812}
+  m_AutoInit: 0
   m_ExcepLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -409,7 +410,7 @@ MonoBehaviour:
     currentDurability: 5
     maxDurability: 5
     actionDelay: 5
-    partType: -1
+    partType: 2
     engineWearValue: 1
   m_Owner: {fileID: 0}
   m_DamageObject:
@@ -446,7 +447,8 @@ MonoBehaviour:
     objectName: GravityMachine
     objectModelPath: GravityMachine
     objectAvatarPath: GravityMachine
-    objectTypes: []
+    objectTypes:
+    - CarPart
     maxResistant: 2
     currentDamage: 5
     currentDurability: 100

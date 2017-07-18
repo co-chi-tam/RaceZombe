@@ -621,10 +621,12 @@ MonoBehaviour:
   m_Collider: {fileID: 65679203297986412}
   m_Animator: {fileID: 95501798817423352}
   m_AudioSource: {fileID: 82666824876845508}
+  m_AutoInit: 0
   m_ExcepLayerMask:
     serializedVersion: 2
     m_Bits: 3221225472
   m_TargetController: {fileID: 0}
+  m_IsBot: 0
   m_Data:
     objectName: BlueBird
     objectModelPath: BlueBird
@@ -663,9 +665,9 @@ MonoBehaviour:
       actionDelay: 0.3
       partType: 1
       engineWearValue: 0.1
-    - objectName: BackGravityMachineTerminal
-      objectModelPath: BackGravityMachineTerminal
-      objectAvatarPath: BackGravityMachineTerminal
+    - objectName: BackPowerShieldTerminal
+      objectModelPath: BackPowerShieldTerminal
+      objectAvatarPath: BackPowerShieldTerminal
       objectTypes: []
       maxResistant: 2
       currentDamage: 0
@@ -747,6 +749,8 @@ MonoBehaviour:
   m_FSMComponent:
     m_FSMJsonText: {fileID: 4900000, guid: 683c418ccf41e0043abf6fb8f7302fce, type: 3}
     m_FSMStateName: 
+  m_MissionComponent:
+    m_MissionPercent: 0
 --- !u!146 &146385513161066990
 WheelCollider:
   m_ObjectHideFlags: 1

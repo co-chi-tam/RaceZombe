@@ -2,7 +2,7 @@
   "objectName": "TopMachineGun",
   "objectModelPath": "TopMachineGun",
   "objectAvatarPath": "TopMachineGun",
-  "objectType": 0,
+  "objectTypes": ["CarPart"],s
   "currentResistant": 2,
   "currentDamage": 15,
   "currentDurability": 100,

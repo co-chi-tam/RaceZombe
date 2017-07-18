@@ -3,7 +3,7 @@
   "objectModelPath": "BlueBird",
   "objectAvatarPath": "BlueBird",
   "objectFSMPath": "FSMCarGraph",
-  "objectType": 1,
+  "objectTypes": ["Car"],
   "currentResistant": 2,
   "currentDamage": 3,
   "currentDurability": 100,

@@ -253,12 +253,17 @@ MonoBehaviour:
   m_Collider: {fileID: 0}
   m_Animator: {fileID: 95643803793055002}
   m_AudioSource: {fileID: 82702789400305772}
+  m_ExcepLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   m_TargetController: {fileID: 0}
   m_Data:
     objectName: BackBBQRibs
     objectModelPath: BackBBQRibs
     objectAvatarPath: BackBBQRibs
-    currentResistant: 0
+    objectTypes:
+    - CarPart
+    maxResistant: 2
     currentDamage: 0
     currentDurability: 100
     maxDurability: 100
@@ -270,8 +275,28 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
-    m_AutoTrigger: 0
+    percentDamage: 100
     OnDamaged:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On10PercentDamage:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On30PercentDamage:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On50PercentDamage:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On80PercentDamage:
       m_PersistentCalls:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -280,7 +305,8 @@ MonoBehaviour:
     objectName: BBQRibs
     objectModelPath: BBQRibs
     objectAvatarPath: BBQRibs
-    currentResistant: 0
+    objectTypes: []
+    maxResistant: 2
     currentDamage: 0
     currentDurability: 100
     maxDurability: 100

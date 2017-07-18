@@ -187,7 +187,7 @@ namespace RacingHuntZombie {
 			return 100f;
 		}
 
-		public virtual void SetMissionObject(CObjectData.EObjectType key, int value) {
+		public virtual void SetMissionObject(string key, int value) {
 
 		}
 

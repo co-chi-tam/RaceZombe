@@ -8,22 +8,22 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CMissionComponent : CComponent {
 
-		protected Dictionary<CObjectData.EObjectType, int> m_MissionObjects;
+		protected Dictionary<string, int> m_MissionObjects;
 
 		public override void Init ()
 		{
 			base.Init ();
-			this.m_MissionObjects = new Dictionary<CObjectData.EObjectType, int> ();
+			this.m_MissionObjects = new Dictionary<string, int> ();
 		}
 
-		public virtual bool IsMissionComplete(Dictionary<CObjectData.EObjectType, int> missionMaps) {
+		public virtual bool IsMissionComplete(Dictionary<string, int> missionMaps) {
 			if (this.m_MissionObjects == null)
 				return false;
 			var result = missionMaps.Count > 0;
 			foreach (var item in missionMaps) {
 				if (this.m_MissionObjects.ContainsKey (item.Key)) {
 					var keyValue = this.m_MissionObjects [item.Key];
-					result &= keyValue == item.Value;
+					result &= this.ComditionComplete (keyValue, item.Value);
 				} else {
 					result = false;
 					break;
@@ -32,7 +32,11 @@ namespace RacingHuntZombie {
 			return result;
 		}
 
-		public virtual void SetMissionObject(CObjectData.EObjectType key, int value) {
+		public virtual bool ComditionComplete(int a, int b)  {
+			return a >= b;
+		}
+
+		public virtual void SetMissionObject(string key, int value) {
 			if (this.m_MissionObjects == null)
 				return;
 			if (this.m_MissionObjects.ContainsKey (key) == false) {
@@ -43,7 +47,7 @@ namespace RacingHuntZombie {
 			this.m_MissionObjects [key] = totalValue;
 		}
 	
-		public virtual int GetMissionObject(CObjectData.EObjectType key) {
+		public virtual int GetMissionObject(string key) {
 			if (this.m_MissionObjects == null)
 				return 0;
 			if (this.m_MissionObjects.ContainsKey (key) == false)

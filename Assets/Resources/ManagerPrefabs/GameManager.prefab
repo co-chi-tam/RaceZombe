@@ -51,13 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e4d449036641a45aaaa5467cadc626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GameModeText: {fileID: 4900000, guid: dca52e203f1f18247bfb8b61b3b2f50f, type: 3}
+  m_GameModeText: {fileID: 4900000, guid: 006621de3ded8b34cb3ef65a606be9bc, type: 3}
   m_GameModeData:
     gameModeName: PVE Mode
     gameModeFSM: FSMPVEGameMode
     gameModeModel: 
     gameModeDescription: 
-    killCount: 100
     goldAward: 1000
   m_FSMGraphText: {fileID: 4900000, guid: 51fee296ad4e8b44090ed2cf9eec8baf, type: 3}
   m_FSMCurrentStateName: 

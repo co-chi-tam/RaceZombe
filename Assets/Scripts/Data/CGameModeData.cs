@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace RacingHuntZombie {	
@@ -10,6 +12,8 @@ namespace RacingHuntZombie {
 		public string gameModeModel;
 		public string gameModeDescription;
 		public int goldAward;
+		public string[] zombiePrefabs;
+		public Dictionary<string, int> gameMissionInfo;
 
 		public CGameModeData ()
 		{

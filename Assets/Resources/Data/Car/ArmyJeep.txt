@@ -3,7 +3,7 @@
   "objectModelPath": "ArmyJeep",
   "objectAvatarPath": "ArmyJeep",
   "objectFSMPath": "FSMCarGraph",
-  "objectType": 1,
+  "objectTypes": ["Car"],
   "currentResistant": 2,
   "currentDamage": 5,
   "currentDurability": 120,

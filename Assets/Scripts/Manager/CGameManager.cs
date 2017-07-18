@@ -82,27 +82,23 @@ namespace RacingHuntZombie {
 		public virtual void UpdateGame() {
 			if (this.m_CarControl == null)
 				return;
-//#if UNITY_EDITOR
-//			var angleInput 	= Input.GetAxis("Horizontal");
-//			var torqueInput = Input.GetAxis("Vertical");
-//			this.m_CarControl.UpdateDriver (angleInput, torqueInput, angleInput == 0 && torqueInput == 0f);
-//			if (Input.GetKey (KeyCode.L)) {
-//				this.UpdateTopCarPart ();
-//			}
-//			if (Input.GetKey (KeyCode.M)) {
-//				this.UpdateBackCarPart ();
-//			}
-//#else
+#if UNITY_EDITOR
+			var angleInput 	= Input.GetAxis("Horizontal");
+			var torqueInput = Input.GetAxis("Vertical");
+			this.m_CarControl.UpdateDriver (angleInput, torqueInput, angleInput == 0 && torqueInput == 0f);
+			if (Input.GetKey (KeyCode.L)) {
+				this.UpdateTopCarPart ();
+			}
+			if (Input.GetKey (KeyCode.M)) {
+				this.UpdateBackCarPart ();
+			}
+#else
 			var joytick 	= this.m_Joytick.InputDirectionXY;
 			var angleInput 	= (joytick.x > 0.25 || joytick.x < -0.25) ? joytick.x : 0f;
 			var torqueInput = joytick.y;
 
-			// var acceleration = Input.acceleration;
-			// var angleInput 	= (acceleration.x > 0.25 || acceleration.x < -0.25) ? acceleration.x : 0f;
-			// var torqueInput = acceleration.y;
-
 			this.m_CarControl.UpdateDriver (angleInput, torqueInput, angleInput == 0 && torqueInput == 0f);
-//#endif
+#endif
 			if (this.m_AllLoadingComplete) {
 				for (int i = 0; i < this.m_Zombies.Count; i++) {
 					if (this.m_Zombies [i] == null) {
@@ -177,14 +173,16 @@ namespace RacingHuntZombie {
 		}
 
 		protected virtual bool IsPlayerDeath() {
-			return this.m_CarControl.GetActive() == false 
-				|| this.m_CarControl.GetGas() <= 0f
-				|| this.m_CarControl.GetDurabilityPercent() <= 0f;
+			return this.m_CarControl.GetActive() == false
+				|| this.m_CarControl.GetGas () <= 0f;
 		}
 
 		protected virtual bool IsMissionComplete() {
-//			return this.m_CarControl.GetMissionComplete();
-			return false;
+			if (this.m_GameModeData == null)
+				return false;
+			if (this.m_GameModeData.gameMissionInfo == null)
+				return false;
+			return this.m_CarControl.GetMissionObject(this.m_GameModeData.gameMissionInfo);
 		}
 
 	}

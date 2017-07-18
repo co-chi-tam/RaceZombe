@@ -2,7 +2,7 @@
   "objectName": "FrontLightDrill",
   "objectModelPath": "FrontLightDrill",
   "objectAvatarPath": "FrontLightDrill",
-  "objectType": 0,
+  "objectTypes": ["CarPart"],
   "currentResistant": 2,
   "currentDamage": 25,
   "currentDurability": 150,

@@ -2,7 +2,7 @@
   "objectName": "TopFanBlade",
   "objectModelPath": "TopFanBlade",
   "objectAvatarPath": "TopFanBlade",
-  "objectType": 0,
+  "objectTypes": ["CarPart"],
   "currentResistant": 2,
   "currentDamage": 15,
   "currentDurability": 100,

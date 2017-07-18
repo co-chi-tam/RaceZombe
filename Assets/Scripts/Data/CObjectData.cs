@@ -7,23 +7,12 @@ namespace RacingHuntZombie {
 	[Serializable]
 	public class CObjectData {
 
-		public enum EObjectType: int {
-			NONE 			= 0,
-			Car 			= 1,
-			NormalZombie 	= 2,
-			ExplosionZombie = 3,
-			Gear 			= 4,
-			Steel 			= 5, 
-			Gas 			= 6,
-			CheckPoint 		= 7
-		}
-
 		#region Properties
 
 		public string objectName;
 		public string objectModelPath;
 		public string objectAvatarPath;
-		public EObjectType objectType;
+		public string[] objectTypes;
 		public float maxResistant;
 		public float currentDamage;
 		public float currentDurability;
@@ -41,7 +30,6 @@ namespace RacingHuntZombie {
 			this.objectName			= string.Empty;
 			this.objectModelPath	= string.Empty;
 			this.objectAvatarPath	= string.Empty;
-			this.objectType 		= EObjectType.NONE;
 			this.maxResistant 		= 2f;
 			this.currentDamage 		= 3f;
 			this.currentDurability 	= 100f;
@@ -60,13 +48,21 @@ namespace RacingHuntZombie {
 			this.m_DictJSON.Add ("objectName", this.objectName);
 			this.m_DictJSON.Add ("objectModelPath", this.objectModelPath);
 			this.m_DictJSON.Add ("objectAvatarPath", this.objectAvatarPath);
-			this.m_DictJSON.Add ("objectType", (int) this.objectType);
+			var objectTypeJSON = "[";
+			for (int i = 0; i < this.objectTypes.Length; i++) {
+				objectTypeJSON += this.objectTypes[i].ToString() + (i < this.objectTypes.Length - 1 ? "," : "");
+			}
+			objectTypeJSON += "],";
+			this.m_DictJSON.Add ("objectTypes", objectTypeJSON);
 			this.m_DictJSON.Add ("currentResistant", this.maxResistant);
 			this.m_DictJSON.Add ("currentDamage", this.currentDamage);
 			this.m_DictJSON.Add ("currentDurability", this.currentDurability);
 			this.m_DictJSON.Add ("maxDurability", this.maxDurability);
 			this.m_DictJSON.Add ("actionDelay", this.actionDelay);
 			var json = MiniJSON.Json.Serialize (this.m_DictJSON);
+			json = json.Replace ("\\", "");
+			json = json.Replace ("\"[", "[");
+			json = json.Replace ("]\"", "]");
 			return json;
 		}
 

@@ -2,7 +2,7 @@
   "objectName": "BackGravityMachineTerminal",
   "objectModelPath": "BackGravityMachineTerminal",
   "objectAvatarPath": "BackGravityMachineTerminal",
-  "objectType": 0,
+  "objectTypes": ["CarPart"],
   "currentResistant": 0,
   "currentDamage": 0,
   "currentDurability": 5,

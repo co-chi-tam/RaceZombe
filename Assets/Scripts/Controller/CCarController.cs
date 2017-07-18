@@ -134,6 +134,11 @@ namespace RacingHuntZombie {
 			return this.GetGas () > 0f;
 		}
 
+		public override bool IsDeath ()
+		{
+			return this.m_DamageObject.IsOutOfDamage() || this.GetGas () <= 0f;
+		}
+
 		#endregion
 
 		#region Getter && Setter
@@ -171,11 +176,13 @@ namespace RacingHuntZombie {
 		}
 
 		public override float GetGasPercent() {
-			return this.m_Data.currentGas / this.m_Data.maxGas * 100f;
+			var gasPercent = this.m_Data.currentGas / this.m_Data.maxGas * 100f;
+			return gasPercent <= 0f ? 0f : gasPercent;
 		}
 
 		public override float GetDurabilityPercent () {
-			return 100f - (this.m_DamageObject.currentDamage / this.m_DamageObject.maxDamage * 100f);
+			var durabilityPercent = 100f - (this.m_DamageObject.currentDamage / this.m_DamageObject.maxDamage * 100f);
+			return durabilityPercent <= 0f ? 0f : durabilityPercent;
 		}
 
 		public override float GetCarPartPercent(CCarPartsComponent.ECarPart value) {
@@ -183,9 +190,13 @@ namespace RacingHuntZombie {
 			return carPartCtrl.GetDurabilityPercent();
 		}
 
-		public override void SetMissionObject (CObjectData.EObjectType key, int value)
+		public override void SetMissionObject (string key, int value)
 		{
 			this.m_MissionComponent.SetMissionObject (key, value);
+		}
+
+		public virtual bool GetMissionObject(Dictionary<string, int> mission) {
+			return this.m_MissionComponent.IsMissionComplete (mission);
 		}
 
 		#endregion

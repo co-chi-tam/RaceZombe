@@ -310,6 +310,8 @@ MonoBehaviour:
     objectName: BombMine
     objectModelPath: BombMine
     objectAvatarPath: BombMine
+    objectTypes:
+    - CarPart
     maxResistant: 2
     currentDamage: 50
     currentDurability: 100
@@ -322,7 +324,28 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
+    percentDamage: 100
     OnDamaged:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On10PercentDamage:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On30PercentDamage:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On50PercentDamage:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On80PercentDamage:
       m_PersistentCalls:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -331,11 +354,6 @@ MonoBehaviour:
   m_RepeatAction: 0
   m_StartWithAnimation: 0
   m_DestroyAfter: 1
-  OnEventTriggerEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   m_HitBoxContacts: []
   m_ExplosionObject:
     m_Rigidbody: {fileID: 54559581679539852}

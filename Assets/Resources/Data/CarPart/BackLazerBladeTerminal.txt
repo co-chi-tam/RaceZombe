@@ -2,7 +2,7 @@
   "objectName": "BackLazerBladeTerminal",
   "objectModelPath": "BackLazerBladeTerminal",
   "objectAvatarPath": "BackLazerBladeTerminal",
-  "objectType": 0,
+  "objectTypes": ["CarPart"],
   "currentResistant": 2,
   "currentDamage": 0,
   "currentDurability": 150,

@@ -257,6 +257,8 @@ MonoBehaviour:
     objectName: MissileBomb
     objectModelPath: MissileBomb
     objectAvatarPath: MissileBomb
+    objectTypes:
+    - CarPart
     maxResistant: 2
     currentDamage: 3
     currentDurability: 100
@@ -269,7 +271,28 @@ MonoBehaviour:
     m_MaxResistant: 20
     m_CurrentDamage: 0
     m_MaxDamage: 100
+    percentDamage: 100
     OnDamaged:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On10PercentDamage:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On30PercentDamage:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On50PercentDamage:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    On80PercentDamage:
       m_PersistentCalls:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -278,11 +301,6 @@ MonoBehaviour:
   m_RepeatAction: 0
   m_StartWithAnimation: 1
   m_DestroyAfter: 2
-  OnEventTriggerEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   m_HitBoxContacts: []
 --- !u!135 &135872989598560148
 SphereCollider:

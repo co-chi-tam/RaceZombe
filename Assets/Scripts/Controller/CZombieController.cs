@@ -83,7 +83,9 @@ namespace RacingHuntZombie {
 			base.ApplyDamage (attacker, value);
 			this.m_DamageObject.CalculteDamage (value);
 			if (this.m_DamageObject.IsOutOfDamage () && this.GetActive () && attacker != null) {
-				attacker.SetMissionObject (this.m_Data.objectType, 1);
+				for (int i = 0; i < this.m_Data.objectTypes.Length; i++) {
+					attacker.SetMissionObject (this.m_Data.objectTypes[i], 1);
+				}
 			}
 		}
 

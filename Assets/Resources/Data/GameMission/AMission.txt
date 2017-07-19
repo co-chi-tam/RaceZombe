@@ -1,7 +1,7 @@
 ﻿{
 	"gameModeName": "Mission A",
 	"gameModeFSM": "FSMPVEGameMode",
-	"gameModeModel": "PVEMap",
+	"gameModeModel": "PVEGroundMap",
 	"gameModeDescription": "Kill normal zombie x20 \nFind gear x2",
 	"gameModeHardPoint": "A",
 	"zombieDatas": [

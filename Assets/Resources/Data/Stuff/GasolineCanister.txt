@@ -1,0 +1,13 @@
+﻿{
+  "objectName": "GasolineCanister",
+  "objectModelPath": "GasolineCanister",
+  "objectAvatarPath": "GasolineCanister",
+  "objectTypes": ["Gas"],
+  "currentResistant": 0,
+  "currentDamage": 500,
+  "currentDurability": 1,
+  "maxDurability": 1,
+  "actionDelay": 0,
+  "partType": -1,
+  "engineWearValue": 1
+}

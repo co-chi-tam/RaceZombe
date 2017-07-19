@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Collider: {fileID: 135189832500268022}
   m_Animator: {fileID: 95153307109689396}
   m_AudioSource: {fileID: 82531064454808582}
+  m_AutoInit: 0
   m_ExcepLayerMask:
     serializedVersion: 2
     m_Bits: 4294965503
@@ -314,11 +315,11 @@ MonoBehaviour:
     - CarPart
     maxResistant: 2
     currentDamage: 50
-    currentDurability: 100
-    maxDurability: 100
-    actionDelay: 0.1
+    currentDurability: 1
+    maxDurability: 1
+    actionDelay: 0
     partType: -1
-    engineWearValue: 0.1
+    engineWearValue: 1
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20

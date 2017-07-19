@@ -4,12 +4,12 @@
   "objectAvatarPath": "BombMine",
   "objectTypes": ["CarPart"],
   "currentResistant": 2,
-  "currentDamage": 20,
-  "currentDurability": 100,
-  "maxDurability": 100,
-  "actionDelay": 0.3,
+  "currentDamage": 50,
+  "currentDurability": 1,
+  "maxDurability": 1,
+  "actionDelay": 0,
   "partType": -1,
-  "engineWearValue": 0.1
+  "engineWearValue": 1
 }
 
 

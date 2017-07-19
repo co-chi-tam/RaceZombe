@@ -1,7 +1,7 @@
 ﻿{
 	"gameModeName": "Mission C",
 	"gameModeFSM": "FSMPVEGameMode",
-	"gameModeModel": "PVEMap",
+	"gameModeModel": "PVEGroundMap",
 	"gameModeDescription": "Kill normal zombie x5",
 	"gameModeHardPoint": "C",
 	"zombieDatas": [

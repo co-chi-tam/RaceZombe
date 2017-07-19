@@ -14,6 +14,7 @@ namespace RacingHuntZombie {
 		public string gameModeHardPoint;
 		public CMovableData[] zombieDatas;
 		public CCarData[] enemyDatas;
+		public CCarPartData[] stuffDatas;
 		public Dictionary<string, float> gameMissionReware;
 		public Dictionary<string, float> gameMissionInfo;
 

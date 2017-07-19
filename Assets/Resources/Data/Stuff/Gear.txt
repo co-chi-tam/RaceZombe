@@ -1,0 +1,13 @@
+﻿{
+  "objectName": "Gear",
+  "objectModelPath": "Gear",
+  "objectAvatarPath": "Gear",
+  "objectTypes": ["Gear"],
+  "currentResistant": 0,
+  "currentDamage": 0,
+  "currentDurability": 1,
+  "maxDurability": 1,
+  "actionDelay": 0,
+  "partType": -1,
+  "engineWearValue": 1
+}

@@ -1,7 +1,7 @@
 ﻿{
 	"gameModeName": "Mission S",
 	"gameModeFSM": "FSMPVEGameMode",
-	"gameModeModel": "PVEMap",
+	"gameModeModel": "PVEGroundMap",
 	"gameModeDescription": "Kill normal zombie x10 \nKill Explosion zombie x2",
 	"gameModeHardPoint": "S",
 	"zombieDatas": [

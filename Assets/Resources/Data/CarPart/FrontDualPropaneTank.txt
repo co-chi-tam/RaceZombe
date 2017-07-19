@@ -1,0 +1,13 @@
+﻿{
+  "objectName": "FrontDualPropaneTank",
+  "objectModelPath": "FrontDualPropaneTank",
+  "objectAvatarPath": "FrontDualPropaneTank",
+  "objectTypes": ["CarPart"],
+  "currentResistant": 2,
+  "currentDamage": 15,
+  "currentDurability": 150,
+  "maxDurability": 150,
+  "actionDelay": 0.3,
+  "partType": 1,
+  "engineWearValue": 0.1
+}

@@ -643,10 +643,11 @@ MonoBehaviour:
     maxGas: 1000
     engineWear: 1
     carParts:
-    - objectName: TopBoxingGloves
-      objectModelPath: TopBoxingGloves
-      objectAvatarPath: TopBoxingGloves
-      objectTypes: []
+    - objectName: TopMachineGun
+      objectModelPath: TopMachineGun
+      objectAvatarPath: TopMachineGun
+      objectTypes:
+      - CarPart
       maxResistant: 2
       currentDamage: 15
       currentDurability: 100
@@ -654,12 +655,13 @@ MonoBehaviour:
       actionDelay: 0.3
       partType: 0
       engineWearValue: 1
-    - objectName: FrontBlade
-      objectModelPath: FrontBlade
-      objectAvatarPath: FrontBlade
-      objectTypes: []
+    - objectName: FrontDualPropaneTank
+      objectModelPath: FrontDualPropaneTank
+      objectAvatarPath: FrontDualPropaneTank
+      objectTypes:
+      - CarPart
       maxResistant: 2
-      currentDamage: 2
+      currentDamage: 15
       currentDurability: 150
       maxDurability: 100
       actionDelay: 0.3
@@ -668,7 +670,8 @@ MonoBehaviour:
     - objectName: BackPowerShieldTerminal
       objectModelPath: BackPowerShieldTerminal
       objectAvatarPath: BackPowerShieldTerminal
-      objectTypes: []
+      objectTypes:
+      - CarPart
       maxResistant: 2
       currentDamage: 0
       currentDurability: 150

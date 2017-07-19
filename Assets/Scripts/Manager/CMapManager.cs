@@ -7,6 +7,7 @@ namespace RacingHuntZombie {
 
 		[SerializeField]	private GameObject[] m_CarSpawnPoints;
 		[SerializeField]	private GameObject[] m_ZombieSpawnPoints;
+		[SerializeField]	private GameObject[] m_EnemySpawnPoints;
 
 		public GameObject[] GetCarSpawnPoints() {
 			return this.m_CarSpawnPoints;
@@ -14,6 +15,10 @@ namespace RacingHuntZombie {
 
 		public GameObject[] GetZombieSpawnPoints() {
 			return this.m_ZombieSpawnPoints;
+		}
+
+		public GameObject[] GetEnemySpawnPoints() {
+			return this.m_EnemySpawnPoints;
 		}
 
 	}

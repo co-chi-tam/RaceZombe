@@ -637,10 +637,12 @@ MonoBehaviour:
   m_Collider: {fileID: 65151637968601064}
   m_Animator: {fileID: 95408426892587546}
   m_AudioSource: {fileID: 82858913898001664}
+  m_AutoInit: 0
   m_ExcepLayerMask:
     serializedVersion: 2
     m_Bits: 3221225472
   m_TargetController: {fileID: 0}
+  m_IsBot: 0
   m_Data:
     objectName: ArmyJeep
     objectModelPath: ArmyJeep
@@ -652,7 +654,7 @@ MonoBehaviour:
     currentDurability: 100
     maxDurability: 100
     actionDelay: 1
-    maxSpeed: 220
+    maxSpeed: 150
     currentGas: 1000
     maxGas: 1000
     engineWear: 1
@@ -660,7 +662,8 @@ MonoBehaviour:
     - objectName: FrontDualSawBlade
       objectModelPath: FrontDualSawBlade
       objectAvatarPath: FrontDualSawBlade
-      objectTypes: []
+      objectTypes:
+      - CarPart
       maxResistant: 2
       currentDamage: 15
       currentDurability: 150
@@ -671,7 +674,8 @@ MonoBehaviour:
     - objectName: BackBBQRibs
       objectModelPath: BackBBQRibs
       objectAvatarPath: BackBBQRibs
-      objectTypes: []
+      objectTypes:
+      - CarPart
       maxResistant: 0
       currentDamage: 0
       currentDurability: 0
@@ -752,6 +756,8 @@ MonoBehaviour:
   m_FSMComponent:
     m_FSMJsonText: {fileID: 4900000, guid: 683c418ccf41e0043abf6fb8f7302fce, type: 3}
     m_FSMStateName: 
+  m_MissionComponent:
+    m_MissionPercent: 0
 --- !u!146 &146392513848195820
 WheelCollider:
   m_ObjectHideFlags: 1

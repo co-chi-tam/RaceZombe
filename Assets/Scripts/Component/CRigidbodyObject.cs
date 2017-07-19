@@ -16,6 +16,15 @@ namespace RacingHuntZombie {
 
 		#region Main methods
 
+		public virtual void FreezeMode(bool value) {
+			this.m_Rigidbody.isKinematic = value;
+			this.m_Rigidbody.useGravity = !value;
+		}
+
+		#endregion
+
+		#region Getter && Setter
+
 		public virtual float GetVelocityMS() {
 			if (this.m_Rigidbody == null)
 				return 0f;

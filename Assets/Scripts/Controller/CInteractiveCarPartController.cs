@@ -51,9 +51,6 @@ namespace RacingHuntZombie {
 					}
 				}
 			}
-			if (this.m_DamageObject.IsOutOfDamage ()) {
-				this.DestroyObject ();
-			}
 		}
 
 		protected override void OnCollisionEnter (Collision collision)

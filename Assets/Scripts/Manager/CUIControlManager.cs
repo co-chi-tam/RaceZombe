@@ -17,14 +17,21 @@ namespace RacingHuntZombie {
 		[SerializeField]	private Image m_TopPartDurabilityImage;
 		[SerializeField]	private Image m_BackPartDurabilityImage;
 		[SerializeField]	private Image m_MissionProcessImage;
+		[SerializeField]	private Text m_MissionProcessText;
 
 		[Header ("Mission Panel")]
 		[SerializeField]	private GameObject m_MissionCompletePanel;
 		[SerializeField]	private GameObject m_MissionFailPanel;
 
+		protected CGameManager m_GameManager;
+
 		protected override void Awake ()
 		{
 			base.Awake ();
+		}
+
+		protected virtual void Start() {
+			this.m_GameManager = CGameManager.GetInstance ();
 		}
 
 		protected void LateUpdate() {
@@ -47,6 +54,9 @@ namespace RacingHuntZombie {
 		
 			var missionProcesss = this.m_ObjectController.GetMissionPercent ();
 			this.m_MissionProcessImage.fillAmount = Mathf.Lerp (this.m_MissionProcessImage.fillAmount, missionProcesss, 0.5f); 
+
+			var gameMission = this.m_GameManager.GetMissionData ();
+			this.m_MissionProcessText.text = gameMission.gameModeDescription;
 		}
 
 		public void OpenMissionCompletePanel() {

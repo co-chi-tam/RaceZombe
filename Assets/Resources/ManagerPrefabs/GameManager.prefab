@@ -51,23 +51,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e4d449036641a45aaaa5467cadc626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GameModeText: {fileID: 4900000, guid: 006621de3ded8b34cb3ef65a606be9bc, type: 3}
   m_GameModeData:
     gameModeName: PVE Mode
     gameModeFSM: FSMPVEGameMode
     gameModeModel: 
     gameModeDescription: 
-    goldAward: 1000
+    gameModeHardPoint: 
+    zombieDatas: []
+    enemyDatas: []
   m_FSMGraphText: {fileID: 4900000, guid: 51fee296ad4e8b44090ed2cf9eec8baf, type: 3}
   m_FSMCurrentStateName: 
   m_Camera: {fileID: 0}
   m_UIControl: {fileID: 0}
   m_CarPrefabs: {fileID: 1112118305138270, guid: 0d540c92524aa334c86e1808e46e4c22,
     type: 2}
-  m_ZombiePrefabs:
-  - {fileID: 1242116809292042, guid: 64cd0dc48f214c640b07fa0101a22398, type: 2}
-  - {fileID: 1402844815016872, guid: e78c2dd0ecbab1a41bbc3f51acffb4f0, type: 2}
-  m_EnemyPrefabs:
-  - {fileID: 1412026671565056, guid: 8a7e59a6482fc2741baa12cf23a80419, type: 2}
   m_MapManager: {fileID: 0}
   m_Joytick: {fileID: 0}

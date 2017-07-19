@@ -45,6 +45,8 @@ namespace RacingHuntZombie {
 		protected virtual void OnCollisionEnter(Collision collision) {
 			if (this.m_Active == false)
 				return;
+			if (collision.collider.isTrigger)
+				return;
 			for (int i = 0; i < collision.contacts.Length; i++) {
 				var contactObj = collision.contacts [i].otherCollider.gameObject;
 				var thisContactObj = collision.contacts [i].thisCollider.gameObject;
@@ -55,6 +57,8 @@ namespace RacingHuntZombie {
 		protected virtual void OnCollisionStay(Collision collision) {
 			if (this.m_Active == false)
 				return;
+			if (collision.collider.isTrigger)
+				return;
 			for (int i = 0; i < collision.contacts.Length; i++) {
 				var contactObj = collision.contacts [i].otherCollider.gameObject;
 				var thisContactObj = collision.contacts [i].thisCollider.gameObject;
@@ -64,6 +68,8 @@ namespace RacingHuntZombie {
 
 		protected virtual void OnCollisionExit(Collision collision) {
 			if (this.m_Active == false)
+				return;
+			if (collision.collider.isTrigger)
 				return;
 			for (int i = 0; i < collision.contacts.Length; i++) {
 				var contactObj = collision.contacts [i].otherCollider.gameObject;

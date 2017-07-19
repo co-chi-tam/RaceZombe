@@ -8,6 +8,7 @@ namespace RacingHuntZombie {
 		#region Properties
 
 		private CUISelectMissionManager m_UISelectMissionManager;
+		private CGameModeData[] m_GameModeDatas;
 
 		#endregion
 
@@ -16,7 +17,19 @@ namespace RacingHuntZombie {
 		public CSelectModeSceneTask () : base ()
 		{
 			this.taskName = "SelectModeScene";
-			this.nextTask = "RaceScene";
+			this.nextTask = "SelectCarScene";
+			var missionA = TinyJSON.JSON.Load (Resources.Load<TextAsset>("Data/GameMission/AMission").text).Make<CGameModeData> ();
+			var missionB = TinyJSON.JSON.Load (Resources.Load<TextAsset>("Data/GameMission/BMission").text).Make<CGameModeData> ();
+			var missionC = TinyJSON.JSON.Load (Resources.Load<TextAsset>("Data/GameMission/CMission").text).Make<CGameModeData> ();
+			var missionS = TinyJSON.JSON.Load (Resources.Load<TextAsset>("Data/GameMission/SMission").text).Make<CGameModeData> ();
+			var missionSSS = TinyJSON.JSON.Load (Resources.Load<TextAsset>("Data/GameMission/SSSMission").text).Make<CGameModeData> ();
+			this.m_GameModeDatas = new CGameModeData[] { 
+				missionA,
+				missionB,
+				missionC, 
+				missionS, 
+				missionSSS
+			};
 		}
 
 		#endregion
@@ -28,11 +41,7 @@ namespace RacingHuntZombie {
 			base.StartTask ();
 			this.m_UISelectMissionManager = CUISelectMissionManager.GetInstance ();
 			this.m_UISelectMissionManager.Init ();
-			this.m_UISelectMissionManager.LoadMission (new CGameModeData () { gameModeName = "Mission A - Killing free", gameModeHardPoint = "A", gameModeDescription = "Kill normal zombie x5" }
-				, new CGameModeData () { gameModeName = "Mission B - Killing free", gameModeHardPoint = "B", gameModeDescription = "Kill normal zombie x5" }
-				, new CGameModeData () { gameModeName = "Mission C - Killing free", gameModeHardPoint = "C", gameModeDescription = "Kill normal zombie x5" }
-				, new CGameModeData () { gameModeName = "Mission S - Killing free", gameModeHardPoint = "S", gameModeDescription = "Kill normal zombie x5" }
-				, new CGameModeData () { gameModeName = "Mission SSS - Killing free", gameModeHardPoint = "SSS", gameModeDescription = "Kill normal zombie x5" });
+			this.m_UISelectMissionManager.LoadMission (this.m_GameModeDatas);
 		}
 
 		public override void UpdateTask (float dt)

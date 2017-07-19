@@ -28,9 +28,9 @@ namespace RacingHuntZombie {
 		protected override void LateUpdate ()
 		{
 			base.LateUpdate ();
-//			if (this.m_DamageObject.IsOutOfDamage ()) {
-//				this.DestroyObject ();
-//			}
+			if (this.m_DamageObject.IsOutOfDamage ()) {
+				this.DestroyObject ();
+			}
 		}
 
 		#endregion

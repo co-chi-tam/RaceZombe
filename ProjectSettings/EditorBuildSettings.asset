@@ -10,6 +10,9 @@ EditorBuildSettings:
     guid: c433e56b9b3f67945a0b4be10958a889
   - enabled: 1
     path: Assets/Scenes/SelectModeScene.unity
+    guid: 535b67ac20a52744cb0f90512cb93c38
+  - enabled: 1
+    path: Assets/Scenes/SelectCarScene.unity
     guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/RaceScene.unity

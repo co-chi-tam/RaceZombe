@@ -10,12 +10,14 @@ namespace RacingHuntZombie {
 		#region Properties
 
 		public enum EInteractiveEvent: int {
-			ApplyDamageTarget = 0,
-			ChangeThisToTarget = 1,
+			None 				= 0,
+			UpdateMission		= 1,
+			ApplyDamageTarget 	= 2,
+			ChangeThisToTarget 	= 3,
 			// Car part
-			AddGasToTarget = 101,
-			PullTarget = 102,
-			PushTarget = 103
+			AddGasToTarget 		= 101,
+			PullTarget 			= 102,
+			PushTarget 			= 103
 		}
 
 		[Header ("Events")]
@@ -37,6 +39,8 @@ namespace RacingHuntZombie {
 		{
 			base.Awake ();
 			this.m_InteractiveEvents = new Dictionary<EInteractiveEvent, Action<object>> ();
+			this.m_InteractiveEvents.Add (EInteractiveEvent.None, 				this.None);
+			this.m_InteractiveEvents.Add (EInteractiveEvent.UpdateMission,		this.UpdateMission);
 			this.m_InteractiveEvents.Add (EInteractiveEvent.ApplyDamageTarget, 	this.ApplyDamageTarget);
 			this.m_InteractiveEvents.Add (EInteractiveEvent.ChangeThisToTarget, this.ChangeThisToTarget);
 			this.m_InteractiveEvents.Add (EInteractiveEvent.AddGasToTarget, 	this.AddGasToTarget);
@@ -78,6 +82,17 @@ namespace RacingHuntZombie {
 				this.m_InteractiveEvents [this.m_CurrentEvent] (target);
 				this.m_CurrentActionDelay = this.m_DestroyAfter;
 				this.DestroyObject ();
+			}
+		}
+
+		protected virtual void None(object target) {
+			
+		}
+
+		protected virtual void UpdateMission(object target) {
+			var objCtrl = target as CObjectController;
+			for (int i = 0; i < this.m_Data.objectTypes.Length; i++) {
+				objCtrl.SetMissionObject (this.m_Data.objectTypes[i], 1);
 			}
 		}
 

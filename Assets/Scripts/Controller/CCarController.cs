@@ -34,7 +34,14 @@ namespace RacingHuntZombie {
 			this.m_CarParts.Init (m_Data.carParts);
 			this.m_FSMComponent.Init (this);
 			this.m_MissionComponent.Init ();
+			this.m_WheelDriver.FreezeMode (false);
 			base.Init ();
+		}
+
+		protected override void Start ()
+		{
+			base.Start ();
+			this.m_WheelDriver.FreezeMode (true);
 		}
 
 		protected override void OnTriggerStay (Collider collider)
@@ -103,6 +110,8 @@ namespace RacingHuntZombie {
 
 		public virtual void UpdateCarPart(CCarPartsComponent.ECarPart part, GameObject contact) {
 			var carPartCtrl = this.m_CarParts.GetCarPart (part);
+			if (carPartCtrl == null)
+				return;
 			carPartCtrl.InteractiveOrtherObject (this.gameObject, contact);
 			carPartCtrl.SetAnimator ("Active");
 		}
@@ -212,11 +221,18 @@ namespace RacingHuntZombie {
 
 		public override float GetCarPartPercent(CCarPartsComponent.ECarPart value) {
 			var carPartCtrl = this.m_CarParts.GetCarPart (value);
+			if (carPartCtrl == null)
+				return 0f;
 			return carPartCtrl.GetDurabilityPercent();
 		}
 
 		public override void SetMissionObject (string key, float value) {
 			this.m_MissionComponent.SetMissionObject (key, value);
+		}
+
+		public override float GetMissionObject (string key)
+		{
+			return this.m_MissionComponent.GetMissionObject (key);
 		}
 
 		public virtual bool GetMissionObject(Dictionary<string, float> mission) {

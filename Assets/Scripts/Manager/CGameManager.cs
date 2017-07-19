@@ -13,7 +13,6 @@ namespace RacingHuntZombie {
 	public class CGameManager : CMonoSingleton<CGameManager>, IContext {
 
 		[Header ("Game Mode")]
-		[SerializeField]	protected TextAsset m_GameModeText;
 		[SerializeField]	protected CGameModeData m_GameModeData;
 		[SerializeField]	protected TextAsset m_FSMGraphText;
 		[SerializeField]	protected string m_FSMCurrentStateName;
@@ -22,8 +21,6 @@ namespace RacingHuntZombie {
 		[SerializeField]	private CCameraController m_Camera;
 		[SerializeField]	private CUIControlManager m_UIControl;
 		[SerializeField]	private GameObject m_CarPrefabs;
-		[SerializeField]	private GameObject[] m_ZombiePrefabs;
-		[SerializeField]	private GameObject[] m_EnemyPrefabs;
 		[SerializeField]	private CMapManager m_MapManager;
 
 		[Header ("Control")]
@@ -50,7 +47,7 @@ namespace RacingHuntZombie {
 
 		protected virtual void Start() {
 			Application.targetFrameRate = 60;
-			this.m_GameModeData = TinyJSON.JSON.Load (this.m_GameModeText.text).Make<CGameModeData>();
+			this.m_GameModeData = CTaskUtil.Get (CTaskUtil.PLAYER_SELECTED_MISSION) as CGameModeData;
 		}
 
 		protected virtual void FixedUpdate() {
@@ -139,16 +136,25 @@ namespace RacingHuntZombie {
 		}
 
 		private IEnumerator HandleSpawnEnemy() {
-			var enemyCarIndex = this.m_EnemyPrefabs.Length;
-			var carGO = Instantiate(this.m_EnemyPrefabs[0]);
-			yield return carGO;
-			var carSpawnPoints = this.m_MapManager.GetZombieSpawnPoints ();
-			carGO.transform.position = carSpawnPoints[0].transform.position;
-			var carEnemy = carGO.GetComponent<CCarController> ();
-			carEnemy.Init ();
-			carEnemy.SetActive (true);
-			carEnemy.SetTarget (this.m_CarControl);
-			carEnemy.IsBot = true;
+			var enemySpawns = this.m_GameModeData.enemyDatas;
+			for (int i = 0; i < enemySpawns.Length; i++) {
+				yield return this.HandleSetupEnemy(i, this.m_CarControl);
+			}
+		}
+
+		private IEnumerator HandleSetupEnemy(int index, CCarController target) {
+			var enemySpawnPoints = this.m_MapManager.GetEnemySpawnPoints ();
+			var position = enemySpawnPoints [index].transform.position;
+			var randomIndex = index % this.m_GameModeData.enemyDatas.Length;
+			var enemyData = this.m_GameModeData.enemyDatas[randomIndex];
+			var enemyCtrl = Instantiate(Resources.Load<CCarController> ("Prefabs/" + enemyData.objectModelPath));
+			yield return enemyCtrl;
+			enemyCtrl.transform.position = position;
+			enemyCtrl.SetData (enemyData);
+			enemyCtrl.Init ();
+			enemyCtrl.SetActive (true);
+			enemyCtrl.SetTarget (target);
+			enemyCtrl.IsBot = true;
 		}
 
 		private IEnumerator HandleSpawnZombies() {
@@ -161,14 +167,20 @@ namespace RacingHuntZombie {
 		private IEnumerator HandleSetupZombie(int index, CCarController target) {
 			var zombieSpawnPoints = this.m_MapManager.GetZombieSpawnPoints ();
 			var position = zombieSpawnPoints [index].transform.position;
-			var zombieGO = Instantiate(this.m_ZombiePrefabs [index % this.m_ZombiePrefabs.Length]);
-			yield return zombieGO;
-			zombieGO.transform.position = position;
-			var zombieCtrl = zombieGO.GetComponent<CZombieController> ();
+			var randomIndex = index % this.m_GameModeData.zombieDatas.Length;
+			var zombieData = this.m_GameModeData.zombieDatas[randomIndex];
+			var zombieCtrl = Instantiate(Resources.Load<CZombieController> ("Prefabs/" + zombieData.objectModelPath));
+			yield return zombieCtrl;
+			zombieCtrl.transform.position = position;
+			zombieCtrl.SetData (zombieData);
 			zombieCtrl.Init ();
 			zombieCtrl.SetActive (true);
 			zombieCtrl.SetTarget (target);
 			this.m_Zombies.Add (zombieCtrl);
+		}
+
+		public virtual CGameModeData GetMissionData() {
+			return this.m_GameModeData;
 		}
 
 		protected virtual bool IsLoadingCompleted() {

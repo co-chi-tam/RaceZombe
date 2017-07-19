@@ -1,10 +1,9 @@
 ﻿{
-	"gameModeName": "PVE Mode",
+	"gameModeName": "Mission A",
 	"gameModeFSM": "FSMPVEGameMode",
 	"gameModeModel": "PVEMap",
-	"gameModeDescription": "Kill normal zombie x5",
+	"gameModeDescription": "Kill normal zombie x20 \nFind gear x2",
 	"gameModeHardPoint": "A",
-	"goldAware": 100,
 	"zombieDatas": [
 		{
 		  "objectName": "Zombie",
@@ -32,7 +31,12 @@
 		  "maxSpeed": 1.5
 		}
 	],
+	"enemyDatas": [],
+	"gameMissionReware": {
+		"playerGold": 1000
+	},
 	"gameMissionInfo": {
-		"NormalZombie": 5
+		"NormalZombie": 20,
+		"Gear": 2
 	}
 }

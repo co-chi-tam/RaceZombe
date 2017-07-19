@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Collider: {fileID: 135377317030698594}
   m_Animator: {fileID: 95123776847261806}
   m_AudioSource: {fileID: 82793224788942922}
+  m_AutoInit: 0
   m_ExcepLayerMask:
     serializedVersion: 2
     m_Bits: 4294967039
@@ -267,11 +268,11 @@ MonoBehaviour:
     - Gas
     maxResistant: 0
     currentDamage: 0
-    currentDurability: 100
-    maxDurability: 100
+    currentDurability: 1
+    maxDurability: 1
     actionDelay: 0
     partType: -1
-    engineWearValue: 100
+    engineWearValue: 1
   m_Owner: {fileID: 0}
   m_DamageObject:
     m_MaxResistant: 20

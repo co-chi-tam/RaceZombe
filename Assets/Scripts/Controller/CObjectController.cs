@@ -208,6 +208,10 @@ namespace RacingHuntZombie {
 
 		}
 
+		public virtual float GetMissionObject(string key) {
+			return 0f;
+		}
+
 		public virtual float GetMissionPercent() {
 			return 1f;
 		}

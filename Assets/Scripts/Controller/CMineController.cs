@@ -27,7 +27,7 @@ namespace RacingHuntZombie {
 
 		protected override void LateUpdate ()
 		{
-			base.LateUpdate ();
+//			base.LateUpdate ();
 			if (m_Countdown > 0f) {
 				this.m_Countdown -= Time.deltaTime;
 				if (this.m_Countdown <= 0f) {

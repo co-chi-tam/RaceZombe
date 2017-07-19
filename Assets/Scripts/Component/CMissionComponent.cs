@@ -31,7 +31,8 @@ namespace RacingHuntZombie {
 			foreach (var item in missionMaps) {
 				if (this.m_MissionObjects.ContainsKey (item.Key)) {
 					var keyValue = this.m_MissionObjects [item.Key];
-					percent += keyValue / item.Value;
+					var percentPerKey = keyValue / item.Value;
+					percent += percentPerKey > 1f ? 1f : percentPerKey;
 					result &= this.ComditionComplete (keyValue, item.Value);
 				} else {
 					result = false;

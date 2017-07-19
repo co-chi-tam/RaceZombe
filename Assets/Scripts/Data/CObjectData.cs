@@ -50,7 +50,7 @@ namespace RacingHuntZombie {
 			this.m_DictJSON.Add ("objectAvatarPath", this.objectAvatarPath);
 			var objectTypeJSON = "[";
 			for (int i = 0; i < this.objectTypes.Length; i++) {
-				objectTypeJSON += this.objectTypes[i].ToString() + (i < this.objectTypes.Length - 1 ? "," : "");
+				objectTypeJSON += "\"" + this.objectTypes[i].ToString() + "\"" + (i < this.objectTypes.Length - 1 ? "," : "");
 			}
 			objectTypeJSON += "],";
 			this.m_DictJSON.Add ("objectTypes", objectTypeJSON);

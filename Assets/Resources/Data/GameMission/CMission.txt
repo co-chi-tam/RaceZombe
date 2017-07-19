@@ -1,10 +1,9 @@
 ﻿{
-	"gameModeName": "PVE Mode",
+	"gameModeName": "Mission C",
 	"gameModeFSM": "FSMPVEGameMode",
 	"gameModeModel": "PVEMap",
 	"gameModeDescription": "Kill normal zombie x5",
-	"gameModeHardPoint": "A",
-	"goldAware": 100,
+	"gameModeHardPoint": "C",
 	"zombieDatas": [
 		{
 		  "objectName": "Zombie",
@@ -32,6 +31,10 @@
 		  "maxSpeed": 1.5
 		}
 	],
+	"enemyDatas": [],
+	"gameMissionReware": {
+		"playerGold": 1000
+	},
 	"gameMissionInfo": {
 		"NormalZombie": 5
 	}

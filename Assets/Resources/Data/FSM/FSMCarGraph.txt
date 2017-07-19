@@ -9,7 +9,7 @@
           "state_name": "ActiveState",
           "states": [
             {
-              "condition_name": "!HaveGas||IsDeath",
+              "condition_name": "!HaveGas||IsInactive",
               "state_name": "DeathState",
               "states": []
             }

@@ -30,7 +30,7 @@ namespace RacingHuntZombie {
 
 			this.m_FSMManager.RegisterCondition ("HaveEnemy", 	context.HaveEnemy);
 			this.m_FSMManager.RegisterCondition ("HaveGas", 	context.HaveGas);
-			this.m_FSMManager.RegisterCondition ("IsDeath", 	context.IsDeath);
+			this.m_FSMManager.RegisterCondition ("IsInactive", 	context.IsInactive);
 		}
 
 		public override void UpdateComponent (float dt)

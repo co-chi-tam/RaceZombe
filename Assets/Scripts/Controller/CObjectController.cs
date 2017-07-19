@@ -136,7 +136,7 @@ namespace RacingHuntZombie {
 			return false;
 		}
 
-		public virtual bool IsDeath() {
+		public virtual bool IsInactive() {
 			return false;
 		}
 

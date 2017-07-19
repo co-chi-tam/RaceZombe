@@ -141,7 +141,7 @@ namespace RacingHuntZombie {
 			return this.GetGas () > 0f;
 		}
 
-		public override bool IsDeath ()
+		public override bool IsInactive ()
 		{
 			return this.m_DamageObject.IsOutOfDamage() || this.GetGas () <= 0f;
 		}

@@ -8,7 +8,7 @@ namespace RacingHuntZombie {
 
 		bool HaveGas ();
 		bool HaveEnemy ();
-		bool IsDeath();
+		bool IsInactive();
 		
 	}
 }

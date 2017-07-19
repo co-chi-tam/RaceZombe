@@ -1,0 +1,38 @@
+﻿{
+	"gameModeName": "PVE Mode",
+	"gameModeFSM": "FSMPVEGameMode",
+	"gameModeModel": "PVEMap",
+	"gameModeDescription": "Kill normal zombie x5",
+	"gameModeHardPoint": "A",
+	"goldAware": 100,
+	"zombieDatas": [
+		{
+		  "objectName": "Zombie",
+		  "objectModelPath": "Zombie",
+		  "objectAvatarPath": "Zombie",
+		  "objectFSMPath": "FSMSimpleGraph",
+		  "objectTypes": ["NormalZombie"],
+		  "currentResistant": 2,
+		  "currentDamage": 3,
+		  "currentDurability": 10,
+		  "maxDurability": 10,
+		  "actionDelay": 0.1,
+		  "maxSpeed": 3.5
+		},{
+		  "objectName": "ExplosionZombie",
+		  "objectModelPath": "ExplosionZombie",
+		  "objectAvatarPath": "ExplosionZombie",
+		  "objectFSMPath": "FSMSimpleGraph",
+		  "objectTypes": ["ExplosionZombie"],
+		  "currentResistant": 2,
+		  "currentDamage": 20,
+		  "currentDurability": 10,
+		  "maxDurability": 10,
+		  "actionDelay": 0.1,
+		  "maxSpeed": 1.5
+		}
+	],
+	"gameMissionInfo": {
+		"NormalZombie": 5
+	}
+}

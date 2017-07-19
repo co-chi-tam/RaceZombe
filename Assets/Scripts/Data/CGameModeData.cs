@@ -13,7 +13,7 @@ namespace RacingHuntZombie {
 		public string gameModeDescription;
 		public string gameModeHardPoint;
 		public int goldAward;
-		public string[] zombiePrefabs;
+		public CMovableData[] zombieDatas;
 		public Dictionary<string, float> gameMissionInfo;
 
 		public CGameModeData ()

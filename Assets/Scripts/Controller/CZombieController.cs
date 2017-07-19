@@ -102,7 +102,7 @@ namespace RacingHuntZombie {
 			return this.m_TargetController != null;
 		}
 
-		public override bool IsDeath() {
+		public override bool IsInactive() {
 			return this.m_DamageObject.IsOutOfDamage ();
 		}
 

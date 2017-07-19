@@ -13,25 +13,33 @@ namespace RacingHuntZombie {
 		[Header ("Mission Object")]
 		[SerializeField]	protected GameObject m_MissionRoot;
 		[SerializeField]	protected CMissionPoint m_MissionPointPrefabs;
+		[SerializeField]	protected CMissionInfo m_MissionInfo;
 
 		protected List<CGameModeData> m_CurrentMissionList;
 		protected List<GameObject> m_CurrentMissionObjList;
+		protected CGameModeData m_CurrentMission;
 
-		protected void Start() {
+		protected override void Awake ()
+		{
+			base.Awake ();
 			this.m_CurrentMissionList = new List<CGameModeData> ();
 			this.m_CurrentMissionObjList = new List<GameObject> ();
-//			if (this.m_MapMissionObjects.Length == 0) {
-//				var countBlocks = GameObject.FindGameObjectsWithTag ("Block");
-//				this.m_MapMissionObjects = new GameObject[countBlocks.Length];
-//				for (int i = 0; i < m_MapMissionObjects.Length; i++) {
-//					this.m_MapMissionObjects [i] = countBlocks [i];
-//				}
-//			}
-			this.LoadMission (new CGameModeData () { gameModeHardPoint = "A" }
-				, new CGameModeData () { gameModeHardPoint = "B" }
-				, new CGameModeData () { gameModeHardPoint = "C" }
-				, new CGameModeData () { gameModeHardPoint = "S" }
-				, new CGameModeData () { gameModeHardPoint = "SSS" });
+			this.m_CurrentMission = null;
+			this.m_MissionInfo.gameObject.SetActive (false);
+		}
+
+		protected virtual void Start() {
+			
+		}
+
+		public virtual void Init() {
+			if (this.m_MapMissionObjects.Length == 0) {
+				var countBlocks = GameObject.FindGameObjectsWithTag ("Block");
+				this.m_MapMissionObjects = new GameObject[countBlocks.Length];
+				for (int i = 0; i < m_MapMissionObjects.Length; i++) {
+					this.m_MapMissionObjects [i] = countBlocks [i];
+				}
+			}
 		}
 
 		public virtual void LoadMission(params CGameModeData[] missions) {
@@ -60,8 +68,17 @@ namespace RacingHuntZombie {
 		}
 
 		public virtual void SelectMission(CGameModeData mission) {
+			this.m_CurrentMission = mission;
+			this.m_MissionInfo.gameObject.SetActive (mission != null);
+			this.m_MissionInfo.missionInfoNameText.text = mission.gameModeName;
+			this.m_MissionInfo.missionInfoDescriptionText.text = mission.gameModeDescription;
 			CTaskUtil.Set (CTaskUtil.PLAYER_SELECTED_MISSION, mission);
-			CRootTask.Instance.GetCurrentTask ().OnTaskCompleted ();
+		}
+
+		public virtual void SubmitMission() {
+			if (this.m_CurrentMission != null) {
+				CRootTask.Instance.GetCurrentTask ().OnTaskCompleted ();
+			}
 		}
 
 	}

@@ -17,18 +17,6 @@
 		  "maxDurability": 10,
 		  "actionDelay": 0.1,
 		  "maxSpeed": 3.5
-		},{
-		  "objectName": "ExplosionZombie",
-		  "objectModelPath": "ExplosionZombie",
-		  "objectAvatarPath": "ExplosionZombie",
-		  "objectFSMPath": "FSMSimpleGraph",
-		  "objectTypes": ["ExplosionZombie"],
-		  "currentResistant": 2,
-		  "currentDamage": 20,
-		  "currentDurability": 10,
-		  "maxDurability": 10,
-		  "actionDelay": 0.1,
-		  "maxSpeed": 1.5
 		}
 	],
 	"enemyDatas": [],

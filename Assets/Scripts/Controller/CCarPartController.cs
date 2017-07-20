@@ -106,6 +106,13 @@ namespace RacingHuntZombie {
 			this.m_Owner.SetMissionObject (key, value);
 		}
 
+		public override bool GetActive ()
+		{
+			if (this.m_Owner == null)
+				return base.GetActive ();
+			return base.GetActive () && this.m_Owner.GetActive ();
+		}
+
 		#endregion
 
 	}

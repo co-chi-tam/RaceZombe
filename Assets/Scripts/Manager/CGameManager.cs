@@ -20,11 +20,11 @@ namespace RacingHuntZombie {
 		[Header ("Map")]
 		[SerializeField]	private CCameraController m_Camera;
 		[SerializeField]	private CUIControlManager m_UIControl;
-		[SerializeField]	private GameObject m_CarPrefabs;
 		[SerializeField]	private CMapManager m_MapManager;
 
 		[Header ("Control")]
 		[SerializeField]	private UIJoytick m_Joytick;
+		[SerializeField]	protected CCarData m_CurrentSelectCarData;
 
 		private CCarController m_CarControl;
 		private bool m_AllLoadingComplete = false;
@@ -48,6 +48,7 @@ namespace RacingHuntZombie {
 		protected virtual void Start() {
 			Application.targetFrameRate = 60;
 			this.m_GameModeData = CTaskUtil.Get (CTaskUtil.PLAYER_SELECTED_MISSION) as CGameModeData;
+			this.m_CurrentSelectCarData = CTaskUtil.Get (CTaskUtil.PLAYER_SELECTED_CAR) as CCarData;
 		}
 
 		protected virtual void FixedUpdate() {
@@ -123,11 +124,11 @@ namespace RacingHuntZombie {
 		}
 
 		private IEnumerator HandleSpawnCar() {
-			var carGO = Instantiate(this.m_CarPrefabs);
-			yield return carGO;
+			this.m_CarControl = Instantiate(Resources.Load<CCarController> ("Prefabs/" + this.m_CurrentSelectCarData.objectModelPath));
+			yield return this.m_CarControl;
 			var carSpawnPoints = this.m_MapManager.GetCarSpawnPoints ();
-			carGO.transform.position = carSpawnPoints[0].transform.position;
-			this.m_CarControl = carGO.GetComponent<CCarController> ();
+			this.m_CarControl.transform.position = carSpawnPoints[0].transform.position;
+			this.m_CarControl.SetData (this.m_CurrentSelectCarData);
 			this.m_CarControl.Init ();
 			this.m_CarControl.SetActive (true);
 			this.m_CarControl.IsBot = false;

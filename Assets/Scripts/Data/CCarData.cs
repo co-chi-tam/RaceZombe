@@ -38,6 +38,8 @@ namespace RacingHuntZombie {
 			this.m_DictJSON.Add ("engineWear", this.engineWear);
 			var carPartsJSON = "[";
 			for (int i = 0; i < this.carParts.Length; i++) {
+				if (this.carParts [i] == null)
+					continue;
 				carPartsJSON += this.carParts[i].ToJSON() + (i < this.carParts.Length - 1 ? "," : "");
 			}
 			carPartsJSON += "]";

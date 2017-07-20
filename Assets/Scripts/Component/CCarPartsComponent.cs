@@ -74,6 +74,18 @@ namespace RacingHuntZombie {
 			return this.m_CarPartMap [part];
 		}
 
+		public GameObject GetCarPartObject(ECarPart part) {
+			switch (part) {
+			case ECarPart.TOP:
+				return this.m_TopPart;
+			case ECarPart.FRONT:
+				return this.m_FrontPart;
+			case ECarPart.BACK:
+				return this.m_BackPart;
+			}
+			return null;
+		}
+
 		#endregion
 
 	}

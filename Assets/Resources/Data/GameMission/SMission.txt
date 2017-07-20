@@ -63,21 +63,6 @@
 		      "actionDelay": 3,
 		      "partType": 1,
 		      "engineWearValue": 0.1
-		    },
-		    {
-		      "objectName": "BackBBQRibs",
-		      "objectModelPath": "BackBBQRibs",
-		      "objectAvatarPath": "BackBBQRibs",
-		      "objectTypes": [
-		        "CarPart"
-		      ],
-		      "currentResistant": 0,
-		      "currentDamage": 0,
-		      "currentDurability": 0,
-		      "maxDurability": 0,
-		      "actionDelay": 0,
-		      "partType": 2,
-		      "engineWearValue": 0
 		    }
 		  ]
 		}

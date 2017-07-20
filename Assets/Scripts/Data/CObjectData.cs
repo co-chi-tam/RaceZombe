@@ -45,6 +45,7 @@ namespace RacingHuntZombie {
 
 		public virtual string ToJSON ()
 		{
+			this.m_DictJSON.Clear ();
 			this.m_DictJSON.Add ("objectName", this.objectName);
 			this.m_DictJSON.Add ("objectModelPath", this.objectModelPath);
 			this.m_DictJSON.Add ("objectAvatarPath", this.objectAvatarPath);

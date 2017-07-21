@@ -42,6 +42,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1108787602860132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4756972415038516}
+  - component: {fileID: 65358669316039652}
+  m_Layer: 8
+  m_Name: CarCrack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1172312407975730
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +280,7 @@ Transform:
   - {fileID: 4041152938864450}
   - {fileID: 4521865152061560}
   m_Father: {fileID: 4523293893404172}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4036458206497448
 Transform:
@@ -334,7 +350,7 @@ Transform:
   - {fileID: 4104603891427452}
   - {fileID: 4036458206497448}
   m_Father: {fileID: 4523293893404172}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4434105834773866
 Transform:
@@ -395,16 +411,17 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1412026671565056}
-  m_LocalRotation: {x: -0, y: -0, z: -0.52880406, w: 0.84874403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.699919, y: 0.6869632, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4756972415038516}
   - {fileID: 4413161318209062}
   - {fileID: 4001049872990776}
   - {fileID: 4552045899715754}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -63.849003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4552045899715754
 Transform:
   m_ObjectHideFlags: 1
@@ -417,7 +434,7 @@ Transform:
   m_Children:
   - {fileID: 4438397269700844}
   m_Father: {fileID: 4523293893404172}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4588045324472142
 Transform:
@@ -459,6 +476,19 @@ Transform:
   m_Father: {fileID: 4413161318209062}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!4 &4756972415038516
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108787602860132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4523293893404172}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23016880548463040
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -525,6 +555,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 1.1, z: 2.5}
   m_Center: {x: 0, y: 0.35, z: 0}
+--- !u!65 &65358669316039652
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108787602860132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.21, z: 3.04}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!82 &82858913898001664
 AudioSource:
   m_ObjectHideFlags: 1

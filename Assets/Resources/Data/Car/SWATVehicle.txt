@@ -1,0 +1,17 @@
+﻿{
+  "objectName": "SWAT Vehicle",
+  "objectModelPath": "SWATVehicle",
+  "objectAvatarPath": "SWATVehicle",
+  "objectFSMPath": "FSMCarGraph",
+  "objectTypes": ["Car"],
+  "currentResistant": 2,
+  "currentDamage": 5,
+  "currentDurability": 120,
+  "maxDurability": 120,
+  "actionDelay": 1,
+  "maxSpeed": 220,
+  "currentGas": 1000,
+  "maxGas": 1000,
+  "engineWear": 1,
+  "carParts": []
+}

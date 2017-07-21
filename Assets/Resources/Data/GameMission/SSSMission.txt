@@ -66,9 +66,9 @@
 		    }
 		  ]
 		},{
-		  "objectName": "ArmyJeep",
-		  "objectModelPath": "ArmyJeep",
-		  "objectAvatarPath": "ArmyJeep",
+		  "objectName": "SWAT Vehicle",
+		  "objectModelPath": "SWATVehicle",
+		  "objectAvatarPath": "SWATVehicle",
 		  "objectTypes": [
 		    "Car"
 		  ],
